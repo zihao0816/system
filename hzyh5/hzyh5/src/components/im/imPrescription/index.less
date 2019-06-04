@@ -1,0 +1,98 @@
+.imprescription{
+    .page{
+        margin: 16px 10px 0;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        .top{
+            padding-bottom: 16px;
+            border-bottom: 1px dashed #C1C1C1;
+            div{
+                display: flex;
+                img:nth-child(1){
+                    vertical-align: middle;
+                    margin-right: 12px;
+                    background-color: #F1F3F4;
+                }
+                div{
+                    display: inline-block;
+                    vertical-align: middle;
+                    @media screen and (min-width: 375px) {
+                        width: 60%;
+                    }
+                    width: 46%;
+                    p:nth-child(1){
+                        font-size: 18px;
+                        color: #141414;
+                    }
+                    p:nth-child(2){
+                        
+                        font-size: 14px;
+                        color: #C1C1C1;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow:ellipsis;
+                    }
+                }
+                img:nth-child(3){
+                    vertical-align: middle;
+                    margin-left: 20px;
+                }
+            }
+            .patient{
+                margin-top: 10px;
+                font-size: 15px;
+            }
+        }
+        .diagnosis{
+            padding: 16px 0;
+            border-bottom: 1px dashed #C1C1C1;
+            width: 100%;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            font-size: 15px;
+        }
+        .price{
+            margin-top: 16px;
+            .left{
+                p:nth-child(1){
+                    float: left;
+                }
+                p:nth-child(2){
+                    float: right;
+                    color: #8B572A;
+                    font-size: 12px;
+                    line-height: 26px;
+                }
+            }
+            .right{
+                width: 100%;
+                button{
+                    width: 100%;
+                    background: #FE5858;
+                    color: #ffffff;
+                    font-size: 18px;
+                    padding: 8px 15px;
+                    border: none;
+                    outline: none;
+                    border-radius: 6px;
+                    margin-top: 16px; 
+                }
+            }
+        }
+        .unprice{
+            text-align: center;
+            margin-top: 16px;
+            span{
+                color: #C1C1C1;
+                font-size: 15px;
+            }
+        }
+    }
+    .clearfix::after{
+        display: block;
+        clear: both;
+        content: "";
+    }
+}

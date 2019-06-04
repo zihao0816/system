@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>消息管理</title>
+  <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+  <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!-- Toastr style -->
+  <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+  <!-- Gritter -->
+  <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+  <link href="/static/common-css/animate.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="/static/common-css/style.css" rel="stylesheet">
+  <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+  <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+  <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+  <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+  <link href="/static/css/orderTemplate/orderTemplate.css" rel="stylesheet">
+
+</head>
+
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+  <div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="b-title clearfix">
+            <h3>订单消息模板</h3>
+          </div>
+          <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" >
+              <li role="presentation" class="active"><a href="#withdrawalSuccess" aria-controls="withdrawalSuccess"
+                  role="tab" data-toggle="tab" id= "one">提现成功</a></li>
+              <li role="presentation"><a href="#withdrawalFailure" aria-controls="withdrawalFailure" role="tab"
+                  data-toggle="tab" id="tow">提现失败</a></li>
+              <li role="presentation"><a href="#checkoutSuccess" aria-controls="checkoutSuccess" role="tab" data-toggle="tab" id="three">药方下单成功</a></li>
+              <li role="presentation"><a href="#prescriptionSuccess" aria-controls="prescriptionSuccess" role="tab"
+                  data-toggle="tab" id="four">药方购买成功</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- 提现成功 -->
+              <div role="tabpanel" class="tab-pane active contents" id="withdrawalSuccess">
+                <div class="principal">
+                  <div class="one">
+                    <span id= "oneid" style="display:none"></span>
+                    <span class="wtitle">标题</span>
+                    <span class="wcontent" id="onecontent"></span>
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails">内容</span>
+                    <input class="details" id="onedetails" value="" />
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails"></span>
+                    <span>字段显示：订单号、提现金额、提现时间、处理时间</span>
+                  </div>
+                  <div class="three">
+                    <span class="wreminder">温馨提示</span>
+                    <input class="reminder" id="onetips" value="" />
+                  </div>
+                  <div>
+                    <input type="button" class="btn save" id="onepreserve" value="保存">
+                  </div>
+                </div>
+              </div>
+              <!-- 提现失败 -->
+              <div role="tabpanel" class="tab-pane contents" id="withdrawalFailure">
+                <div class="principal">
+                  <div class="one">
+                    <span id= "towid" style="display:none"></span>
+                    <span class="wtitle">标题</span>
+                    <span class="wcontent" id="towcontent"></span>
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails">内容</span>
+                    <input class="details" id="towdetails" value="" />
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails"></span>
+                    <span>字段显示：订单号、提现金额、提现时间、处理时间</span>
+                  </div>
+                  <div class="three">
+                    <span class="wreminder">温馨提示</span>
+                    <input class="reminder" id="towtips" value="" />
+                  </div>
+                  <div>
+                    <input type="button" class="btn save" id="towpreserve" value="保存">
+                  </div>
+                </div>
+              </div>
+              <!-- 药方下单成功 -->
+              <div role="tabpanel" class="tab-pane contents" id="checkoutSuccess">
+                <div class="principal">
+                  <div class="one">
+                      <span id= "threeid" style="display:none"></span>
+                    <span class="wtitle">标题</span>
+                    <span class="wcontent" id="threecontent"></span>
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails">内容</span>
+                    <input class="details" id="threedetails" value="" />
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails"></span>
+                    <span>字段显示：订单号、患者姓名、医生姓名、药方价格、下单时间</span>
+                  </div>
+                  <div class="three">
+                    <span class="wreminder">温馨提示</span>
+                    <input class="reminder" id="threetips" value="" />
+                  </div>
+                  <div>
+                    <input type="button" class="btn save" id="threepreserve" value="保存">
+                  </div>
+                </div>
+              </div>
+              <!-- 药方购买成功 -->
+              <div role="tabpanel" class="tab-pane contents" id="prescriptionSuccess">
+                <div class="principal">
+                  <div class="one">
+                      <span id= "fourid" style="display:none"></span>
+                    <span class="wtitle">标题</span>
+                    <span class="wcontent" id="fourcontent"></span>
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails">内容</span>
+                    <input class="details" id="fourdetails" value="" />
+                  </div>
+                  <div class="tow">
+                    <span class="wdetails"></span>
+                    <span>字段显示：订单号、患者姓名、医生姓名、药方价格、下单时间</span>
+                  </div>
+                  <div class="three">
+                    <span class="wreminder">温馨提示</span>
+                    <input class="reminder" id="fourtips" value="" />
+                  </div>
+                  <div>
+                    <input type="button" class="btn save" id="fourpreserve" value="保存">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.data.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.js"></script>
+<script type="text/javascript" src="/static/js/common/main.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js"></script>
+<script type="text/javascript" src="/static/js/common/index.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/patientManagement/index.js"></script>
+<script type="text/javascript" src="/static/js/orderTemplate/index.js"></script>

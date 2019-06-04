@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>问诊单</title>
+  <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+  <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <style>
+    *{margin: 0;padding: 0;}
+    body{
+      font-family: PingFang-SC-Regular;
+      color: #141414;
+      background-color: #F1F0F5;
+    }
+    .content{
+      padding-top:20px;
+      background-color: #fff;
+    }
+    .question{
+      padding:5px 20px 0 20px;
+    }
+    .questionname{
+      font-size: 16px;
+    }
+    .singleselection{
+      font-size: 16px;
+    }
+    img{
+      width: 18px;
+      height: 18px;
+    }
+    .anwser{
+      padding:0 5px 0 5px;
+    }
+    .options{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .options div{
+      padding:10px 0 10px 0;
+    }
+    .options div span{
+      padding-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="content" class="content">
+    <span id="questionname" class="questionname"></span><span id="singleselection" class="singleselection"></span>
+    <div class="options">
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/common/template-web.js"></script>
+<script type="text/javascript" src="/static/js/ios&android/FillInTheQuestionnaire/index.js"></script>
+<script type="text/html" id="template">
+  <% for ( var i = 0 ; i < list.length; i++){ %>
+    <div class="question">
+       <span id="questionname" class="questionname"><%= [i+1] + '.' + list[i].questionname %></span>
+       <% if (list[i].singleselection == 1) { %>
+       <span id="singleselection" class="singleselection">（单选）</span> 
+       <% } else if(list[i].singleselection == 2) { %>
+       <span id="singleselection" class="singleselection">（多选）</span> 
+        <% } %>
+        <div class="options">
+          <% for (var j = 0; j < list[i].orderinquiryoptions.length; j++){ %>
+          <div>
+          <% if(list[i].orderinquiryoptions[j].ischecked == 2){ %>
+          <img src="/static/image/circle.png" alt=""> 
+          <% } else { %>
+          <img src="/static/image/yes@2x.png" alt="">
+          <% } %>
+          <span id="anwser" class="anwser"><%= list[i].orderinquiryoptions[j].anwser %></span> 
+          </div>
+          <% } %>
+        </div>
+      </div>
+        <hr>
+  <% } %>
+</script>
+<script type="text/html" id="Dtemplate">
+  <% for ( var i = 0 ; i < list.length; i++){ %>
+    <div class="question">
+       <span id="questionname" class="questionname"><%= [i+1] + '.' + list[i].questionname %></span>
+       <% if (list[i].singleselection == 1) { %>
+       <span id="singleselection" class="singleselection">（单选）</span> 
+       <% } else if(list[i].singleselection == 2) { %>
+       <span id="singleselection" class="singleselection">（多选）</span> 
+        <% } %>
+        <div class="options">
+          <% for (var j = 0; j < list[i].orderinquiryoptions.length; j++){ %>
+          <div>
+            <img src="/static/image/circle.png" alt=""> 
+          <span id="anwser" class="anwser"><%= list[i].orderinquiryoptions[j].anwser %></span> 
+          </div>
+          <% } %>
+        </div>
+      </div>
+        <hr>
+  <% } %>
+</script>
+<script>
+  window.onload = function (){
+    created();
+  }
+</script>
+
+</html>

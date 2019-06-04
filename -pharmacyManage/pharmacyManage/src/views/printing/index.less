@@ -1,0 +1,160 @@
+.printing{
+    width: 680px;
+    height: auto;
+    margin: 10px auto;
+    background: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    .state{
+        overflow: hidden;
+        span{
+            line-height: 20px;
+        }
+        span.isshow{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #818181;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            display: inline-block;
+        }
+        span.isstate{
+            height: 20px;
+            padding: 0 10px;
+            border: #979797 1px solid;
+            line-height: 20px;
+            float: right;
+            border-radius: 10px; 
+        }
+    }
+    .patient{
+        div{
+            overflow: hidden;
+            line-height: 22px;
+            .left{
+                width: 50%;
+                text-align: left;
+                float: left;
+                span{
+                    display: block;
+                }
+            }
+            .right{
+                width: 50%;
+                float: right;
+                text-align: right;
+                span{
+                    padding-right: 0;
+                    display: block;
+                }
+                span:nth-child(1){
+                    font-size: 24px;
+                    
+                }
+                span:nth-child(2){
+                    font-size: 10px;
+                }
+            }
+        }
+        >div:nth-child(2){
+            span:nth-child(1){
+                padding-right: 70px;
+            }
+        }
+        >div:nth-child(3){
+            span{
+                padding-right: 60px;
+            }
+        }
+    }
+    .drugs{
+        width: 100%;
+        min-height: 700px;
+        border: #979797 1px solid;
+        padding: 16px;
+        box-sizing: border-box;
+        position: relative;
+        h3{
+
+        }
+        .drugsShowIcon{
+            width: 87px;
+            height: 88px;
+            background-image: url('../../assets/pfbm@3x.png');
+            background-size: 100%;
+            position: absolute;
+            right: 20px;
+            top: -44px;
+        }
+        div.drugsList{
+            overflow: hidden;
+            padding-bottom: 10px;
+            >span{
+                width: 40%;
+                height: 30px;
+                line-height: 30px;
+                display: inline-block;
+                span{
+                    width: 49%;
+                    display: inline-block;
+                }
+                >span:nth-child(1n){
+                    text-align: left;
+                    font-weight: 600;
+                }
+                >span:nth-child(2n){
+                    text-align: right;
+                    font-weight: 400;
+                }
+            }
+            >span:nth-child(1n){
+                float: left;
+            }
+            >span:nth-child(2n){
+                float: right;
+            }
+        }
+        .secrecy{
+            padding: 30px;
+
+        }
+        div.explain{
+            padding: 10px 0;
+            border-top: #979797 1px dashed;
+            line-height: 30px;
+            span{
+                display: block;
+                span{
+                    font-weight: 600;
+                    display: inline-block;
+                }
+            }
+            span:nth-child(3){
+                text-align: right;
+                // padding-right: 90px;
+                font-weight: 600;
+            }
+        }
+    }
+    .footer{
+        padding: 10px 0;
+        div:nth-child(1){
+            line-height: 30px;
+            >span{
+                width: 30%;
+                display: inline-block;
+                font-weight: 600;
+                span{
+                    font-weight: normal;
+                }
+            }
+        }
+        div:nth-child(2){
+            span:nth-child(1){
+                font-weight: 600;
+            }
+        }
+    }
+}

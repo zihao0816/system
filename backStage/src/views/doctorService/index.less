@@ -1,0 +1,135 @@
+.examine{
+    .el-table__row{
+        p:last-child{
+            span{
+                font-size:14px;color:#07A591;text-decoration:underline;cursor: pointer;
+            }
+        }
+    }
+
+
+
+    padding: 20px;
+    background-color: #F1F0F5;
+    .page{
+        .content{
+            background: #ffffff;
+            padding: 20px;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+            .search{
+                margin-top: 20px;
+                /deep/ .el-input__inner{
+                    padding-right: 15px;
+                }
+            }
+        }
+        .update-data{
+            .el-form{
+                .el-form-item{
+                    p{
+                        color: #D74326;
+                    }
+                }
+                .province{
+                    /deep/.el-form-item__content{
+                        width: calc(100% - 100px);
+                    }
+                }
+            }
+        }
+        .inventory{
+            ul{
+                border-bottom: 2px solid #c1c1c1;
+                padding-bottom: 16px;
+                margin-bottom: 20px;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 40px;
+                }
+            }
+            .el-form{
+                .el-form-item{
+                    width: 20%;
+                    /deep/.el-form-item__content{
+                        width: calc(100% - 90px);
+                    }
+                }
+            }
+        }
+        .update-password{
+            /deep/.el-dialog--center .el-dialog__body{
+                padding: 12px 25px 8px
+            }
+            .el-form{
+                .el-form-item{
+                    margin-bottom: 6px;
+                    p{
+                        color: #D74326;
+                    }
+                }
+            }
+        }
+        .child-account{
+            ul{
+                border-bottom: 2px solid #c1c1c1;
+                padding-bottom: 16px;
+                margin-bottom: 20px;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+}
+
+/*
+    弹框内容的样式
+*/
+.addDetail,.upSubmit{
+    .el-input{
+        width: 50%;
+    }
+    .el-select{
+        width: 140px;
+    }
+    .el-form{
+        .el-form-item:nth-child(1),.el-form-item:nth-child(5){
+            font-weight: bold;
+        }
+    }
+}
+.doctorList{
+    max-height: 600px;
+    overflow-y: auto;
+}
+.QRcode{
+    text-align: center;
+    span,img{
+        display: block;
+        margin: 0 auto;
+    }
+}
+.structureDetails,.doctorList{
+    >div{
+        span{
+            display: inline-flex;
+            width: 30%;
+            text-align: left;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}
+.el-cascader{
+    width: 300px;
+}
+.commDialog{
+    span{
+        line-height: 40px;
+        display: block;
+    }
+}

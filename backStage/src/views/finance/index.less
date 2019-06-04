@@ -1,0 +1,84 @@
+.finance{
+    padding:20px;
+    background-color: #F1F0F5;
+   
+    /deep/ .el-tabs__item.is-active{
+        color: rgb(7, 165, 145);
+    }
+    /deep/ .el-tabs__active-bar{
+        background: rgb(7, 165, 145);
+    }
+    /deep/ .el-tabs__item:hover{
+        color: rgb(7, 165, 145);
+        
+    }
+
+    .bodys{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .cards{
+            min-width: 47.92%;
+            height: 180px;
+            background: #fff;
+            margin: 10px 20px 10px 0;
+            position: relative;
+            .tit{
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+    /deep/ .el-tabs__header{
+        margin-top:10px;
+        margin-bottom:0px;
+        border-bottom: 1px solid #CFCFCF;
+    }
+    /deep/ .el-tabs__nav-wrap::after{
+        display: none
+    }
+    /deep/ .el-tabs__active-bar{
+        height: 3px !important;
+        width: 50px !important; 
+    }
+    /deep/ .el-tabs__item{
+        padding: 0 0 0 30px;
+    } 
+    /deep/ .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2), .el-tabs--bottom .el-tabs__item.is-top:nth-child(2), .el-tabs--top .el-tabs__item.is-bottom:nth-child(2), .el-tabs--top .el-tabs__item.is-top:nth-child(2){
+        padding-left: 10px; 
+    }
+    /deep/ .el-tab-pane{
+        padding: 10px 5px;
+        line-height: 35px;
+        text-align: center;
+        display: flex;
+        .list{
+            width: 33%;
+            border-right:1px solid #CFCFCF; 
+        }
+        .one{
+            font-size: 14px;
+        }
+        .two{
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+        .three{
+            font-size: 12px;
+            color:rgba(67,67,67,1)
+        }
+    }
+    .bank{
+        /deep/ .el-tabs__header{
+            color: #000;
+        }
+        /deep/ .el-tabs__active-bar{
+            display: none;
+        }
+    }
+    
+}

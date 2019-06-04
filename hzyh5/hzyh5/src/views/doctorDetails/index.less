@@ -1,0 +1,201 @@
+.istrue {
+    padding-top: 44px;
+}
+
+.visitDoctor {
+    .clearfix:after {
+        clear: both;
+        display: block;
+        content: "";
+        overflow: hidden;
+    }
+    .title {
+        width: 375px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        img {
+            width: 10px;
+            height: 18px;
+            position: absolute; // top:5px;
+            left: 10px;
+        }
+        p {
+            position: absolute;
+            left: 152px; // top:px;
+            right: 151px;
+            font-size: 18px;
+            color: #141414;
+        }
+    }
+    .head-zy {
+        background-image: url('../../assets/disekuai@3x.png');
+        background-size: 100% 100%;
+        .information-zy {
+            text-align: center;
+            padding-bottom: 20px;
+            .imgs {
+                position: relative;
+                .docHead-zy {
+                    width: 88px;
+                    height: 88px;
+                    border-radius: 50%;
+                    margin-top: 20px;
+                }
+                .yes {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    bottom: 4px;
+                    left: 55%;
+                }
+            }
+            p {
+                margin-bottom: 4px;
+                .docName-zy {
+                    color: #fff;
+                    font-size: 20px;
+                }
+            }
+            .pl-zy {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+    .content-zy {
+        .online-zy {
+            background: #fff;
+            padding: 16px 15px;
+            .heads-zy {
+                .left {
+                    float: left;
+                    >p {
+                        line-height: 22px;
+                    }
+                    p:nth-child(2) {
+                        font-size: 12px;
+                        color: #818181;
+                    }
+                    p:nth-child(3) {
+                        color: #D74326;
+                    }
+                }
+                .right {
+                    float: right;
+                    line-height: 66px;
+                    button {
+                        color: #ffffff;
+                        border: none;
+                        outline: none;
+                        border-radius:16px;
+                        width: 116px;
+                        height: 32px;
+                        line-height: 32px;
+                        font-size: 14px;
+                    }
+                    .btn{
+                        background: #D74326;
+                    }
+                    .btns{
+                        background:#C1C1C1;
+                    }
+                    .btns_remove{
+                        background:#4DBFFF;
+                    }
+                }
+            }
+        }
+        .notice{
+            padding: 16px 15px;
+            background: #ffffff;
+            margin-top: 1px;
+            p{
+                span:nth-child(2){
+                    font-size: 14px;
+                    color: #818181;
+                    float: right;
+                }
+            }
+            .time-notice{
+                background: #F8F8F8;
+                padding: 16px 10px;
+                margin-top: 16px;
+                .notices{
+                    div{
+                        float: left;
+                        >p{
+                            text-align: right;
+                        }
+                        p:nth-child(1){
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                        p:nth-child(n+2){
+                            font-size: 12px;
+                            color: #818181;
+                        }
+                    }
+                    .texts{
+                        width: calc(100% - 60px);
+                        float: right;
+                        margin-left: 10px;
+                        text-overflow: -o-ellipsis-lastline;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        line-clamp: 4;
+                        /*! autoprefixer: off */
+                        -webkit-box-orient: vertical;
+                        /* autoprefixer: on */
+                        font-size: 14px;
+                    }
+                }
+                .see{
+                    margin-top: 4px;
+                    span{
+                        float: right;
+                        font-size: 14px;
+                        color: #D74326;
+                    }
+                }
+            }
+        }
+        .adept-zy {
+            background: #fff;
+            border-radius: 4px;
+            margin-top: 1px;
+            padding: 16px 15px;
+            .adeptCon-zy {
+                margin-top: 16px;
+                .one-zy {
+                    padding: 6px 14px;
+                    border: 1px solid #F1F0F5;
+                    display: inline-block;
+                    border-radius: 4px;
+                    margin: 0 12px 10px 0;
+                    font-size: 14px;
+                }
+            }
+        }
+        .introduce-zy {
+            background: #fff;
+            border-radius: 4px;
+            margin-top: 1px;
+            margin-bottom: 10px;
+            padding: 16px 15px;
+            .introCon-zy{
+                margin-top: 16px;
+                font-size: 14px;
+                word-wrap:break-word;
+            }
+        }
+    }
+}

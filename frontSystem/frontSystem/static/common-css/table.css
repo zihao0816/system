@@ -1,0 +1,66 @@
+body{
+    font-size: 12px;
+}
+form .input-group input.form-control,form .input-group select.form-control{  color:#666;}
+.form-box form .input-group input.form-control,.form-box form .input-group select.form-control{  color:#666;}
+a{text-decoration: none;}
+.input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group{
+    background-color: transparent;
+    cursor: inherit;
+}
+
+.bootbox, .modal {
+    overflow-y: scroll;
+    -moz-overflow-y: scroll;
+    -webkit-overflow-y: scroll;
+    -o-overflow-y: scroll;
+    -ms-overflow-y: scroll;
+}
+
+.modal.fade.in{
+    position: fixed;
+    top: 0;
+    z-index: 110;
+}
+.modal-backdrop.fade.in{
+    z-index: 100;
+}
+table{
+    width:100%;
+}
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 4px 2px;
+    text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    line-height: 13px;
+    font-size: 12px;
+    width: auto;
+
+}
+table.dataTable thead th, table.dataTable thead td {
+    font-size: 12px;
+    padding: 4px 2px;
+    text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    line-height: 18px;
+    border-bottom: 1px  solid #ddd;
+    font-weight: normal;
+    width: auto;
+    background-color: #0585d4;
+}
+table.dataTable.no-footer{border-bottom:1px solid #ddd;}
+table.dataTable tbody th{background-color: #0585d4}
+table.dataTable tbody th, table.dataTable tbody td,table.dataTable thead th, table.dataTable thead td{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 12px;
+    width: auto;
+}
+.form-box form label{font-weight: normal;font-size: 12px;color: #666}
+.form-box form input,.form-box form select{border: 1px solid #edf0f2;outline: none;}
+form .input-group .form-control{padding: 5px;border:none;box-shadow: none;height: 32px;color:#999;font-size: 12px;}
+.input-group {border: 1px solid #ddd; border-radius: 5px}
+.input-group-btn button{border: none;padding: 6px 5px; color:#999;font-size: 12px}
+.box{margin-top: 10px}

@@ -1,0 +1,161 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: "微软雅黑";
+}
+ul {
+	list-style: none;
+}
+#header{
+	position: relative;
+	height: 50px;
+	background:url(../image/topNavbg.jpg) repeat-x;
+	font-size: 14px;
+}
+#header>a{
+	position: absolute;
+	top: 8px;
+	left:48px;
+}
+#header>ul {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 32px;
+	/*padding-top: 18px;*/
+	line-height: 50px;
+}
+#header>ul li {
+	float: left;
+	margin-right: 18px;
+}
+#header>ul li a {
+	curser:pointer;
+}
+.logSchool, .logRole{
+	margin-right: 25px;
+	color: #ffffff;
+	padding-top: 2px;
+}
+.logSchool {
+	padding-left: 30px;
+	background: url(../image/logSchool.png) no-repeat 0 center;
+}
+ .logRole{
+ 	color: #d2d51e;
+ }
+ #content .nav {
+	height: 35px;
+	background: url(../image/firstMenu.jpg) repeat-x;
+	border-bottom: 1px solid #bfc2be;
+ }
+ #content .nav li {
+ 	float: left;
+	position: relative;
+	background: url(../image/navlibg.jpg) no-repeat;
+ }
+  #content .nav li a {
+  	display: inline-block;
+	width: 120px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	color: #323232;
+	font-size: 14px;
+  }
+#content .nav li.hover{
+	height: 35px;
+	background: url(../image/liActive.jpg) no-repeat;
+}
+#content .nav li.hover a{
+	color: #056d00;
+}
+#content .nav li:hover {
+	height: 35px;
+	border-bottom:none;
+	color: #056d00;
+	background: url(../image/liActive.jpg) no-repeat;
+}
+.mianView {
+	position: relative;
+}
+.sidebar{
+	width: 234px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background-color: #e2f5e1;
+}
+.sidebar li{
+	position: relative;
+}
+.sidebar li a{
+	display: block;
+	width: 234px;
+	height: 35px;
+	padding-left: 50px;
+	background:#4bba75;
+	line-height: 35px;
+	color: #262626;
+	font-size: 14px;
+}
+.sidebar li em {
+	position: absolute;
+	top: 10px;
+	left: 14px;
+	width: 16px;
+	height: 16px;
+	background:url(../image/leftIcon.png) no-repeat;
+}
+.sidebar li span {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	width: 7px;
+	height: 13px;
+	background:url(../image/leftTT.png) no-repeat;
+	-webkit-transition:all 0.1s;
+	-moz-transition:all 0.1s;
+	-o-transition:all 0.1s;
+	transition:all 0.1s;
+}
+.sidebar li.hover span {
+	 -webkit-transform:rotatez(90deg);
+    -moz-transform:rotatez(90deg);
+    -o-transform:rotatez(90deg);
+    transform:rotatez(90deg);
+}
+.sidebar li .colum {
+	padding: 5px 0;
+	background: #e2f5e1;
+	display: none;
+}
+.sidebar li .colum li a{
+	background: none;
+	height: 30px;
+	line-height: 30px;
+}
+.sidebar li .colum li em{
+	top: 10px;
+    left: 25px;
+	width: 9px;
+	height: 9px;
+	background:url(../image/leftSicon.png) no-repeat;
+}
+#page-wrapper{
+	margin-left: 250px;
+}
+#content-main{
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+}
+body.mini-navbar #page-wrapper{
+	margin-left: 0;
+}
+

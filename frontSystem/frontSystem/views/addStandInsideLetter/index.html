@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>编辑站内信</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <link href="/static/css/admin/home.css" rel="stylesheet">
+    <style>
+        .add{
+            padding: 6px 30px;background-color: #07a591;color: #ffffff;
+        }
+        .add:hover,.add:focus{
+            background-color: #007a6b;
+            color: #ffffff;
+        }
+        .colors{
+            color: #D74326;
+        }
+    </style>
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>编辑站内信</h3>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal" id="addform">
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label"><span class="colors">*</span>标题</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control prescriptionname" placeholder="请输入消息标题" id="prescriptionname" autocomplete="off"/>
+                            </div>
+                            <div class="length" style="padding-top: 7px;"><span id="maxlength"></span>/30</div>
+                        </div>
+                        <div class="form-group f-herbs">
+                            <label class="col-sm-1 control-label"><span class="colors">*</span>简介</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control medicines" placeholder="请输入简介" autocomplete="off" id="medicinesearch" />
+                            </div>
+                            <div class="lengths" style="padding-top: 7px;"><span id="maxlengths"></span>/65</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label"><span class="colors">*</span>内容</label>
+                            <div class="col-sm-8">
+                                <div type="text/plain" style="height: 240px;" autocomplete="off" id="editor"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label"><span class="colors">*</span>用户范围</label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline my_protocol">
+                                    <input type="radio" class="radio_agreement_protocol"  name="user" value="1">全部医生
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label"><span class="colors">*</span>推送时间</label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline my_protocol">
+                                    <input type="radio" class="radio_agreement_protocol" name="times" value="1">立即推送
+                                </label>
+                                <label class="radio-inline my_protocol">
+                                    <input type="radio" class="radio_agreement_protocol" name="times" value="2">定时推送
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="displaytime">
+                            <label class="col-sm-1"></label>
+                            <div class="col-sm-10 clearfix">
+                                <div class="addtimes"></div>
+                                <label class="glyphicon glyphicon-plus fl addtime" style="color: #dfdfdf;border: 1px solid #dfdfdf;border-radius: 4px;padding: 9px 26px;cursor: pointer;"></label>
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 180px;">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-6">
+                                <input type="button" class="btn add" value="发布" id="add"/>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/views/addStandInsideLetter/ueditor.config.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/md5/md5.min.js"></script>
+<script type="text/javascript" src="/views/addStandInsideLetter/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/views/addStandInsideLetter/zh-cn.js"></script>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/standInsideLetter/add.js"></script>
+<script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+    //初始化内容
+    function ready(html) {
+        UE.getEditor('editor').ready(function () {
+            insertHtml(html);
+        })
+    }
+    function isFocus(e) {
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e) {
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    //添加html代码
+    function insertHtml(value) {
+//         value = prompt('插入html代码', '');
+//        console.log(value)
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    //获取内容
+    function getContent() {
+        var arr = [];
+        arr.push(UE.getEditor('editor').getContent());
+        return arr.join("\n");
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    //赋予内容
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData() {
+        alert(UE.getEditor('editor').execCommand("getlocaldata"));
+    }
+
+    function clearLocalData() {
+        UE.getEditor('editor').execCommand("clearlocaldata");
+        alert("已清空草稿箱")
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(ObjAddStandInsideLetter.init('{ID}'));
+</script>

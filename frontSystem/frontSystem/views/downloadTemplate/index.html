@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调理模板</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #F1F0F5;
+        }
+        li{
+            list-style: none;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .fat{
+            font-weight:800;
+        }
+        .thin{
+            font-weight:normal;
+        }
+        .clearfix:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .page{
+            margin:0 auto;
+            width: 900px;
+            font-size: 14px;
+            padding-top:40px;
+            font-size:14px;
+            /* height:1273px; */
+            letter-spacing:1px;
+            background: #fff;
+            padding: 20px;
+        }
+        .header{
+            width:100%;
+            overflow: hidden;
+        }
+        .header_left{
+            font-weight: 600px;
+            float:left;
+        }
+        .header_left p{
+            font-size:16px;
+            line-height: 12px;
+            font-weight: 700;
+        }
+        .header_left p:first-child{
+            margin-top:16px;           
+            margin-bottom:24px;
+        }
+        .header_right{
+            float:right;
+            font-size:18px;
+        }
+        .header_right p:nth-of-type(1){
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .header_right .phone{
+            float:right;
+            font-size:16px;
+        }
+        .padbottom{
+            padding-bottom: 10px;
+        }
+        .borderdetail{
+            box-sizing: border-box;
+            border: 1px solid #979797;
+            margin-bottom:17px;
+            width:900px;
+            height:941px;
+            padding-left:20px;
+            font-size:16px;
+            position: relative;
+        }
+        .addlist p{
+            font-size:18px;
+            margin-bottom: 10px;
+            margin-top:10px;
+        }
+        .addlist li{
+            float:left;
+            width:50%; 
+            margin-bottom:20px;         
+        }
+        .addlist li span{
+            font-size:16px;
+            float:left;
+            width:30%;
+        }
+        /* 新增保密状态 */
+        .secrecyInfo{
+            width: 100%;
+            height: 22px;
+            overflow: hidden;
+        }
+        .secrecyInfo div.secrecy{
+            width: 20px;
+            height: 20px;
+            background: #818181;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            font-size: 10px;
+            float: left;
+        }
+        .secrecyInfo div.state{
+            padding: 0 10px;
+            border: 1px solid #979797;
+            line-height: 20px;
+            height: 20px;
+            float: right;
+            border-radius: 10px;
+        }
+        .stateIcon{
+            width: 88px;
+            height: 90px;
+            background-image: url(/static/image/pfbm@3x.png);
+            background-size: 100% 100%;
+            display: block;
+            position: absolute;
+            top: -40px;
+            right: 20px; 
+        }
+    </style>
+</head>
+<body>
+ <!-- <div class="page">
+   <div class="header paddings">
+        <div class="header_left">
+            <p>供应商:<span class="hostName"></span> </p>
+            <p class="">剂型:<span class="dosage"></span><span class="dosageLength"></span</p>
+        </div>  
+        <div class="header_right">
+            <p>北京好中医处方笺</p>
+            <p class="phone">客服电话：<span class="tel"></span></p>
+        </div>           
+    </div> 
+        <div class="paddings" style="margin-top:20px;font-size:12px;"> 
+            <div style="overflow: hidden;">
+                <p class="time fl">开方时间: <span class="paytimes"></span></p>
+                <p class="padbottom fr" >订单编号：<span class="code"></span></p>
+            </div>
+            <div class="padbottom clearfix">
+                <p class="fl" style="margin-right: 80px;">患者姓名：<span class="name"></span></p>
+                <p class="fl" style="margin-right: 80px;">性别：<span class="sex"></span></p>
+                <p class="fl">年龄：<span class="age"></span></p>
+            </div>
+            <div class="clearfix padbottom">
+                    <p class="fl">收货地址：<span class="receiver" style="margin-right: 16px;"></span><span class="telephone"></span></span></p>
+                    <p><span class="address fl" style="margin-left:40px;"></span></p>
+            </div>
+            
+            <div style="overflow:hidden;">
+                <p class="padbottom fl">辨病：<span class="symptoms"></span> ;</p>
+                <p class="padbottom fl" style="margin-left:15px;"> 辨证：<span class="doctorconclusion" style="word-break: break-all;"></span></p>
+            </div>  
+           <div style="margin-top: 6px;" class="borderdetail">
+                <ul class="clearfix padbottom addlist">
+                    <p>R:</p>
+                </ul>
+                <p class="padbottom">用药说明：<span>共<span class="total"></span>剂，每日<span class="daytotal"></span>剂，每剂分<span class="number"></span>次服用</span></p>
+                <p class="padbottom">医嘱: <span class="specialadvice"></span></p>
+                <p class="padbottom" style="text-align: right">医生签名：<span class="doctorname"></span></p>
+            </div>
+        </div>
+        <div class="clearfix padbottom paddings">
+                <p class="fl" style="margin-right: 150px;">审方：<span></span></p>
+                <p class="fl">打印时间:  <span class="paytimes"></span></p>
+                <p class="fr" style="margin-right:60px;">发药:</p>
+        </div>
+        <div style="overflow: hidden;font-size: 14px;" class="paddings">
+            <p class="fl">温馨提示:</p>           
+                <p class="fl">1、请遵医嘱用药  2、 因各药房药名录入规则不同，同一种药在纸质处方与电子处方的药名显示可能不同</p>
+                <p class="fl" style="margin-left:50px;">3、请将药品防御阴凉干燥处保存  4、 本药方3日内有效</p>
+            
+           
+        </div>
+    </div>  
+</div> --> 
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+    <script type="text/javascript" src="/static/js/downloadTemplate/index.js"></script>
+    <script type="text/javascript">
+    query()
+</script>

@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+.nav_wrap {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.gotop{
+    width:60px;
+    height:60px;
+    position:fixed;
+    bottom: 6%; /*这里我用的百分比控制位置，你也可以选择px来控制，我是遵循自适应 */
+    right: 2%;
+    border-radius:10px 10px 10px 10px;   /* 改变div圆角效果，可能我的有点小，根据自己来改变 */
+    text-decoration:none;
+    background: gray;
+    display: none;
+    cursor:pointer;
+}
+.gotop span{
+    display:block;
+    font:14px "microsoft yahei";
+    text-align: center;
+    color: white;
+    line-height: 60px;
+}
+.nav_wrap .nav {
+    height: 70px;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.nav_wrap .nav {
+    height: 70px;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.nav_wrap .nav .logo {
+    float: left;
+    width: 214px;
+    height: 70px;
+    margin-left: -8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.nav_wrap .nav .logo img {
+    width: 100%;
+    height: 56px;
+}
+.nav_wrap .nav ul {
+    float: right;
+}
+.nav_wrap .nav ul li {
+    float: left;
+}
+.nav_wrap .nav ul a {
+    display: inline-block;
+    width: 104px;
+    height: 32px;
+    font-size: 16px;
+    margin-top: 19px;
+    line-height: 32px;
+    margin-left: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+.nav_wrap .nav ul .nav_news {
+    background: #D74326 ;
+    color: #fff;
+}
+.nav_headers {
+    width: 100%;
+    background: #F3F3F3 ;
+    overflow: hidden;
+}
+.nav_headers ul {
+    width: 1200px;
+    margin: 0 auto;
+    height: 17px;
+    line-height: 17px;
+    padding: 12px 0 12px 0;
+}
+.nav_headers ul span {
+    font-family: "iconfont" !important;
+    float: left;
+    font-size: 14px;
+    height: 15px;
+    margin-right: 0 10px;
+    padding-bottom: 2px;
+    color: #444444 ;
+}
+.nav_headers ul li {
+    float: left;
+    font-size: 12px;
+    margin-right: 1px;
+    line-height: 17px;
+    color: #141414;
+}
+.nav_headers ul li:nth-of-type(1) {
+    width: 65px;
+}

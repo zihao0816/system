@@ -1,0 +1,271 @@
+.introduce{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.introduce img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.introduce h3{
+    width: 830px;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: normal;
+    padding: 100px 0 40px;
+}
+.introduce span{
+    width: 830px;
+    line-height: 24px;
+    display: block;
+    margin: 0 auto 40px;
+    line-height: 24px;
+
+}
+.title{
+    width: 640px;
+    height: 40px;
+    margin: 90px auto;
+}
+.title span:nth-child(1){
+    width: 183px;
+    height: 8px;
+    background: url('../img/special/img_pjyyg111.png');
+    background-size: 100% 100%;
+    display: inline-block;
+    float: left;
+    margin: 16px 0;
+}
+.title span:nth-child(2){
+    font-size: 24px;
+    width: 260px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.title span:nth-child(3){
+    width: 183px;
+    height: 8px;
+    background: url('../img/special/img_pjyyg222.png');
+    background-size: 100% 100%;
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+    margin: 16px 0;
+}
+.bigTitle{
+    width: 540px;
+    height: 120px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.department .bigTitle h3{
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 120px;
+}
+.department .bigTitle span{
+    width: 100%;
+    height: 60px;
+    background: #F1F0F5;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.department>span{
+    font-size: 20px;
+    margin: 40px auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #434343;
+}
+.special{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+.goodList{
+    margin: 40px 0;
+    overflow: hidden;
+    display: flex;
+}
+.goodList div{
+    width: 150px;
+    height: 200px;
+    margin-right: 60px;
+}
+.goodList div img{
+    width: 150px;
+    height: 150px;
+}
+.goodList div span{
+    width: 150px;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+.goodList div:nth-child(5){
+    width: 60px;
+}
+.goodList div:nth-child(5) span{
+    width: 8px;
+    height: 8px;
+    background: #BABABA;
+    display: block;
+    float: left;
+    border-radius: 4px;
+    margin: 70px 10px 0 0;
+}
+.doctorList{
+    overflow: hidden;
+}
+.doctorList>div{
+    width: 380px;
+    height: 675px;
+    margin: 0 30px 30px 0;
+    float: left;
+    overflow: hidden;
+}
+.doctorList>div img{
+    width: 380px;
+    height: 675px;
+}
+.doctorList>div:nth-child(3n+0){
+    float: right;
+    margin: 0 0 30px 0;
+}
+.doctorList .logo div{
+    width: 270px;
+    height: 675px;
+    border-left: #979797 1px solid;
+    border-right: #979797 1px solid;
+    margin: 0 auto;
+}
+.doctorList .wechat{
+    background: url('../img/special/ewmbg.png');
+}
+.doctorList .wechat div{
+    width: 336px;
+    height: 630px;
+    border: 2px solid #F6F5F4;
+    margin: 20px;
+}
+.doctorList .wechat img:nth-child(1){
+    width: 60px;
+    height: 52px;
+    margin: 35px 0 0 35px;
+    display: block;
+}
+.doctorList .wechat span{
+    font-size: 24px;
+    color: #954600;
+    width: 200px;
+    margin: 80px auto 0;
+    display: block;
+    text-align: center;
+}
+.doctorList .wechat img:nth-child(2){
+    width: 240px;
+    height: 248px;
+    display: block;
+    margin: 80px auto 0;
+}
+.doctorList .logo div span{
+    width: 40px;
+    padding: 56px 74px;
+    border: #979797 1px solid;
+    font-size: 40px;
+    display: block;
+    margin: 0 auto;
+}
+.make{
+    width: 100%;
+    min-height: 850px;
+    position: relative;
+}
+.make img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.make div{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 190px 0;
+    position: relative;
+}
+.make div h3{
+    font-size: 50px;
+    color: #fff;
+    line-height: 100px;
+    font-weight: 300;
+}
+.make div span:nth-child(2),.make div span:nth-child(3){
+    width: 300px;
+    height: 64px;
+    display: block;
+    background: #fff;
+    opacity: 0.3;
+    position: absolute;
+    top: 300px;
+    left: 0;
+}
+.make div span:nth-child(3){
+    top: 374px;
+    left: 0;
+}
+.make div span:nth-child(4),.make div span:nth-child(5){
+    width: 300px;
+    height: 64px;
+    font-size: 40px;
+    line-height: 64px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    color: #fff;
+    font-weight: 200;
+}
+.make div span:nth-child(5){
+    top: 374px;
+    left: 0;
+}
+.make div span:nth-child(6){
+    font-size: 18px;
+    width: 300px;
+    line-height: 24px;
+    color: #fff;
+    display: block;
+    position: absolute;
+    top: 600px;
+    left: 0;
+    font-weight: 200;
+}
+.crumbs{
+    width: 100%;
+    height: 40px;
+    background: #F3F3F3;
+    line-height: 40px;
+}
+.crumbs div{
+    width: 1200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    margin: 0 auto;
+}

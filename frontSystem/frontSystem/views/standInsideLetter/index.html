@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>站内信列表</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <link href="/static/css/admin/home.css" rel="stylesheet">
+    <style>
+        .colors{
+            color: #D74326;
+        }
+    </style>
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>站内信列表</h3>
+                </div>
+                <div class="ibox-title">
+                    <form class="form-inline clearfix">
+                        <div class="form-group">
+                            <label>标题</label>
+                            <input type="text" class="form-control" id="title" autocomplete="off"/>
+                        </div>
+                        <div class="form-group">
+                            <label>创建时间</label>
+                            <input type="date" class="form-control" style="width: 150px" placeholder="请选择" id="createtime"/>
+                        </div>
+                        <div class="form-group">
+                            <label>推送状态</label>
+                            <select class="form-control" id="pushstate">
+                                <option value="">请选择</option>
+                                <option value="1">未推送</option>
+                                <option value="2">已推送</option>
+                            </select>
+                        </div>
+                        <input type="button" class="btn btn-default submit fr" value="确定" id="search"/>
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div id="container" class="out_box">
+                                <table class="display table " id="tbStandInsideLetterList" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 300px;">标题</th>
+                                        <th style="width: 300px;">简介</th>
+                                        <th>推送时间</th>
+                                        <th>创建时间</th>
+                                        <th>发布人</th>
+                                        <th>推送状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<div class="hide" id="updateStandInsideLetter">
+    <div class="container">
+        <form class="form-horizontal" style="height: 360px;overflow-y: auto;overflow-x: hidden">
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="colors">*</span>标题</label>
+                <div class="col-sm-4">
+                    <textarea type="text" style="resize: none" class="form-control prescriptionname" id="prescriptionname" autocomplete="off"></textarea>
+                </div>
+                <div class="length" style="padding-top: 7px;"><span id="maxlength"></span>/30</div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="colors">*</span>简介</label>
+                <div class="col-sm-4">
+                    <textarea type="text" style="resize: none" class="form-control medicines" autocomplete="off"></textarea>
+                </div>
+                <div class="lengths" style="padding-top: 7px;"><span id="maxlengths"></span>/65</div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="colors">*</span>内容</label>
+                <div class="col-sm-10">
+                    <div type="text/plain" style="height: 240px;" autocomplete="off"  id="editor"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="colors">*</span>用户范围</label>
+                <div class="col-sm-3">
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol"  name="user" value="1">全部医生
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="colors">*</span>推送时间</label>
+                <div class="col-sm-3">
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" name="time" value="1">立即推送
+                    </label>
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" name="time" value="2">定时推送
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" id="displaytime">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="addtimes"></div>
+                    <label class="glyphicon glyphicon-plus fl addtime" style="color: #dfdfdf;border: 1px solid #dfdfdf;border-radius: 4px;padding: 9px 26px;cursor: pointer;"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">创建人</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control createby" disabled autocomplete="off"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">创建时间</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control createtime" disabled autocomplete="off"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">推送状态</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control pushstate" disabled autocomplete="off"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/views/standInsideLetter/ueditor.config.js"></script>
+<script type="text/javascript" src="/views/standInsideLetter/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/views/standInsideLetter/zh-cn.js"></script>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/standInsideLetter/index.js"></script>
+<script>
+    $(document).ready(ObjStandInsideLetterIndex.init('{ID}'));
+</script>

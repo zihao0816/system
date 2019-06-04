@@ -1,0 +1,218 @@
+body{
+    background-color: #f4f6fa;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.h-style{
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.home .h-approve{
+    margin:20px 20px 20px 40px;
+    padding: 0;
+}
+.home .h-entrance{
+    margin-top:20px;
+    padding: 0;
+}
+.a-title{
+    border-bottom: 1px solid #eeeeee;
+}
+.a-title p{
+    margin: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #29bda9;
+}
+.a-content .c-title{
+    text-align: center;
+    padding: 50px 0 70px;
+}
+.a-content .c-number{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.a-content .c-number span{
+    color: #07a591;
+    font-size: 68px;
+}
+.a-content .c-number span:hover{
+    text-decoration:underline;
+    color: #07a591;
+}
+.img-size{
+    width: 140px;
+    height: 140px;
+}
+.d-size{
+    margin: 60px 44px 30px;
+    display: inline-block;
+}
+.img-small{
+    width: 20px;
+    height: 20px;
+}
+.b-size{
+    border: 1px solid #07a591;
+    background-color: #ffffff;
+    color: #07a591;
+    border-radius: 20px;
+    font-size: 12px;
+    width: 100px;
+    height: 26px;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+}
+.b-size:hover,.b-size:focus{
+    background-color: #07a591;
+    border: 1px solid #07a591;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 12px;
+    width: 100px;
+    height: 26px;
+    margin: 30px auto 0;
+    text-align: center;
+    cursor: pointer;
+}
+.b-sizes{
+    background-color: #07a591;
+    border: 1px solid #07a591;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 12px;
+    width: 78px;
+    height: 26px;
+    text-align: center;
+    cursor: pointer;
+}
+.b-size .text,.b-sizes .text{
+   line-height: 26px;
+}
+.r-color{
+    color: red;
+}
+.headImg{
+    width: 120px;
+    height: 120px;
+    border: 1px solid #dfdfdf;
+    border-radius: 6px;
+}
+.uploadimage{
+    width: 180px;
+    height: 120px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.uploadImg{
+    width: 170px;
+    height: 110px;
+    border: 1px solid #dfdfdf;
+    border-radius: 6px;
+}
+.disnone{
+    display: none;
+}
+.uploadImg label{
+    margin-top: 46px;
+    font-size: 24px;
+    color: #dfdfdf;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-color{
+    background-color: #07a591;
+    color: #FFFFFF;
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0;
+}
+.upload{
+    margin-left: 6px;
+    margin-top: 65px;
+}
+.uploads{
+    margin-top: 110px;
+}
+.form-controls {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.col-sm-5 .margin{
+    margin-bottom: 10px;
+}
+.col-sm-5 .padding{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #dddddd;
+}
+.time .t-1,.time .t-2,.time .t-3{
+    margin-top: 10px;
+    padding-left: 0;
+}
+.p-style{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #cccccc;
+}
+.my_protocol .input_agreement_protocol, .my_protocol .radio_agreement_protocol{
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none;
+}
+/*鏈�変腑鏃�*/
+.my_protocol .input_agreement_protocol, .my_protocol .radio_agreement_protocol{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    top: 3px;
+    border: 1px solid #07a591;
+    border-radius: 50%;
+}
+.my_protocol .input_agreement_protocol:checked, .my_protocol .radio_agreement_protocol:checked{
+    background: url("/static/image/duihao @2x.png") -1px -1px no-repeat;
+    outline: none;
+}
+.patientsize{
+    width: 900px;
+    margin: 0 auto;
+}
+.modal-dialog{
+    width: 100%;
+}
+.add-btn{
+    width: 32px;
+    height: 32px;
+    background: url("/static/image/plus-squares.png") no-repeat;
+}
+.add-btn:hover,.add-btn:focus{
+    width: 32px;
+    height: 32px;
+    background: url("/static/image/plus-square.png") no-repeat;
+}

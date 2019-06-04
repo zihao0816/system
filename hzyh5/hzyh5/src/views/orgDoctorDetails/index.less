@@ -1,0 +1,228 @@
+.orgDoctorDetails {
+    .orgInfo{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        background: #fff;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        p{
+            padding: 0 14px;
+            line-height: 20px;
+            font-size: 14px;
+            width: 100%;
+            height: 20px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            display: block;
+        }
+        p.show{
+            height: auto;
+            white-space: normal;
+        }
+        .side{
+            padding: 0 14px;
+            overflow: hidden;
+            height: 30px;
+            line-height: 30px;
+            cursor:pointer;
+            span{
+                color: #818181;
+                display: block;
+                text-align: right;
+                float: right;
+                font-size: 12px;
+            }
+            i{
+                width: 14px;
+                height: 14px;
+                display: block;
+                background-image: url('../../assets/icon_zhankai01@3x.png');
+                background-size: 14px 14px;
+                background-repeat: no-repeat;
+                float: right;
+                margin: 8px 0 8px 4px;
+            }
+        }
+    }
+    .doctorInfo{
+        background: #fff;
+        margin: 6px 0;
+        padding: 20px 14px;
+        .h3{
+            width: 140px;
+            margin: 0 auto;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            span:nth-child(1),span:nth-child(3){
+                width: 10px;
+                height: 2px;
+                background: #818181;
+                display: inline-block;
+                margin: 20px 0;
+                float: left;
+            }
+            span:nth-child(3){
+                float: right;
+            }
+            span:nth-child(2){
+                font-size: 18px;
+                color: #434343;
+                height: 40px;
+                line-height: 40px;
+                display: block;
+                padding: 0 20px;
+                width: 120px;
+                text-align: center;
+                float: left;
+            }
+        }
+        >div:nth-child(2){
+            padding: 20px 0;
+            border-bottom: 1px dashed #CBCBCB;
+            overflow: hidden;
+            img{
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                float: left;
+                margin-right: 14px;
+            }
+            h3{
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 10px;
+            }
+            span{
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .seekInfo{
+            padding-top: 20px;
+            position: relative;
+            h3{
+                font-size: 18px;
+                line-height: 18px;
+                position: relative;
+                padding-left: 10px;
+                i{
+                    width: 3px;
+                    height: 16px;
+                    background: #D74326;
+                    border-radius: 8px;
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                }
+            }
+            span:nth-child(2){
+                font-size: 12px;
+                color: #818181;
+                padding-left: 10px;
+            }
+            span:nth-child(3){
+                display: block;
+                color: #D74326;
+                font-size: 16px;
+                padding-left: 10px;
+            }
+            span:nth-child(4){
+                width: 88px;
+                height: 32px;
+                background: #D74326;
+                text-align: center;
+                line-height: 32px;
+                color: #fff;
+                border-radius: 16px;
+                font-size: 14px;
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 20px;
+                cursor:pointer;
+            }
+        }
+    }
+    .doctorList{
+        background: #fff;
+        width: 100%;
+        >h3{
+            width: 100%;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            font-size: 14px;
+            color: #818181;
+        }
+        >div{
+            padding: 16px 14px;
+            border-top: 1px solid #F1F0F5;
+            overflow: hidden;
+            cursor:pointer;
+            >div:nth-child(1){
+                width: 50px;
+                height: 50px;
+                float: left;
+                margin-right: 10px;
+                img{
+                    width: 50px;
+                    height: auto;
+                }
+            }
+            >div:nth-child(2){
+                float: left;
+                width: calc(100% - 60px);
+                h3{
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+                >span{
+                    width: 100%;
+                    font-size: 12px;
+                    color: #818181;
+                    margin-top: 10px;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                }
+                .lebal{
+                    overflow: hidden;
+                    padding: 10px 0;
+                    span{
+                        display: block;
+                        float: left;
+                        padding: 0 10px;
+                        height: 26px;
+                        line-height: 26px;
+                        border: #F1F0F5 1px solid;
+                        border-radius: 4px;
+                        color: #141414;
+                        margin-right: 20px;
+                        margin-bottom: 4px;
+                        font-size: 12px;
+                    }
+                }
+                >div:nth-child(4){
+                    span:nth-child(1){
+                        font-size: 16px;
+                        color: #D74326;
+                    }
+                    span:nth-child(2),span:nth-child(3){
+                        font-size: 12px;
+                        color: #818181;
+                        float: right;
+                        padding-left: 10px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.nav{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 52px;
+    background: #f8f8f8;
+    border-top: 1px solid #F1F0F5;
+    overflow: hidden;
+    font-size: 12px;
+    z-index: 999;
+    padding: 2px 0 !important;
+    div{
+        width: 25%;
+        height: 50px;
+        float: left;
+        text-align: center;
+        i{
+            width: 24px;
+            height: 24px;
+            display: block;
+            background: url(../../assets/icon.png);
+            background-size: 100%;
+            margin: 6px auto 0;
+        }
+    }
+    div:nth-child(2) i{
+        background-position: 0 -67px;
+    }
+    div:nth-child(3) i{
+        background-position: 0 -135px;
+    }
+    div:nth-child(4) i{
+        background-position: 0 -462px;
+    }
+    div:nth-child(1).active i{
+        background-position: 0 -33px;
+    }
+    div:nth-child(2).active i{
+        background-position: 0 -101px;
+    }
+    div:nth-child(3).active i{
+        background-position: 0 -169px;
+    }
+    div:nth-child(4).active i{
+        background-position: 0 -234px;
+    }
+}

@@ -1,0 +1,107 @@
+.examine {
+  padding: 20px;
+  background-color: #F1F0F5;
+}
+.examine .el-table__row p:last-child span {
+  font-size: 14px;
+  color: #07A591;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.examine .page .content {
+  background: #ffffff;
+  padding: 20px;
+  height: calc(-50vh);
+  overflow-y: auto;
+}
+.examine .page .content .search {
+  margin-top: 20px;
+}
+.examine .page .content .search /deep/ .el-input__inner {
+  padding-right: 15px;
+}
+.examine .page .update-data .el-form .el-form-item p {
+  color: #D74326;
+}
+.examine .page .update-data .el-form .province /deep/ .el-form-item__content {
+  width: calc(0%);
+}
+.examine .page .inventory ul {
+  border-bottom: 2px solid #c1c1c1;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.examine .page .inventory ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 40px;
+}
+.examine .page .inventory .el-form .el-form-item {
+  width: 20%;
+}
+.examine .page .inventory .el-form .el-form-item /deep/ .el-form-item__content {
+  width: calc(10%);
+}
+.examine .page .update-password /deep/ .el-dialog--center .el-dialog__body {
+  padding: 12px 25px 8px;
+}
+.examine .page .update-password .el-form .el-form-item {
+  margin-bottom: 6px;
+}
+.examine .page .update-password .el-form .el-form-item p {
+  color: #D74326;
+}
+.examine .page .child-account ul {
+  border-bottom: 2px solid #c1c1c1;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.examine .page .child-account ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 40px;
+}
+/*
+    弹框内容的样式
+*/
+.addDetail .el-input,
+.upSubmit .el-input {
+  width: 50%;
+}
+.addDetail .el-select,
+.upSubmit .el-select {
+  width: 140px;
+}
+.addDetail .el-form .el-form-item:nth-child(1),
+.upSubmit .el-form .el-form-item:nth-child(1),
+.addDetail .el-form .el-form-item:nth-child(5),
+.upSubmit .el-form .el-form-item:nth-child(5) {
+  font-weight: bold;
+}
+.doctorList {
+  max-height: 600px;
+  overflow-y: auto;
+}
+.QRcode {
+  text-align: center;
+}
+.QRcode span,
+.QRcode img {
+  display: block;
+  margin: 0 auto;
+}
+.structureDetails > div span,
+.doctorList > div span {
+  display: inline-flex;
+  width: 30%;
+  text-align: left;
+  height: 30px;
+  line-height: 30px;
+}
+.el-cascader {
+  width: 300px;
+}
+.commDialog span {
+  line-height: 40px;
+  display: block;
+}

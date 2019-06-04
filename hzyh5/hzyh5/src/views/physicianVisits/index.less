@@ -1,0 +1,86 @@
+.physicianVisits {
+    .page-py {
+        margin-top: 4px;
+        .choose-py {
+            background: #ffffff;
+            margin-top: 6px;
+            border-bottom: 1px solid #F1F0F5;
+            padding: 16px 15px 16px 0;
+            span:nth-child(1) {
+                border-left: 3px solid #D74326;
+                margin-right: 14px;
+            }
+            span:nth-child(3) {
+                color: #D74326;
+                float: right;
+                cursor: pointer;
+            }
+        }
+        .aaa {
+            .bgcolor-py {
+                background: #ffffff;
+            }
+            .bgcolors-py{
+                background: #F5F5F7;
+            }
+            .li-item-py {
+                margin-bottom: 1px;
+                display: flex;
+                list-style: none;
+                padding: 10px 15px;
+                position: relative;
+                .photo-py {
+                    border-radius: 4px;
+                    margin-right: 10px;
+                    width: 50px;
+                    height: 50px;
+                    overflow:hidden;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    -webkit-background-size:cover;
+                    -moz-background-size:cover;
+                    background-size:cover;
+                }
+                .badges-py {
+                    position: absolute;
+                    left: 64px;
+                    top: -2px;
+                }
+                .contents-py {
+                    width: calc(100% - 66px);
+                    p:nth-child(1) {
+                        span:nth-child(1){
+                            float: left;
+                        }
+                        span:nth-child(2) {
+                            font-size: 14px;
+                            color: #818181;
+                            margin-left: 10px;
+                            float: left;
+                            margin-top: 2px;
+                        }
+                        span:nth-child(3){
+                            float: right;
+                            font-size: 14px;
+                            margin-top: 2px;
+                        }
+                    }
+                    .message-py {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size: 14px;
+                        color: #818181;
+                        margin-top: 3px;
+                    }
+                }
+            }
+        }
+        .clearfix:after {
+            clear: both;
+            display: block;
+            content: "";
+            overflow: hidden;
+        }
+    }
+}

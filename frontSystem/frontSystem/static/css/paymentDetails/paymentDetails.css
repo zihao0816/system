@@ -1,0 +1,49 @@
+*{margin: 0;padding: 0;}
+p{margin: 0;}
+a{text-decoration: none;color: #5d9ce5;}
+a:hover,a:focus{text-decoration: none;color: #000;}
+.fl{float: left;}
+.fr{float: right;}
+.afour{width: 100%;}
+.clearfix:after{display: block;content: "";clear: both;}
+body{
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+  background-color: #F1F0F5;
+}
+.money{
+  background:url("/static/image/disekuai2@3x.png") no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  text-align: center;
+  height:134px;
+  font-size: 32px;
+  /*display:flex;*/
+}
+.money span{
+  line-height:134px;
+}
+.contents{
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+.orderNum,.paymentType,.processingTime{
+  padding:20px 20px;
+  color:#A3A3A3;
+}
+#ordercode,#serviceId,#payTime{
+  color: #141414;
+}
+.footer{
+  display: block;
+  margin-top: 6px;
+  background-color: #fff;
+  color:#141414;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+a{
+  color:#141414;
+}
+
+

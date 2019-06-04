@@ -1,0 +1,29 @@
+.ibox-title .form-inline .form-group label{
+    margin-right: 10px;
+    margin-left: 18px;
+}
+.submit{
+    margin-left: 20px;
+    color: #FFFFFF;
+    background-color: #07a591;
+    padding: 6px 26px;
+}
+.submit:hover{
+    background-color: #007a6b;
+    color: #FFFFFF;
+}
+.s-btn{
+    color: #07a591;
+    cursor: pointer;
+}
+.patientsize{
+    width: 900px;
+    margin: 0 auto;
+}
+.details{
+    width: 400px;
+    margin: 0 auto;
+}
+.modal-dialog{
+    width: 100%;
+}

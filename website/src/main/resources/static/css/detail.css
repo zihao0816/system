@@ -1,0 +1,115 @@
+
+.doctordetails {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ulsss{
+  clear: both;
+  display: block;
+  content: "";
+  overflow: hidden;
+}
+.doctordetails .page {
+  padding: 198px 0 98px;
+  background-image: url('/img/Group.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+}
+.doctordetails .page .doctor {
+  background: #ffffff;
+  box-shadow: 0 0 8px 0 rgba(127, 127, 127, 0.5);
+  width: 1200px;
+  padding-bottom: 164px;
+  position: relative;
+  margin: 0 auto;
+
+}
+.doctordetails .page .doctor .headimg {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  margin-left: -108px;
+  border-radius: 50%;
+}
+.doctordetails .page .doctor .headimg img {
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  display:block;
+  background:#FFF;
+}
+.doctordetails .page .doctor .top {
+  width: 100%;
+  text-align: center;
+  padding-top: 86px;
+  color: #32303B;
+}
+.doctordetails .page .doctor .top h3 {
+  font-size: 40px;
+}
+.doctordetails .page .doctor .top p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.doctordetails .page .doctor .code {
+  background: #FAFAFB;
+  margin: 46px 75px 0;
+  padding: 40px 25px 36px;
+}
+.doctordetails .page .doctor .code .always {
+  width: 494px;
+}
+.doctordetails .page .doctor .code div {
+  text-align: right;
+}
+.doctordetails .page .doctor .code div > p {
+  font-size: 14px;
+  color: #141414;
+}
+.doctordetails .page .doctor .synopsis {
+  background: #FAFAFB;
+  margin: 20px 75px 0;
+  padding: 30px 0 40px;
+}
+.doctordetails .page .doctor .synopsis .title {
+  font-size: 24px;
+  color: #32303B;
+  font-weight: bold;
+}
+.doctordetails .page .doctor .synopsis .title span:nth-child(1) {
+  height: 18px;
+  vertical-align: middle;
+  display: inline-block;
+  border: 3px solid #FF7860;
+}
+.doctordetails .page .doctor .synopsis .title span:nth-child(2) {
+  padding-left: 34px;
+  vertical-align: middle;
+}
+.doctordetails .page .doctor .synopsis .content {
+  padding: 20px 40px 0;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: lighter;
+}
+.doctordetails .page .doctor .synopsis ul {
+  min-height:40px;
+  padding: 20px 40px 0;
+}
+.doctordetails .page .doctor .synopsis ul li {
+  border: 1px solid #E7E6EB;
+  border-radius: 8px;
+  padding: 6px 20px;
+  list-style: none;
+}
+.doctordetails .page .doctor .synopsis ul li {
+  margin: 0 20px 20px 0;
+  float: left;
+}
+.doctordetails .page .doctor .code .always {
+  float: left;
+  width: 494px;
+}

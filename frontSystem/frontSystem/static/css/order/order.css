@@ -1,0 +1,467 @@
+.formWidth{
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.formWidth .p-title{
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+.formWidth .p-title h4{
+    margin: 0;
+    font-size: 18px;
+}
+.p-content{
+    margin: 14px;
+}
+.p-content .c-message{
+    border-bottom: 2px dashed #dfdfdf;
+    padding-bottom: 4px;
+}
+.p-content .c-prescription{
+    border-bottom: 2px dashed #dfdfdf;
+}
+.p-content .c-prescription,.p-content .c-pay{
+    margin-top: 20px;
+}
+.span-margin{
+    margin-right: 50px;
+}
+.c-message table tr td{
+    float: left;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.c-message p{
+    margin: 10px 0;
+}
+.c-img{
+    margin-top: 16px;
+    width: 80%;
+}
+.c-img p{
+    font-size: 14px;
+    font-weight: 600;
+}
+.c-img img,.bodyImg img{
+    width: 120px;
+    height: 90px;
+}
+.c-img img{
+    margin: 36px 40px 0 36px;
+}
+.bodyImg img{
+    margin: 10px 40px 30px 36px;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.c-prescription ul{
+    padding: 0;
+    margin-bottom: 30px;
+}
+.c-prescription ul li{
+    list-style: none;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+li{
+    list-style: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.span-style{
+    padding: 0 10px 4px;
+    border-bottom: 1px solid #dbdbdb;
+    color: #ff0000;
+}
+.s-style{
+    padding-right: 30px;
+}
+p{
+    margin: 0;
+}
+.c-time{
+    padding-top: 30px;
+}
+.c-time .t-title{
+    margin-right: 20px;
+}
+.c-time .t-hour{
+    margin-right: 20px;
+    border: 1px solid #c0c0c0;
+    margin-top: -2px;
+}
+.t-hour .s1{
+    border-right: 1px solid #c0c0c0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.t-hour .s3{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-left: 1px solid #c0c0c0;
+    cursor: pointer;
+}
+.t-hour .s2{
+    padding: 0 16px;
+    text-align: center;
+    vertical-align: middle;
+    color: #7baeea;
+}
+.select-size{
+    width: 640px;
+    margin: 0 auto;
+}
+.select-sizes{
+    width: 900px;
+    margin: 0 auto;
+}
+.modal-dialog{
+    width: 100%;
+}
+.c-text{
+    padding: 16px 24px 16px 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    max-width: 240px;
+    background-color: #ffffff;
+    margin-left: -5px;
+}
+.c-rotate{
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    width: 10px;
+    height: 10px;
+    transform: rotate(310deg);
+    margin: 10px 0 0 10px;
+}
+.c-texts{
+    padding: 16px 24px 16px 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    background-color: #ffffff;
+    max-width: 240px;
+    margin-right: -5px;
+}
+.c-rotates{
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    width: 10px;
+    height: 10px;
+    transform: rotate(130deg);
+    margin: 10px 10px 0 0;
+}
+.back{
+    background-color: #ffffff;
+}
+ul{
+    padding: 0;
+}
+.p-content ul li{
+    margin-bottom: 16px;
+}
+
+/*12.04订单管理改版*/
+.dataTable p{
+    height: 80px;
+    line-height: 80px;
+}
+.doctorinfo span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+}
+.yflist{
+    width: 100%;
+
+    min-height: 113px; 
+
+    padding: 10px;
+    border-bottom: #e7eaec 1px solid;
+}
+.yflist div{
+    overflow: hidden;
+}
+.yflist div span:nth-child(1){
+    float: left;
+}
+.yflist div span:nth-child(2){
+    float: right;
+}
+.yflist span{
+    display: block;
+    line-height: 24px;
+}
+.yflist span.not{
+    color: #ec3923;
+}
+.yflist span.pay{
+    color: #377d22;
+}
+.total span{
+    width: 100%;
+    text-align: left;
+    line-height: 24px;
+    display: block;
+}
+/* 详情弹框 */
+.select-maxsize{
+    width: 1100px;
+    margin: 0 auto;
+}
+.fl{ float: left}
+.fr{ float: right}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.orderDetails{
+    width: 100%;
+    overflow: hidden;
+    color: #141414;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 14px;
+    color: #676a6c;
+}
+.orderDetails>h3{
+    font-weight: normal;
+    overflow: hidden;
+}
+.orderDetails .patient{
+    overflow: hidden;
+}
+.patientinfo{
+    height: 70px;
+    float: left;
+    padding: 10px 0;
+    border-right: 1px #dcdcdc dashed;
+    margin-bottom: 20px;
+}
+.patientinfo:nth-child(1),.patientinfo:nth-child(2){
+    width: 40%;
+}
+.patientinfo:nth-child(3){
+    border-right: none;
+    width: 19%;
+}
+.patientinfo:nth-child(3) .sum{
+    width: 100%;
+}
+.patientinfo .photo{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.patientinfo .photo img{
+    width: 100%;
+    height: auto;
+}
+.patientinfo .info{
+    float: left;
+}
+.patientinfo .info span{
+    line-height: 24px;
+    font-size: 14px;
+    display: block;
+}
+.patientinfo .sum{
+    width: 30%;
+    float: right;
+    padding-right: 10px;
+}
+.patientinfo .sum span{
+    line-height: 24px;
+    display: block;
+    text-align: right;
+}
+.patientinfo .sum span:nth-child(1){
+    font-size: 18px;
+    color: #D74326;
+    font-weight: bold;
+}
+.wzinfo,.wzinfo table{
+    width: 100%;
+    /* border-top: 1px #dcdcdc solid; */
+    /* border-bottom: 1px #dcdcdc solid; */
+}
+.wzinfo table tbody{
+    border-top: 1px #dcdcdc solid;
+}
+.wzinfo tr{
+    height: 40px;
+    line-height: 40px;
+}
+.wzinfo tr td{
+    width: 25%;
+    padding: 0 10px;
+}
+.wzinfo tr td span{
+    font-weight: bold;
+}
+.handle{
+    padding: 20px 0;
+    overflow: hidden;
+    border-top: 1px #dcdcdc solid;
+}
+.handle button{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #07a591;
+    border-radius: 4px;
+    float: left;
+    margin-right: 20px;
+    border: none;
+    color: #fff;
+}
+
+.yfinfo,.yfinfo table{
+    width: 100%;
+}
+.yfinfo table{
+    border-top: 1px #dcdcdc solid;
+}
+.yfinfo>h3{
+    font-weight: normal;
+    overflow: hidden;
+}
+.yfinfo tr{
+    height: 40px;
+    line-height: 40px;
+}
+.yfinfo tr td{
+    width: 16.5%;
+    padding: 0 10px;
+}
+.yfinfo tr td span{
+    font-weight: bold;
+}
+.yinfodDetail h3{
+    font-size: 18px;
+}
+.medicine{
+    overflow: hidden;
+    padding: 10px 0;
+}
+.medicine span{
+    display: inline-block;
+    padding-right: 20px;
+    line-height: 24px;
+}
+.explain{
+    padding: 10px 0;
+}
+.explain span{
+    line-height: 24px;
+    display: block;
+}
+.paytable{
+    width: 100%;
+    border-top: 1px solid #dcdcdc;
+    /* border-bottom: 1px solid #dcdcdc; */
+}
+.paytable tr{
+    height: 40px;
+    line-height: 40px;
+}
+.paytable tr span{
+    font-weight: bold;
+}
+.yflist .printOrder{
+    color: #0020f5;
+    padding-right: 10px;
+    cursor:pointer;
+}
+.time{
+    padding-left: 40px;
+}
+
+/* 新版订单管理table */
+.orderList .dataTable tr td{
+    border-right: 1px solid #e7eaec;
+}
+.orderList .dataTable>tbody>tr>td{
+    vertical-align: middle;
+}
+.orderList .dataTable tr td:nth-child(4),.orderList .dataTable tr td:nth-child(5),.orderList .dataTable tr td:nth-child(6){
+    padding: 0;
+    vertical-align: top;
+    position: relative;
+}
+.orderList .dataTable tr td:nth-child(1){
+    border-left: 1px solid #e7eaec;
+}
+.orderList .dataTable tr td p{
+    height: 110px;
+    width: 100%;
+    text-align: center;
+    line-height: 113px;
+}
+.orderList .dataTable tr td:nth-child(5) span,.orderList .dataTable tr td:nth-child(6) span{
+    width: 100%;
+    height: 113px;
+    display: block;
+    border-bottom: 1px #e7eaec solid;
+    text-align: center;
+    line-height: 113px;
+}
+.orderList .dataTable tr td:nth-child(5) span:last-child,.orderList .dataTable tr td:nth-child(6) span:last-child{
+    border: none;
+}
+.orderList .dataTable tr td span.special{
+    height: 110px;
+    width: 100%;
+    text-align: center;
+    line-height: 110px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.orderList .dataTable tr td .yflist:last-child{
+    border: none;
+}
+.orderList table.dataTable{
+    border-bottom: 1px solid #e7eaec;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

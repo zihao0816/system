@@ -1,0 +1,252 @@
+.pushStorage{
+    height: 100%;
+    overflow-y: auto;
+    .page{
+        margin-left: 24px;
+        .title{
+            margin-bottom: 20px;
+            span:nth-child(1){
+                color: #141414;
+            }
+            span:nth-child(3){
+                color: #07A591;
+            }
+        }
+        .card{
+            width: calc(100% - 160px);
+            height: 260px;
+            background: #fff;
+            overflow: hidden;
+            margin-bottom: 20px;
+            >div{
+                width: 25%;
+                height: 160px;
+                padding: 50px 0;
+                float: left;
+                position: relative;
+                h3{
+                    padding: 0 50px;
+                    font-size: 40px;
+                    height: 60px;
+                    line-height: 60px;
+                }
+                p{
+                    font-size: 16px;
+                    padding: 0 20px;
+                    margin-top: 60px;
+                }
+                span{
+                    width: 1px;
+                    height: 136px;
+                    background: #D8D8D8;
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 60px;
+                }
+            }
+         }
+        .push{
+            background: #ffffff;
+            padding: 20px 106px 54px 20px;
+            margin-right: 160px;
+            .bills{
+                .message{
+                    margin-bottom: 20px;
+                    span:nth-child(1){
+                        float: left;
+                        color: #141414;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    span:nth-child(2){
+                        float: right;
+                        text-decoration: underline;
+                        color: #07A591;
+                        font-size: 14px;
+                        margin-top: 6px;
+                        cursor: pointer;
+                    }
+                }
+                .form-inline{
+                    margin-left: 52px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .el-form-item{
+                        width: 32%;
+                        margin-right: 0px;
+                        margin-bottom: 18px;
+                        .el-form-item__label{
+                            font-size: 16px;
+                        }
+                       
+                        
+                        @media screen and (min-width: 1360px) {
+                            .el-form-item__content{
+                                width: 50%;
+                            }
+                            .inputw{
+                                width:62%;
+                            }
+                        }
+                        @media screen and (min-width: 1440px) {
+                            .el-form-item__content{
+                                width: 50%;
+                            }
+                            .inputw{
+                                width:66%;
+                            }
+                        }
+                        @media screen and (min-width: 1600px) {
+                            .el-form-item__content{
+                                width: 60%;
+                            }
+                            .inputw{
+                                width:66%;
+                            }
+                        }
+                        .el-form-item__content{
+                            .el-date-editor.el-input{
+                                width: 100%;
+                            }
+                            .el-select{
+                                width: 100%;
+                            }
+                            .el-input{
+                                .el-input__inner{
+                                    padding-right: 30px;
+                                    border-color: #dcdfe6
+                                }
+                                .el-form-item.is-success .el-input__inner{
+                                    border: none;
+                                }
+                            }
+                        }
+                        p{
+                            font-size: 14px;
+                            color: #D74326;
+                            text-align: left;
+                        }
+                    }
+                    .only{
+                        .el-form-item__content{
+                            .el-input{
+                                .el-input__inner{
+                                    padding:0px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                    div:nth-child(3n-1){
+                        text-align: center;
+                    }
+                    div:nth-child(3n){
+                        text-align: right;
+                    }
+                }
+            }
+            .add-list{
+                margin-top: 20px;
+                .message{
+                    margin-bottom: 20px;
+                    .titles{
+                        float: left;
+                        color: #141414;
+                        font-size: 20px;
+                        font-weight: bold;
+                        line-height: 40px;
+                    }
+                    button{
+                        float: right;
+                    }
+                }
+            }
+        }
+        .dialog-push{
+            .form-inline{
+                margin-bottom: 20px;
+                .el-form-item{
+                    .el-form-item__content{
+                        width: 140px;
+                        input{
+                            width: 140px;
+                        }
+                    }
+                }
+            }
+        }
+        .dialog-pushUpdate{
+            .titles{
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .form-inline{
+                margin-left: 52px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .el-form-item{
+                    width: 32%;
+                    margin-right: 0px;
+                    margin-bottom: 18px;
+                    .el-form-item__label{
+                        font-size: 16px;
+                    }
+                    @media screen and (min-width: 1600px) {
+                        .el-form-item__content{
+                            width: 60%;
+                        }
+                    }
+                    @media screen and (min-width: 1440px) {
+                        .el-form-item__content{
+                            width: 50%;
+                        }
+                    }
+                    .el-form-item__content{
+                        .el-date-editor.el-input{
+                            width: 100%;
+                        }
+                        .el-input{
+                            .el-input__inner{
+                                padding-right: 30px;
+                                border-color: #dcdfe6;
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 14px;
+                        color: #D74326;
+                        text-align: left;
+                    }
+                }
+                .only{
+                    .el-form-item__content{
+                        .el-input{
+                            .el-input__inner{
+                                padding:0px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                div:nth-child(3n-1){
+                    text-align: center;
+                }
+                div:nth-child(3n){
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .clearfix:after{
+        clear: both;
+        content: "";
+        display: block;
+        overflow: hidden;
+    }
+}

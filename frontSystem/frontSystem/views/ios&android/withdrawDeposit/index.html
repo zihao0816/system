@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+  <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="/static/css/withdrawDeposit/withdrawDeposit.css" rel="stylesheet">
+
+  <title>提现详情</title>
+</head>
+
+<body>
+  <!-- 金额 -->
+  <div class="money">
+    <p>提现金额（元）</p>
+    <p id="money"></p>
+  </div>
+  <!-- 步骤 -->
+  <div class="procedure">
+    <div class="start">
+      <img id="statusImg" src="/static/image/ddcl@2x.png" alt="">
+      <div class="status">
+        <div class="status1">
+          <p id = "startName"></p>
+          <p id="startTime"></p>
+        </div>
+        <div class="status2">
+          <p id="awaitName"></p>
+          <p id="awaitTime"></p>
+        </div>
+        <div class="status3">
+          <p id="endStatus"></p>
+          <p id="endTime"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 联系客服 -->
+  <div class="clearfix footer">
+    <span class="fl">呼叫客服</span>
+    <a class="fr" id="serverTel"></span>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/ios&android/withdrawDeposit/index.js"></script>

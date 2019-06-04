@@ -1,0 +1,95 @@
+.perfectinformation{
+    .page{
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        .title{
+            padding: 15px;
+            color: #D74326;
+            background: #FFFFD3;
+            font-size: 12px;
+        }
+        .content{
+            .headphoto{
+                text-align: center;
+                padding: 20px 0;
+                img{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                }
+            }
+            .patient{
+                .samestyle{
+                    display: flex;
+                    padding: 0 20px;
+                    height: 60px;
+                    line-height: 60px;
+                    overflow: hidden;
+                    input{
+                        border:none;
+                        outline: none;
+                        height: 24px;
+                        line-height: 24px;
+                        margin: 13px 0;
+                        font-size: 14px;
+                    }
+                    span:nth-child(1){
+                        margin-right: 6px;
+                    }
+                    span:nth-child(2){
+                        margin-right: 26px;
+                    }
+                    .samecolor{
+                        color: #D74326;
+                    }
+                    .el-radio-group{
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                    .el-radio{
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                    .select{
+                        width: calc(100% - 106px);
+                        .weui-cell{
+                            padding: 0;
+                        }
+                        /deep/ .weui-cell_access{
+                            .weui-cell__ft{
+                                height: 60px;
+                                line-height: 60px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .samediv{
+                        border-bottom: 1px solid #eeeeee;
+                        width: calc(100% - 106px);
+                        /deep/ .el-radio__input.is-checked .el-radio__inner{
+                            border-color: #D74326;
+                            background: #D74326;
+                        }
+                        /deep/ .el-radio__input.is-checked+.el-radio__label{
+                            color: #D74326;
+                        }
+                    }
+                }
+            }
+            .btn{
+                padding: 0 30px 60px;
+                margin-top: 60px;
+                button{
+                    background: #D74326;
+                    width: 100%;
+                    border: none;
+                    padding: 10px 0;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+} 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>病历详情</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0}
+        p{margin: 0}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        body{font-family: "serif","sans-serif","cursive","fantasy","monospace";font-size: 15px;}
+        body,.page{width: 100%;background-color: #f1f0f5;}
+        .page .p-top{width: 100%;text-align: center;background: url("/static/common-image/disekuai@3x.png") no-repeat;background-size: 100% 100%;color:#ffffff;}
+        .p-top .headerImg{width: 62px;height: 62px;border-radius: 50%;margin-top: 40px;}
+        .p-top .name{margin-top: 10px;}
+        .name span{font-size: 18px;position: relative}
+        .yirenzhen{position: absolute;top: 8px;right: -60px;}
+        .page .content{background-color: #ffffff;margin-top: 6px;text-align: center;padding: 16px 0;}
+        .content .padding-top{margin-bottom: 10px;font-size: 16px}
+        .spans{margin-left: 22px;}
+        .page .mainsuit,
+        .records .prescription,
+        .records .medication,
+        .records .delivery,
+        .records .pay{background-color: #ffffff;margin-top: 6px;padding: 16px 20px;}
+        .records .delivery{background-color: #ffffff}
+        .marginbottom{margin-bottom: 20px;}
+        .marginbottoms{margin-bottom: 10px;}
+        .label-color{color: #818181;}
+        .label-colors{color: #C1C1C1;}
+        #smallwidth{width:100%;position: relative;-webkit-transition: height 0.6s;-moz-transition: height 0.6s;-o-transition: height 0.6s;transition: height 0.6s;}
+        #button {position: absolute;  bottom: 4px; right: 0}
+        .border-b{border-bottom: 1px dashed #f1f0f5;padding-bottom: 6px;}
+        .m-padding span{padding-bottom: 10px;padding-right: 22px;}
+        .span-style span{border-bottom: 1px solid #C1C1C1;padding: 2px 16px 0;color: #D74326;}
+        .records .dialectical{
+            background-color: #ffffff;margin-top: 6px;
+        }
+        .order{
+            padding: 16px 20px;
+        }
+        .orders{
+            width:100% !important;
+            height:100% !important;
+            background-color:#f1f0f5;
+            display: flex;
+        }
+        .doctorconclusion{
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="p-top">
+        <img class="headerImg" id="headerImg" src="/static/image/img1.png">
+        <p class="name"><span id="doctorname"></span></p>
+        <p style="font-size: 14px;padding: 10px 0 21px;"><span id="position"></span>&ensp;<span id="address"></span></p>
+    </div>
+    <div class="content">
+        <p class="padding-top">【患者信息】</p>
+        <p class="c-message paddingall"><span id="patientname"></span><span class="spans" id="sex"></span><span class="spans" id="age"></span></p>
+    </div>
+    <div class="mainsuit">
+        <p class="clearfix marginbottom"><span class="fl label-color">身高</span><span class="fr" id="height"></span></p>
+        <p class="clearfix marginbottom"><span class="fl label-color">体重</span><span class="fr" id="weight"></span></p>
+        <div class="marginbottom" id="smallwidth">
+            <p class="label-color" id="smalltitle">病症自述</p>
+            <p id="content" style="margin-top: 8px;word-wrap:break-word;overflow:hidden;margin-top: 10px;"></p>
+        </div>
+        <div class="marginbottom">
+            <p class="label-color marginbottoms">既往病史</p>
+            <p id="pastcase" style="word-wrap:break-word;overflow:hidden;margin-top: 10px;"></p>
+        </div>
+        <div class="">
+            <p class="label-color marginbottoms">过敏史</p>
+            <p id="allergichistory" style="word-wrap:break-word;overflow:hidden;margin-top: 10px;"></p>
+        </div>
+    </div>
+    <div id="orders"></div>
+    <div class="records" id="records">
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/wechatSubroutine/completeMedicalRecordDetails/index.js"></script>
+<script>
+    query();
+</script>

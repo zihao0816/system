@@ -1,0 +1,76 @@
+.r-color{
+    color: red;
+}
+.headImg{
+    width: 140px;
+    height: 140px;
+}
+.btn-color{
+    background-color: #07a591;
+    color: #FFFFFF;
+}
+.upload{
+    margin-left: 6px;
+    margin-top: 65px;
+}
+.form-controls {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.col-sm-5 .margin{
+    margin-bottom: 10px;
+}
+.col-sm-5 .padding{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #dddddd;
+}
+.time .t-1,.time .t-2,.time .t-3{
+    margin-top: 10px;
+}
+.p-style{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #cccccc;
+}
+.b-sizes{
+    background-color: #07a591;
+    border: 1px solid #07a591;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 12px;
+    width: 78px;
+    height: 26px;
+    text-align: center;
+    cursor: pointer;
+}
+.b-size .text,.b-sizes .text{
+    line-height: 26px;
+}
+.uploadImg{
+    width: 280px;
+    height: 160px;
+}
+.uploads{
+    margin-top: 130px;
+}
+.patientsize{
+    width: 900px;
+    margin: 0 auto;
+}
+.modal-dialog{
+    width: 100%;
+}

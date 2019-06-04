@@ -1,0 +1,352 @@
+.im-msg {
+    background: #f1f0f5;
+    width: 100%;
+    padding-top: 44px;
+  }
+  .container-py {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
+    position: relative;
+  }
+  .unnetwork-py{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    color: #745b5e;
+    font-size: 14px;
+    padding: 12px;
+    background: #ffdfe2;
+  }
+  .unnetwork-py img{
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  .unnetwork-py span{
+    vertical-align: middle;
+  }
+  .voice-img-py{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 50%;
+    top: 50%;
+    background-color:#000000;
+    opacity:.4;
+    margin:-70px;
+    border-radius:4px;
+  }
+  .voice-img-py img{
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 14%;
+    margin-left: -20px;
+  }
+  .voice-img-py p{
+    position: absolute;
+    color:#ffffff;
+    font-size: 16px;
+    margin-left:7px;
+    top:66%;
+  }
+  .footer-py {
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    height: 49px;
+    border: 1px solid #e5e5e7;
+  }
+  .footer-py .f-main-py {
+    display: flex;
+  }
+  .footers-py {
+    background: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .sendall-text-py {
+    outline: none;
+    height: 35px;
+    border-radius: 4px;
+    padding-left: 10px;
+    margin: 7px 5px 0 10px;
+    width: 100%;
+    font-size: 16px;
+    background: #E7E6EB;
+    border: 1px solid #e5e5e7;
+  }
+  .sendall-text-py{
+    background: #ffffff;
+    -webkit-appearance: none;
+  }
+  .sendall-voice-py{
+    background: #f4f4f6;
+  }
+  .f-main-py img {
+    width: 20px;
+    height: 20px;
+    margin: 15px 0 15px 16px;
+    vertical-align: middle;
+  }
+  .addmain-py ul {
+    border-top: 1px solid #e5e5e7;
+    background: #f4f4f6;
+    width: 100%;
+    height: 100%;
+    padding: 10px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .other-record-py {
+    display: flex;
+    justify-content: flex-start;
+    margin: 16px 10px 0 10px;
+  }
+  .other-record-content-py {
+    background-color: #ffffff;
+    border-radius: 2px 14px 14px 14px;
+    padding: 12px;
+    min-width: 80px;
+    max-width: 220px;
+    word-break: break-all;
+  }
+  .other-record-content-py img{
+    vertical-align: middle;
+  }
+  .other-record-contents-py {
+    background-color: #ffffff;
+    border-radius: 4px;
+    /* min-width: 40px; */
+    /* max-width: 220px; */
+    word-break: break-all;
+    /* im1.5.3改版 */
+    width: 100%;
+    border-radius: 20px;
+    padding: 25px;
+    overflow: hidden;
+  }
+  .other-record-contents-py img{
+    float:left;
+    margin-right: 12px;
+    width: 50px;
+    height: 50px;
+    background-color: #F1F3F4;
+  }
+  .other-record-contents-py div p:nth-child(1){
+    font-size: 18px;
+  }
+  .other-record-contents-py div p:nth-child(2){
+    font-size: 14px;
+    color: #141414;
+  }
+
+  .other-head-img-py {
+    width: 40px;
+    height: 40px;
+    margin: 5px 10px 5px 5px;
+  }
+  .other-record-content-triangle-py {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #ffffff;
+    border-bottom: 8px solid transparent;
+    margin-top: 10px;
+  }
+  .own-record-py {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px 10px 0 10px;
+  }
+  .own-record-content-py {
+    background-color: #FFF0F0;
+    border-radius: 14px 2px 14px 14px;;
+    padding: 12px;
+    min-width: 40px;
+    max-width: 220px;
+    word-break: break-all;
+  }
+  .own-record-contents-py {
+    background-color: #FFF0F0;
+    border-radius: 14px 2px 14px 14px;;
+    min-width: 40px;
+    max-width: 220px;
+    word-break: break-all;
+  }
+  .own-record-content-triangle-py {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 8px solid #FFF0F0;
+    border-bottom: 8px solid transparent;
+    margin-top: 10px;
+  }
+  .own-record-content-triangles-py {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 8px solid #ffffff;
+    border-bottom: 8px solid transparent;
+    margin-top: 10px;
+  }
+  .own-head-img-py {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 5px 10px;
+  }
+  .firstmsg-py {
+    text-align: center;
+    margin-top: 18px;
+  }
+  .over{
+    background: #FAFAFA;
+    padding: 16px 0;
+    position: relative;
+  }
+  .over span{
+    width: 30%;
+    height: 1px;
+    border-top: 1px dashed #C1C1C1;
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+  }
+  .over span:nth-child(2){
+    left: 10px;
+  }
+  .over span:nth-child(3){
+    right: 10px;
+}
+  .firstmsg-py p span {
+    font-size: 14px;
+    color: #818181;
+  }
+  .button-py {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #d74326;
+    float: right;
+    border: none;
+    padding: 6px 26px;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .button-remove{
+    background:#C1C1C1;
+    color:#fff;
+  }
+  .onlines-py{
+    display: inline-block;
+  }
+  .onlines-py p:nth-child(2){
+    font-size: 12px;
+  }
+  li{
+    list-style: none;
+    position: relative;
+  }
+  .send-msg-py{
+    border: none;
+    background: none;
+    margin: 0 14px 0 6px;
+    vertical-align: middle;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+  .choose-py{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .buy-medicine{
+    position:absolute;
+    right:16px;
+    bottom:80px;
+    width:50px;
+    height:50px;
+    background:#ffffff;
+    border-radius:50%;
+    box-shadow: darkgrey 0px 0px 10px 2px;
+    opacity: 0.8;
+  }
+  .buy-medicine img{
+    margin:4px 0 0 10px;
+  }
+  .buy-medicine p{
+    font-size:14px;
+    -webkit-transform:scale(0.8);
+    position:absolute;
+    bottom:2px;
+    left:12px;
+  }
+  .top{
+    top: -300px;
+  }
+/* 新增公共气泡 */
+.public{
+  margin: 16px 10px 0;
+  display: flex;
+  align-items: center;
+}
+.public span{
+  padding: 6px 16px;
+  line-height: 16px;
+  background: #fff;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #818181;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.public span a{
+  color: #4DBFFF;
+}
+.public span i{
+  width: 12px;
+  height: 12px;
+  background: url('../../../assets/im/xuankuang_green@3x.png');
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+/* 跟随问诊单的气泡单独处理 */
+.new-hints{
+  display: block;
+}
+.new-hints .public{
+  margin: 16px 10px;
+}
+/* 通话样式 */
+.conversation .other-record-contents-py{
+  width: 60%;
+  padding: 12px;
+  border-radius: 2px 14px 14px 14px;
+}
+.conversation .other-record-contents-py img{
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  vertical-align: middle;
+  margin: 4px 10px 0 0;
+}

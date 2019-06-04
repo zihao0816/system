@@ -1,0 +1,361 @@
+.doctorlist {
+  width: 100%;
+  height: 100%;
+background-image: url('/img/Group.png');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+-webkit-background-size: 100% 100%;
+-o-background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.doctorlist .page-py {
+   width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0 90px;
+}
+.doctorlist .page-py .top-py {
+  min-width:1093px;
+  text-align: center;
+}
+.doctorlist .page-py .top-py > p {
+  display: inline-block;
+}
+.doctorlist .page-py .top-py hr:nth-child(1),
+.doctorlist .page-py .top-py hr:nth-child(3) {
+  border: 0.5px dashed #ffffff;
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.doctorlist .page-py .top-py p:nth-child(2) {
+  padding: 0 5%;
+  font-size: 28px;
+  vertical-align: middle;
+  display: inline-block;
+  color: #ffffff;
+}
+.doctorlist .page-py .top-py p:nth-child(2) img {
+  margin-right: 20px;
+}
+.doctorlist .page-py .list-py {
+  margin-top: 60px;
+}
+.doctorlist .page-py .list-py ul {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;
+}
+.doctorlist .page-py .list-py ul li {
+  box-sizing: border-box;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #E7E6EB;
+  padding: 25px;
+  width: 50%;
+  cursor: pointer;
+  position:relative;
+  overflow: hidden;
+}
+
+.doctorlist .page-py .list-py ul li .qrCode {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    width: 188px;
+    height: 180px;
+    border-radius: 4px;
+    background: #F1F0F5;
+    transform: translate(188px, 0);
+    transition: all 1s;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_left {
+    width: 180px;
+    float: left;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_left p {
+    width: 100%;
+    text-align: center;
+    color: #141414;
+    font-size: 14px;
+    margin: 15px 0;
+    line-height: 20px;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_left p:nth-of-type(2) {
+    width: 100%;
+    text-align: center;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_left p:nth-of-type(2) img {
+    display: inline-block;
+    margin-left:40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_right {
+    float: left;
+    width: 8px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+ .doctorlist .page-py .list-py ul li .qrCode .qrCode_right img {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+
+
+
+
+.doctorlist .page-py .list-py ul li .headphoto-py {
+  margin-right: 18px;
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.doctorlist .page-py .list-py ul li .headphoto-py .imgone-py,
+.doctorlist .page-py .list-py ul li .headphoto-py .imgtwo-py {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.doctorlist .page-py .list-py ul li .headphoto-py .imgone-py {
+  z-index: 99;
+}
+.doctorlist .page-py .list-py ul li .headphoto-py .imgtwo-py {
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  display: none;
+}
+.doctorlist .page-py .list-py ul li .content-py {
+  min-width: 60%;
+  width: 66%;
+  max-width: 66%;
+}
+.doctorlist .page-py .list-py ul li .content-py .name-py {
+  margin-bottom: 8px;
+}
+.doctorlist .page-py .list-py ul li .content-py .name-py span:nth-child(1) {
+  font-size: 22px;
+  color: #32303B;
+  margin-right: 15px;
+}
+.doctorlist .page-py .list-py ul li .content-py .name-py span:nth-child(2) {
+  font-size: 18px;
+  font-weight: lighter;
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py .left-py {
+  width: 6px;
+  height: 14px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('/img/Path@3x.png');
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py .left::after {
+  border: 0;
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py p {
+  margin: 14px 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  padding: 0 18px;
+  height: 72px;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py p span:nth-child(1) {
+  font-size: 18px;
+  color: #818181;
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py p span:nth-child(2) {
+  font-size: 14px;
+  color: #818181;
+  font-weight: lighter;
+  line-height: 24px;
+}
+.doctorlist .page-py .list-py ul li .content-py .intro-py .right-py {
+  width: 6px;
+  height: 14px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('/img/aaa@3x.png');
+}
+.doctorlist .page-py .list-py ul li .content-py .see-py {
+  margin-top: 16px;
+  text-align: right;
+}
+.doctorlist .page-py .list-py ul li .content-py .see-py span {
+  vertical-align: middle;
+}
+.doctorlist .page-py .list-py ul li .content-py .see-py img {
+  vertical-align: middle;
+  margin-left: 8px;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-image: url('/img/ck_icn@3x.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.doctorlist .page-py .list-py ul li:hover .qrCode{
+  transform: translate(0);
+}
+.doctorlist .page-py .list-py ul li:hover .headphoto-py .imgtwo-py {
+  display: block;
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .name-py span {
+  color: #FF7860;
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .name-py span  a{
+  color: #FF7860;
+}
+
+.doctorlist .page-py .list-py ul li:hover .content-py .intro-py .left-py {
+  width: 6px;
+  height: 14px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('/img/zs@3x.png');
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .intro-py .right-py {
+  width: 6px;
+  height: 14px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('/img/zx@3x.png');
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .see-py span{
+  color: #FF7860;
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .see-py span a{
+  color: #FF7860;
+}
+.doctorlist .page-py .list-py ul li:hover .content-py .see-py img {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-image: url('/img/ck_y_icn@3x.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.pagetions {
+  min-width:1093px;
+  background: #ffffff;
+  text-align: center;
+  padding: 35px 0;
+  margin-top: 32px;
+}
+.pagetions .paginations {
+  line-height: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+}
+.pagetions .paginations p {
+  margin: 0;
+  float: left;
+  height: 25px;
+  padding: 0;
+  padding-top: 7px;
+  font-size: 13px;
+}
+.pagetions .paginations p a {
+  padding: 0 4px;
+  font-size: 13px;
+  float: left;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 4px;
+}
+.pagetions .paginations p a:nth-of-type(1) {
+  background: #FF7860;
+  color: #fff;
+}
+.pagetions .paginations p a:hover {
+  background: #FF7860;
+  color: #fff;
+}
+.pagetions .paginations .a_left {
+  float: left;
+  padding: 0 12px;
+}
+.pagetions .paginations .a_left:hover {
+  color: #ccc;
+}
+.pagetions .paginations .ye {
+  float: left;
+  font-size: 13px;
+  margin-left: 24px;
+}
+.pagetions .paginations .ye div {
+  display: inline-block;
+}
+.pagetions .paginations .ye div input {
+  width: 46px;
+  border: 0;
+  outline: none;
+  border: 1px solid #dcdfe6;
+  height: 28px;
+  border-radius: 4px;
+  text-align: center;
+}
+.box {
+  position: relative;
+  min-width:1093px;
+  min-height: 300px;
+}
+.box .list-py {
+  width: 100%;
+ min-height: 290px;
+}
+.box a {
+  text-decoration: none;
+  display: block;
+}
+.box .swterLeft {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 999999999;
+  margin: auto 0;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  opacity: .4;
+}
+.box .swterRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 3px;
+  z-index: 99999999;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  opacity: .4;
+}
+
+
+

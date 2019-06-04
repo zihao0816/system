@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>北京好中医</title>
+  <style>
+    #app{
+      /* overflow-x: hidden; */
+    }
+  </style>
+</head>
+<script>
+  
+  
+  (function(_D){
+        var _self = {};
+        _self.resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        _self.Html = _D.getElementsByTagName("html")[0];
+        _self.widthProportion = function(){
+            var p = Number((_D.body&&_D.body.clientWidth||_self.Html.offsetWidth)/720).toFixed(3);
+            return p>1.067?1.067:p<0.444?0.444:p;
+        };
+        _self.changePage = function(){
+            _self.Html.setAttribute("style","font-size:"+Math.ceil(_self.widthProportion()*200-1)+"px");
+        };
+        _self.changePage();
+        if (!document.addEventListener) return;
+        window.addEventListener(_self.resizeEvt,_self.changePage,false);
+        document.addEventListener('DOMContentLoaded', _self.changePage, false);
+})(document);
+
+</script>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

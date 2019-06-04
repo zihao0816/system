@@ -1,0 +1,82 @@
+.unshow{
+    display: none;
+}
+li{
+    list-style: none;
+}
+.f-herbs{
+    position: relative;
+}
+.f-herbs .c-herbs{
+    position: absolute;
+    z-index: 40;
+    background-color: #25d2bc;
+    width: 90%;
+    padding: 0;
+}
+.f-herbs .c-herbs li{
+    padding: 4%;
+    cursor: pointer;
+}
+.f-herbs .c-herbs li:hover{
+    background-color: #07a591;
+}
+.selectHerbs{
+    position: relative;
+    border: 1px solid #dbdbdb;
+    margin: 16px 16px 0 0;
+    padding: 4px 14px;
+    border-radius: 4px;
+}
+.selectHerbs .minus{
+    position: absolute;
+    right: -8px;
+    top:-8px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+.minu{
+    margin-left: -18px;
+    margin-top: -118px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+.selectHerbs .move{
+    margin-left: 50px;
+}
+.span-style{
+    padding: 0 10px 4px;
+    border-bottom: 1px solid #dbdbdb;
+    color: #ff0000;
+}
+.patientsize{
+    width: 900px;
+    margin: 0 auto;
+}
+.patientsizc{
+    width: 400px;
+    margin: 0 auto;
+}
+.alertsize{
+    width: 200px;
+    margin: 0 auto;
+}
+.modal-dialog{
+    width: 100%;
+}
+#copy{
+    outline: none;
+    padding: 0 14px;
+    border-radius: 2px;
+    border: 1px solid #07a591;
+    color: #ffffff;
+    background-color: #07a591;
+}
+.alert-size{
+    width: 280px;
+    margin: 0 auto;
+}

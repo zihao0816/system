@@ -1,0 +1,17 @@
+form input,form select,form button{
+    border: 1px solid #c8cbcd;
+    border-radius:4px;
+    height: 30px;
+    color:#8c8888;
+}
+form input:focus,form select:focus,form button:focus{
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    box-shadow: 0 0 3px rgba(82,168,236,.6);
+}
+.form-box form label{font-weight: normal;font-size: 12px;color: #666}
+.form-box form input,.form-box form select{border: 1px solid #edf0f2;outline: none;}
+form .input-group .form-control{padding: 5px;border:none;box-shadow: none;height: 32px;color:#999;font-size: 12px;}
+.input-group {border: 1px solid #ddd; border-radius: 5px}
+.input-group-btn button{border: none;padding: 6px 5px; color:#999;font-size: 12px}
+.box{margin-top: 10px}

@@ -1,0 +1,106 @@
+html,body{ margin:0; padding:0; width:100%; height:100%; background-color:#f2f2f2; font-size:14px; color:#171717; font-family:"微软雅黑"; overflow:auto; min-width:1100px;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0; font-weight:normal;}
+ul,li{list-style:none; margin:0; padding:0;}
+a{ text-decoration:none; color:#000;}
+img{ border:0;}
+
+.header{ width:100%; height:60px; background-color:#ecf1f3; border-bottom: 1px solid #d2d1d1;}
+.header h1{ width:250px; height:40px; background-image:url(../image/newlogo3.png); text-indent:-1000px; margin:10px 0 0 48px; float:left;}
+.header .tags{ float:right; margin-right:28px;}
+.header .tags ul li{ float:left; margin-left:22px; line-height:58px; cursor:pointer;}
+.header .tags ul li a{ margin-left:20px;}
+.header .tags ul li em{ width:24px; height:24px; margin: 18px 4px 0 0; float:left;}
+.ioc01{ background-image:url(../image/ico01.png);}
+.ioc02{ background-image:url(../image/ico02.png);}
+.ioc03{ background-image:url(../image/ico03.png);}
+.ioc04{ background-image:url(../image/ico04.png);}
+
+.nav{ position:absolute; top:0; left:0; bottom:0; width:72px; background-color:#6699cc;}
+.nav ul li{ width:100%; float:left; border-top:1px solid #79aee3; border-bottom:1px solid #5489be; cursor:pointer;}
+.nav ul li em{ width:32px; height:30px; margin:10px 0 4px 21px; float:left;}
+.nav ul li a{ width:100%; text-align:center; float:left; color:#fff;}
+.nav ul li.hover{ background-color:#9dc7f1;}
+.nav ul li.hover a{ color:#123d68;}
+.nav01{ background-image:url(../image/nav01.png);}
+.nav01x{ background-image:url(../image/nav01x.png);}
+.nav02{ background-image:url(../image/nav02.png);}
+.nav02x{ background-image:url(../image/nav02x.png);}
+.nav03{ background-image:url(../image/nav03.png);}
+.nav03x{ background-image:url(../image/nav03x.png);}
+.nav04{ background-image:url(../image/nav04.png);}
+.nav04x{ background-image:url(../image/nav04x.png);}
+.nav05{ background-image:url(../image/nav05.png);}
+.nav05x{ background-image:url(../image/nav05x.png);}
+.nav06{ background-image:url(../image/nav06.png);}
+.nav06x{ background-image:url(../image/nav06x.png);}
+.nav07{ background-image:url(../image/nav07.png);}
+.nav07x{ background-image:url(../image/nav07x.png);}
+.nav08{ background-image:url(../image/nav08.png);}
+.nav08x{ background-image:url(../image/nav08x.png);}
+
+.sidebar{ position:absolute; top:0; left:72px; bottom:0; width:240px; background-color:#ececec; border-right:1px solid #d2d1d1;}
+.sidebar ul li{ width:100%; line-height:32px; background-image:url(../image/colbg.png); float:left; border-bottom:1px solid #d9dbda; cursor:pointer;position: relative;}
+.sidebar ul li em{ width:14px; height:12px; margin:11px 14px 0 22px; float:left; background-image:url(../image/ico05.png);/*position: absolute;top: 0;left: 0;*/}
+/*.sidebar ul li a{display: block;padding-left: 28px}*/
+.sidebar ul li i{ width:12px; height:12px; float:right; margin:10px 14px 0 10px;-webkit-transition:all 0.1s;-moz-transition:all 0.1s;-o-transition:all 0.1s;transition:all 0.1s;}
+.ioc6{ background-image:url(../image/ico06.png);}
+.ioc7{ background-image:url(../image/ico07.png);}
+.sidebar ul li .column{ width:200px; padding:8px 10px 8px 30px; float:left; background-color:#ececec; border-top:1px solid #d9dbda;display: none;}
+.sidebar ul li .column ul li{ width:100%; line-height:26px; float:left; border:none; color:#171717; cursor:pointer; background:none;}
+.sidebar ul li .column ul li em{ width:11px; height:11px; background-image:url(../image/ico08.png); margin:8px 10px 0 0;position: absolute; top: 0;left: 0;}
+.sidebar ul li .column ul li a{display: block;padding-left: 19px;line-height: 26px;}
+.sidebar>ul{display: none;}
+#rightContent {
+	position: relative;
+}
+#page-wrapper {
+	margin-left: 328px;
+  /*  
+    left: 6px;*/
+}
+body.mini-navbar #page-wrapper{
+	margin-left: 0;
+}
+#content-main{
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+}
+.side-menu22 .nav-label{
+    display: block;
+}
+.addThird.hover i {
+    -webkit-transform:rotatez(90deg);
+    -moz-transform:rotatez(90deg);
+    -o-transform:rotatez(90deg);
+    transform:rotatez(90deg);
+} 
+.nav ul li img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>查看病历</title>
+
+
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>查看病历</h3>
+                </div>
+                <div class="ibox-title">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="name">医生姓名</label>
+                            <input type="text" class="form-control" id="name" autocomplete="off" placeholder="输入医生姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>问诊时间</label>
+                            <select class="form-control">
+                                <option>请选择</option>
+                            </select>
+                        </div>
+                        <input type="button" class="btn btn-default submit" value="确定" />
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div id="container" class="out_box">
+                                <table class="display table " id="tbBackgroundRole" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th>问诊医生</th>
+                                        <th>职称</th>
+                                        <th>问诊时间</th>
+                                        <th>问诊方式</th>
+                                        <th>辩证结果</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<div class="hide" id="CreateRolePopup">
+    <div class="container">
+        <form role="form" class="formWidth">
+            <div class="form-group">
+                <label>角色名称</label>
+                <input id="rolename" class="form-control" type="text" autocomplete="off" maxlength="10" placeholder="不能超过10个字符">
+            </div>
+            <div class="form-group">
+                <label for="">状态</label>
+                <select id="rolestate" class="form-control">
+                    <option value="0">启用</option>
+                    <option value="1">禁用</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide" id="UpdateRolePopup">
+    <div class="container">
+        <form role="form" class="formWidth">
+            <div class="form-group">
+                <label>角色名称</label>
+                <input id="rolenameupdate" class="form-control" autocomplete="off" type="text" maxlength="10" placeholder="不能超过10个字符">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<!--<script type="text/javascript" src="/static/common-js/jquery-ui.custom.min.js"></script>-->
+<!--<script type="text/javascript" src="/static/common-js/jquery-ui-1.10.4.min.js"></script>-->
+<!--<script type="text/javascript" src="/static/common-js/bootstrap.js"></script>-->
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<!--<script type="text/javascript" src="/static/common-js/plugins/tinycon/tinycon.min.js"></script>-->
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<!--<script type="text/javascript" src="/static/common-js/plugins/slick/slick.min.js"></script>-->
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<!--<script type="text/javascript" src="/static/common-js/jquery.searchBox.js"></script>-->
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/user/index.js" ></script>
+<script type="text/javascript" src="/static/js/index/common.js" ></script>
+
+
+
+
+
+<script type="text/javascript" src="/static/js/BackgroundRoleManagement/index.js" ></script>
+<script type="text/javascript">
+    //    $(document).ready(ObjBackgroundRoleManagementIndex.init('{ID}'));
+</script>

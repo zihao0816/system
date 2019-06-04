@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>查看问诊资料</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/viewer.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        p{margin: 0;}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        li{list-style: none}
+        ul{margin: 0}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        .myDiseaseInfo{padding: 10px;background: #F1F0F5 100%;}
+        .basicInfo{padding: 20px;background: #fff;border-radius: 8px;text-align: center;}
+        .basicInfo .top{padding: 10px 0;}
+        .basicInfo .top h3{font-size: 18px;color: #141414;font-weight: normal;}
+        .basicInfo .top span{width: 100%;text-align: center;font-size: 14px;color: #32303B;display: block;line-height: 40px;}
+        .basicInfo .top span span{ display: inline;}
+        .basicInfo .line{padding: 10px 0;border-top: #C1C1C1 1px dashed;border-bottom: #C1C1C1 1px dashed;overflow: hidden;}
+        .basicInfo .line>div{width: 32%;display: inline-block;float: left;text-align: center; }
+        .basicInfo .line>div span{display: block;line-height: 30px;} 
+        .basicInfo .line>div span:nth-child(1){font-size: 16px;color: #141414;}
+        .basicInfo .line>div span:nth-child(2){font-size: 14px;color: #32303B;}
+        .basicInfo .history{text-align: left;}
+        .basicInfo .history h3{color: #141414;font-weight: normal;line-height: 40px;font-size: 16px;}
+        .basicInfo .history span{color: #32303B;font-size: 14px;line-height: 20px;}
+        .facePhoto{padding: 20px;background: #fff;border-radius: 8px;margin: 10px 0;width: 100%;}
+        .facePhoto .Accordingtotongueexchanges{ display: flex;align-content: flex-start;flex-wrap: wrap;width: 100%;height: auto !important;}
+        .facePhoto .Accordingtotongueexchanges li{flex:1;display: inline-block;margin-bottom: 10px;}
+        .facePhoto .Accordingtotongueexchanges img{width: 98px; height: 98px;}
+        .facePhoto h3{width: 100%;border-bottom: 1px dashed #C1C1C1;font-weight: normal;height: 30px;font-size: 16px;}
+        .facePhoto h3 span{color: #C1C1C1;font-size: 14px;float: right;height: auto;line-height: 20px;}
+        .facePhoto>div{display: flex;flex-wrap: wrap;justify-content: space-around;}
+        .facePhoto>div div{width: 30%;height: 100px;margin-top: 3%;}
+        .facePhoto>div div div{width: 100%;height: 100%;overflow: hidden;}
+        .facePhoto>div div div img{width: 100%;height: auto;}
+        .facePhoto span{color: #818181;height: 40px;line-height: 40px;}
+        .facePhoto .issueInfo{display: block;}
+        .facePhoto .issueInfo span{display: block;height: 30px;font-size: 14px;}
+        .facePhoto .issueInfo span:nth-child(odd){color: #141414;}
+        .facePhoto .issueInfo span:nth-child(even){color: #32303B;}
+        .viewer-toolbar>ul>.viewer-large {display: none;}
+        .viewer-reset{display: none;}
+    </style>
+</head>
+<body>
+<div class="myDiseaseInfo">
+    <div class="basicInfo">
+        <div class="top">
+            <h3 id="patientname">无</h3>
+            <span><span id="sex">无</span>·<span id="age">无</span></span>
+        </div>
+        <div class="line">
+            <div>
+                <span id="height">无</span>
+                <span>患者身高</span>
+            </div>
+            <div>
+                <span id="weight">无</span>
+                <span>患者体重</span>
+            </div> 
+            <div>
+                <span id="specialperiod">无</span>
+                <span>特殊时期</span>
+            </div>
+        </div>
+        <div class="history">
+            <h3>既往病史</h3>
+            <span id="pastcase">-</span>
+            <h3>过敏历史</h3>
+            <span id="allergichistory">-</span>
+            <h3>患者自述</h3>
+            <span class="symptom">-</span>
+        </div>
+    </div>
+    <div class="facePhoto">
+        <h3>舌照面照<span id="Accordingtotongueexchangeslength"></span></h3>
+        <!-- 有照片的 otherdetails-->
+        <div>
+            <div class="Accordingtotongueexchanges" id="viewer">
+                <img src="../../../static/image/6@2x.png">
+            </div>
+        </div>
+        <!-- 无照片的 -->
+        <span>暂无提交</span>
+    </div>
+    <div class="facePhoto">
+        <h3>问诊单问题</h3>
+        <!-- 有信息的 -->
+        <div class="issueInfo">
+            <span style="height: auto !important" class="reorderinquiryquestion">无</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script type="text/javascript" src="/static/common-js/zoom.js"></script>
+<script type="text/javascript" src="/static/common-js/viewer.min.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/wechatSubroutine/physicianVisitsDetails/index.js" ></script>
+<script>
+    window.onload = function(){
+        created();
+    }
+  
+</script>

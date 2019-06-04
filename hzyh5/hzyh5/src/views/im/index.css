@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .page-py {
+    margin-top: 0px;
+  }
+  .im {
+    width: 100%;
+  }
+  .tabbars-py {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    height: 44px;
+  }
+  .tabmenus-py {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    position: relative;
+  }
+  .tabmenus-item-py {
+    flex: 1;
+    padding: 12px 0;
+    position: relative;
+  }
+  .tabmenusitems-py {
+    color: #d74326;
+    border-bottom: 2px solid #d74326;
+  }

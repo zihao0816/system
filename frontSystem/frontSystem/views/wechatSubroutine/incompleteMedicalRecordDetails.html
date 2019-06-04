@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>病历详情</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0}
+        p{margin: 0}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        body{font-family: "serif","sans-serif","cursive","fantasy","monospace";font-size: 20px;}
+        body,.page{width: 100%;background-color: #f1f0f5;}
+        .page .p-top{width: 100%;position: relative}
+        .p-top .backImg{width: 100%;}
+        .p-top .p-message{position: absolute;text-align: center;left: 50%;top: 50%;margin: -68px 0 0 -110px;color: #ffffff;}
+        .p-message .headerImg{width: 60px;border-radius: 50%;}
+        .p-message p{line-height: 34px;}
+        .p-message .name{margin-top: 10px;}
+        .page .content{background-color: #ffffff;margin-top: 10px;text-align: center;}
+        .content .c-message span{margin-right: 10px;}
+        .page .mainsuit{background-color: #ffffff;margin-top: 10px;padding: 0 14px;}
+        .label-color{color: #9b9b9b;}
+        .padding-top{padding-top: 14px;}
+        .paddingall{padding: 14px 0;}
+        #smallwidth{width:100%;height: 130px;overflow: hidden;position: relative;-webkit-transition: height 0.6s;-moz-transition: height 0.6s;-o-transition: height 0.6s;transition: height 0.6s;}
+        #content{width:100%;}
+        #button {position: absolute;  bottom: 4px; right: 0}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="p-top">
+        <img class="backImg" src="/static/common-image/disekuai@3x.png">
+        <div class="p-message">
+            <img class="headerImg" src="/static/image/img1.png">
+            <p class="name"><span>张三</span>&ensp;<img width="70px" style="display: inline-block" src="/static/common-image/yirenzhen@3x.png"></p>
+            <p><span>主任医生</span>&ensp;<span>北京京顺中医堂</span></p>
+        </div>
+    </div>
+    <div class="content">
+        <p class="padding-top">【患者信息】</p>
+        <p class="c-message paddingall"><span>张三</span><span>男</span><span>33岁</span></p>
+    </div>
+    <div class="mainsuit">
+        <p class="clearfix padding-top"><span class="fl label-color">身高</span><span class="fr">180cm</span></p>
+        <p class="clearfix padding-top"><span class="fl label-color">体重</span><span class="fr">79kg</span></p>
+        <div class="padding-top" id="smallwidth">
+            <p class="label-color" id="smalltitle">病症自诉</p>
+            <p id="content">心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不df</p>
+        </div>
+        <div class="padding-top">
+            <p class="label-color">既往病史</p>
+            <p></p>
+        </div>
+        <div class="paddingall">
+            <p class="label-color">过敏史</p>
+            <p></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function init(){
+        var eleBtn = document.getElementById("button"),
+            eleMore = document.getElementById("smallwidth"),
+            ptextheight = document.getElementById("content").offsetHeight,
+            smalltitle = document.getElementById("smalltitle").offsetHeight,
+            content = document.getElementById("content");
+        var display = false;
+        var contents = content.innerHTML;
+        var newhight = ptextheight+smalltitle+40;
+        content.innerHTML = contents.substring(0,46);
+        eleBtn.onclick = function() {
+            display = !display;
+            eleMore.style.height = display? newhight+"px": "130px";
+            eleBtn.innerHTML = display? "<img width='12px' style='transform: rotate(180deg)' src='/static/common-image/zhankai@3x.png'/>收起":"<img width='12px' src='/static/common-image/zhankai@3x.png'/>展开";
+            content.innerHTML = display? contents:contents.substring(0,46);
+            return false;
+        };
+    }
+    init();
+</script>

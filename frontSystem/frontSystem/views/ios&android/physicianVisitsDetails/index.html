@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>查看问诊资料</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        p{margin: 0;}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        li{list-style: none}
+        ul{margin: 0}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        body{font-family: "serif","sans-serif","cursive","fantasy","monospace";font-size: 16px;}
+        li{list-style: none;}
+        body,.page{background-color: #F1F0F5;}
+        .page .p-top{background-color: #ffffff;text-align: center;padding: 16px 0;}
+        .p-top img{width: 60px;border-radius: 50%;margin-bottom: 16px;}
+        .page .first,.page .talk,.page .inquiry,.page .photo{background-color: #ffffff;margin-top: 6px;}
+        .first .f-title,.talk .t-title,.inquiry .i-title,.photo .p-title{border-bottom: 1px solid #F1F0F5;padding: 16px 0;text-align: center;}
+        .first ul,.photo ul{display: flex;width: 100%;flex-wrap: wrap;align-content: flex-start;padding-bottom: 5%;}
+        .first ul li,.photo ul li{flex: 0 0 26%;box-sizing: border-box;margin: 5% 0 0 5%}
+        .first ul li img,.photo ul li img{width: 100%;}
+        .tatlks{padding: 0 14px;}
+        .label-color{color: #9b9b9b;}
+        .padding-top{padding-top: 20px;}
+        .paddingall{padding: 20px 0;}
+        #smallwidth{width:100%;position: relative;-webkit-transition: height 0.6s;-moz-transition: height 0.6s;-o-transition: height 0.6s;transition: height 0.6s;word-break: break-all;}
+        #content , #pastcase, #allergichistory{width:100%;}
+        #button {position: absolute;  bottom: 0; right: 0}
+        .inquiry .hiddens{width:100%;height: 320px;overflow:hidden;-webkit-transition: height 1s;-moz-transition: height 1s;-o-transition: height 1s;transition: height 1s;}
+        .hiddens ul{padding:0 14px;}
+        .hiddens ul li{border-bottom: 1px solid #F1F0F5;}
+        .hiddens ul li p{margin-bottom: 10px;}
+        .hiddens ul li .one{margin-top: 10px;}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="p-top">
+        <img src="/static/image/img1.png">
+        <p><span>张三</span>&ensp;<span>男</span>&ensp;<span>22岁</span></p>
+    </div>
+    <div class="first">
+        <p class="f-title">【初始病例】</p>
+        <ul>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+        </ul>
+    </div>
+    <div class="talk">
+        <p class="t-title">【病症主诉】</p>
+        <div class="tatlks">
+            <p class="clearfix padding-top"><span class="fl label-color">身高</span><span class="fr">180cm</span></p>
+            <p class="clearfix padding-top"><span class="fl label-color">体重</span><span class="fr">79kg</span></p>
+            <div class="padding-top" id="smallwidth">
+                <p class="label-color" id="smalltitle">病症自诉</p>
+                <p id="content">心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不df</p>
+                <a href="javascript:;" id="button"><img width='12px' src='/static/common-image/zhankai@3x.png'/>展开</a>
+            </div>
+            <div class="padding-top" id="smallwidth">
+                <p class="label-color">既往病史</p>
+                <p id="pastcase"></p>
+            </div>
+            <div class="paddingall" id="smallwidth">
+                <p class="label-color">过敏史</p>
+                <p id="allergichistory"></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="inquiry" id="inquiry">
+        <p class="i-title" id="i-title">【问诊单】</p>
+        <div class="hiddens" id="hiddens">
+            <ul id="contentone">
+                <li>
+                    <p class="one">1.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">2.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">3.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">4.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">5.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">6.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">7.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">8.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">9.问：您身体的冷热感受如何？</p>
+                    <p>&ensp;&nbsp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">10.问：您身体的冷热感受如何？</p>
+                    <p>&emsp;&ensp;答：很冷</p>
+                </li>
+                <li>
+                    <p class="one">11.问：您身体的冷热感受如何？</p>
+                    <p>&emsp;&ensp;答：很冷</p>
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:;" id="open" style="display: block;padding: 14px 0;text-align: center"><img width='12px' src='/static/common-image/zhankai@3x.png'/>展开</a>
+    </div>
+    <div class="photo">
+        <p class="p-title">【舌照面照】</p>
+        <ul>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li><li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+            <li><img src="/static/image/img1.png"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function init(){
+        var eleBtn = document.getElementById("button"),
+            eleMore = document.getElementById("smallwidth"),
+            ptextheight = document.getElementById("content").offsetHeight,
+            smalltitle = document.getElementById("smalltitle").offsetHeight,
+            content = document.getElementById("content");
+        var display = false;
+        var contents = content.innerHTML;
+        var newhight = ptextheight+smalltitle+50;
+        content.innerHTML = contents.substring(0,46);
+        eleBtn.onclick = function() {
+            display = !display;
+            eleMore.style.height = display? newhight+"px": "130px";
+            eleBtn.innerHTML = display? "<img width='12px' style='transform: rotate(180deg)' src='/static/common-image/zhankai@3x.png'/>收起":"<img width='12px' src='/static/common-image/zhankai@3x.png'/>展开";
+            content.innerHTML = display? contents:contents.substring(0,46);
+            return false;
+        };
+
+        var contentone = document.getElementById("contentone").offsetHeight,
+            open = document.getElementById("open"),
+            hiddens = document.getElementById("hiddens");
+        var display1 = false;
+        open.onclick = function(){
+            display1 = !display1;
+            hiddens.style.height = display1?contentone+"px":"320px";
+            open.innerHTML = display1?"<img width='12px' style='transform: rotate(180deg)' src='/static/common-image/zhankai@3x.png'/>收起":"<img width='12px' src='/static/common-image/zhankai@3x.png'/>展开";
+        }
+    };
+    init();
+</script>

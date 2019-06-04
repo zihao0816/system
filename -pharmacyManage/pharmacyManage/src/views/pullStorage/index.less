@@ -1,0 +1,215 @@
+.pullStorage{
+    height: 100%;
+    overflow-y: auto;
+    .page{
+        margin-left: 24px;
+        .title{
+            margin-bottom: 20px;
+            span:nth-child(1){
+                color: #141414;
+            }
+            span:nth-child(3){
+                color: #07A591;
+            }
+        }
+        .content{
+            display: flex;
+            >div{
+                background: #ffffff;
+                padding: 20px;
+            }
+            .left-content{
+                width: 56%;
+                p:nth-child(1){
+                    span:nth-child(1){
+                        color: #141414;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    span:nth-child(2){
+                        float: right;
+                        font-size: 14px;
+                        color: #07A591;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                p:nth-child(2){
+                    margin: 20px 0;
+                    .order{
+                        color: #141414;
+                        font-size: 17px;
+                    }
+                    button{
+                        margin-left: 8%;
+                    }
+                }
+                .searchs{
+                    display: flex;
+                    margin-bottom: 20px;
+                    button{
+                        margin-left: 20px;
+                    }
+                }
+            }
+            .right-content{
+                width: 40%;
+                margin-left: 6px;
+                .titles{
+                    color: #141414;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    font-weight: bold;
+                }
+                .orderdetail{
+                    border-bottom: 1px dashed #C1C1C1;
+                    div{
+                        display: flex;
+                        margin-bottom: 20px;
+                        p:nth-child(1){
+                            width: 50%;
+                        }
+                        p:nth-child(2){
+                            width: 44%;
+                            margin-left: 6%;
+                        }
+                    }
+                }
+                .prescription{
+                    .titles{
+                        font-size: 20px;
+                        color: #141414;
+                        font-weight: bold;
+                        margin: 10px 0 12px;
+                    }
+                    .medicines{
+                        font-weight: bold;
+                        margin-top: 12px;
+                        span{
+                            font-weight: normal;
+                        }
+                    }
+                    .medicines-name{
+                        span{
+                            padding-right: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                    .last{
+                        margin-top: 20px;
+                        display: flex;
+                        p{
+                            width: 33%;
+                            span{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .btn{
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+        .clearfix:after{
+            clear: both;
+            content: "";
+            display: block;
+            overflow: hidden;
+        }
+        .search{
+            overflow: hidden;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #141414;
+            >div{
+                float: left;
+                padding-right: 20px;
+                margin: 5px 0;
+                .el-input{
+                    width: 120px;
+                    max-width: 200px;
+                }
+            }
+        }
+        .dialog-push{
+            .titles{
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .form-inline{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .el-form-item{
+                    width: 25%;
+                    margin-right: 0px;
+                    margin-bottom: 18px;
+                    .el-form-item__label{
+                        font-size: 16px;
+                    }
+                    @media screen and (min-width: 1600px) {
+                        .el-form-item__content{
+                            width: 60%;
+                        }
+                    }
+                    @media screen and (min-width: 1440px) {
+                        .el-form-item__content{
+                            width: 50%;
+                        }
+                    }
+                    .el-form-item__content{
+                        .el-date-editor.el-input{
+                            width: 100%;
+                        }
+                        .el-input{
+                            .el-input__inner{
+                                padding-right: 30px;
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 14px;
+                        color: #D74326;
+                        text-align: left;
+                    }
+                    .erorr{
+                        color: #D74326;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .el-table--enable-row-transition .el-table__body td{
+        text-align: center;
+    }
+    .el-table{
+        .el-button+.el-button{
+            margin-left: 0;
+        }
+        th{
+            text-align:center;/** 设置水平方向居中 */
+            vertical-align:middle/** 设置垂直方向居中 */
+        }
+    }
+    
+    .el-pagination{
+        margin: 20px 0 0px;
+        text-align: right;
+    }
+}
+.verificationCenter{
+    p{
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+.el-dialog--center .el-dialog__footer{
+    text-align: center;
+}

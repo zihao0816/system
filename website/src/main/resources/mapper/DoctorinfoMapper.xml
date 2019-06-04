@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="doctorinfo">
+    <resultMap id="BaseResultMap" type="com.zksd.website.entity.Doctorinfo">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <id column="doctorcode" property="doctorcode" jdbcType="VARCHAR"/>
+        <id column="doctorname" property="doctorname" jdbcType="VARCHAR"/>
+        <id column="password" property="password" jdbcType="VARCHAR"/>
+        <id column="headphoto" property="headphoto" jdbcType="VARCHAR"/>
+        <id column="qrsmallurl" property="qrsmallurl" jdbcType="VARCHAR"/>
+        <id column="qrbigurl" property="qrbigurl" jdbcType="VARCHAR"/>
+        <id column="sex" property="sex" jdbcType="INTEGER"/>
+        <id column="birthday" property="birthday" jdbcType="DATE"/>
+        <id column="hospitaid" property="hospitaid" jdbcType="VARCHAR"/>
+        <id column="department" property="department" jdbcType="VARCHAR"/>
+        <id column="duties" property="duties" jdbcType="VARCHAR"/>
+        <id column="province" property="province" jdbcType="VARCHAR"/>
+        <id column="city" property="city" jdbcType="VARCHAR"/>
+        <id column="contry" property="contry" jdbcType="VARCHAR"/>
+        <id column="address" property="address" jdbcType="VARCHAR"/>
+        <id column="telephone" property="telephone" jdbcType="VARCHAR"/>
+        <id column="phoneticode" property="phoneticode" jdbcType="VARCHAR"/>
+        <id column="fivecode" property="fivecode" jdbcType="VARCHAR"/>
+        <id column="intro" property="intro" jdbcType="LONGVARCHAR"/>
+        <id column="isstick" property="isstick" jdbcType="INTEGER"/>
+        <id column="ordernum" property="ordernum" jdbcType="INTEGER"/>
+        <id column="confirmstate" property="confirmstate" jdbcType="INTEGER"/>
+        <id column="examineby" property="examineby" jdbcType="VARCHAR"/>
+        <id column="starttime" property="starttime" jdbcType="TIMESTAMP"/>
+        <id column="confirmtime" property="confirmtime" jdbcType="TIMESTAMP"/>
+        <id column="source" property="source" jdbcType="VARCHAR"/>
+        <id column="itaskprice" property="itaskprice" jdbcType="VARCHAR"/>
+        <id column="itasktime" property="itasktime" jdbcType="VARCHAR"/>
+        <id column="itaskisopen" property="itaskisopen" jdbcType="INTEGER"/>
+        <id column="thaskprice" property="thaskprice" jdbcType="VARCHAR"/>
+        <id column="thasktime" property="thasktime" jdbcType="VARCHAR"/>
+        <id column="thaskisopen" property="thaskisopen" jdbcType="INTEGER"/>
+        <id column="itagainprice" property="itagainprice" jdbcType="VARCHAR"/>
+        <id column="itagaintime" property="itagaintime" jdbcType="VARCHAR"/>
+        <id column="itagainisopen" property="itagainisopen" jdbcType="INTEGER"/>
+        <id column="thagainprice" property="thagainprice" jdbcType="VARCHAR"/>
+        <id column="thagaintime" property="thagaintime" jdbcType="VARCHAR"/>
+        <id column="thagainisopen" property="thagainisopen" jdbcType="INTEGER"/>
+        <id column="createby" property="createby" jdbcType="VARCHAR"/>
+        <id column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+        <id column="updateby" property="updateby" jdbcType="VARCHAR"/>
+        <id column="updatetime" property="updatetime" jdbcType="TIMESTAMP"/>
+        <id column="remark" property="remark" jdbcType="LONGVARCHAR"/>
+        <id column="docstate" property="docstate" jdbcType="CHAR"/>
+        <id column="setprice" property="setprice" jdbcType="VARCHAR"/>
+        <id column="websiteranking" property="websiteranking" jdbcType="INTEGER"/>
+        <id column="websitestate" property="websitestate" jdbcType="VARCHAR"/>
+        <id column="openid" property="openid" jdbcType="VARCHAR"/>
+        <id column="headimgurl" property="headimgurl" jdbcType="VARCHAR"/>
+        <id column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <id column="aftermedicalfee" property="aftermedicalfee" jdbcType="VARCHAR"/>
+        <id column="orcodestatus" property="orcodestatus" jdbcType="VARCHAR"/>
+        <id column="orderurl" property="orderurl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="DoctorDetailsVoResultMap" type="com.zksd.website.entity.DoctorDetailsVo">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <id column="doctorcode" property="doctorcode" jdbcType="VARCHAR"/>
+        <id column="doctorname" property="doctorname" jdbcType="VARCHAR"/>
+        <id column="headphoto" property="headphoto" jdbcType="VARCHAR"/>
+        <id column="qrsmallurl" property="qrsmallurl" jdbcType="VARCHAR"/>
+        <id column="qrbigurl" property="qrbigurl" jdbcType="VARCHAR"/>
+        <id column="sex" property="sex" jdbcType="INTEGER"/>
+        <id column="birthday" property="birthday" jdbcType="DATE"/>
+        <id column="hospitaid" property="hospitaid" jdbcType="VARCHAR"/>
+        <id column="department" property="department" jdbcType="VARCHAR"/>
+        <id column="duties" property="duties" jdbcType="VARCHAR"/>
+        <id column="province" property="province" jdbcType="VARCHAR"/>
+        <id column="city" property="city" jdbcType="VARCHAR"/>
+        <id column="contry" property="contry" jdbcType="VARCHAR"/>
+        <id column="address" property="address" jdbcType="VARCHAR"/>
+        <id column="telephone" property="telephone" jdbcType="VARCHAR"/>
+        <id column="phoneticode" property="phoneticode" jdbcType="VARCHAR"/>
+        <id column="fivecode" property="fivecode" jdbcType="VARCHAR"/>
+        <id column="intro" property="intro" jdbcType="VARCHAR"/>
+        <id column="isstick" property="isstick" jdbcType="INTEGER"/>
+        <id column="ordernum" property="ordernum" jdbcType="INTEGER"/>
+        <id column="confirmstate" property="confirmstate" jdbcType="INTEGER"/>
+        <id column="examineby" property="examineby" jdbcType="VARCHAR"/>
+        <id column="starttime" property="starttime" jdbcType="TIMESTAMP"/>
+        <id column="confirmtime" property="confirmtime" jdbcType="VARCHAR"/>
+        <id column="source" property="source" jdbcType="VARCHAR"/>
+        <id column="itaskprice" property="itaskprice" jdbcType="VARCHAR"/>
+        <id column="itasktime" property="itasktime" jdbcType="VARCHAR"/>
+        <id column="itaskisopen" property="itaskisopen" jdbcType="INTEGER"/>
+        <id column="thaskprice" property="thaskprice" jdbcType="VARCHAR"/>
+        <id column="thasktime" property="thasktime" jdbcType="VARCHAR"/>
+        <id column="thaskisopen" property="thaskisopen" jdbcType="INTEGER"/>
+        <id column="itagainprice" property="itagainprice" jdbcType="VARCHAR"/>
+        <id column="itagaintime" property="itagaintime" jdbcType="VARCHAR"/>
+        <id column="itagainisopen" property="itagainisopen" jdbcType="INTEGER"/>
+        <id column="thagainprice" property="thagainprice" jdbcType="VARCHAR"/>
+        <id column="thagaintime" property="thagaintime" jdbcType="VARCHAR"/>
+        <id column="thagainisopen" property="thagainisopen" jdbcType="INTEGER"/>
+        <id column="createby" property="createby" jdbcType="VARCHAR"/>
+        <id column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+        <id column="updateby" property="updateby" jdbcType="VARCHAR"/>
+        <id column="updatetime" property="updatetime" jdbcType="TIMESTAMP"/>
+        <id column="remark" property="remark" jdbcType="VARCHAR"/>
+        <id column="setprice" property="setprice" jdbcType="VARCHAR" />
+        <id column="websitestate" property="websitestate" jdbcType="VARCHAR" />
+        <id column="websiteranking" property="websiteranking" jdbcType="VARCHAR" />
+        <id column="hospitacode" property="hospitacode" jdbcType="VARCHAR"/>
+        <id column="hospitaname" property="hospitaname" jdbcType="VARCHAR"/>
+        <id column="hospitashortname" property="hospitashortname" jdbcType="VARCHAR"/>
+        <id column="departmentname" property="departmentname" jdbcType="VARCHAR"/>
+        <id column="dutiesname" property="dutiesname" jdbcType="VARCHAR"/>
+        <id column="thagainpriceid" property="thagainpriceid" jdbcType="VARCHAR"/>
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        maintable.id,maintable.doctorcode,maintable.doctorname,maintable.password,maintable.headphoto,maintable.qrsmallurl,maintable.qrbigurl,maintable.sex,maintable.birthday,maintable.hospitaid,maintable.department,maintable.duties,maintable.province,maintable.city,maintable.contry,maintable.address,maintable.telephone,maintable.phoneticode,maintable.fivecode,maintable.intro,maintable.isstick,maintable.ordernum,maintable.confirmstate,maintable.examineby,maintable.starttime,maintable.confirmtime,maintable.source,maintable.itaskprice,maintable.itasktime,maintable.itaskisopen,maintable.thaskprice,maintable.thasktime,maintable.thaskisopen,maintable.itagainprice,maintable.itagaintime,maintable.itagainisopen,maintable.thagainprice,maintable.thagaintime,maintable.thagainisopen,maintable.createby,maintable.createtime,maintable.updateby,maintable.updatetime,maintable.remark,maintable.docstate,maintable.setprice,maintable.websiteranking,maintable.websitestate,maintable.openid,maintable.headimgurl,maintable.nickname,maintable.aftermedicalfee,maintable.orcodestatus,maintable.orderurl
+    </sql>
+    <sql id="doctorqualification">
+        maintable.id,maintable.doctorid,maintable.qftype,maintable.papername,maintable.paperfile,maintable.createby,maintable.createtime
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap"
+            parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from doctorinfo maintable
+        where id = #{id}
+    </select>
+    <sql id="queryByCondition_getListByKey">
+        select
+        <include refid="Base_Column_List"/>
+        from doctorinfo maintable
+        where 1=1
+        <if test="id != null and id != '' ">
+            and maintable.id = #{id}
+        </if>
+        <if test="nid != null and nid != '' ">
+            and maintable.id != #{nid}
+        </if>
+        <if test="doctorcode != null and doctorcode != '' ">
+            and maintable.doctorcode = #{doctorcode}
+        </if>
+        <if test="doctorname != null and doctorname != '' ">
+            and maintable.doctorname = #{doctorname}
+        </if>
+        <if test="password != null and password != '' ">
+            and maintable.password = #{password}
+        </if>
+        <if test="headphoto != null and headphoto != '' ">
+            and maintable.headphoto = #{headphoto}
+        </if>
+        <if test="qrsmallurl != null and qrsmallurl != '' ">
+            and maintable.qrsmallurl = #{qrsmallurl}
+        </if>
+        <if test="qrbigurl != null and qrbigurl != '' ">
+            and maintable.qrbigurl = #{qrbigurl}
+        </if>
+        <if test="sex != null and sex != '' ">
+            and maintable.sex = #{sex}
+        </if>
+        <if test="birthday != null and birthday != '' ">
+            and maintable.birthday = #{birthday}
+        </if>
+        <if test="hospitaid != null and hospitaid != '' ">
+            and maintable.hospitaid = #{hospitaid}
+        </if>
+        <if test="department != null and department != '' ">
+            and maintable.department = #{department}
+        </if>
+        <if test="duties != null and duties != '' ">
+            and maintable.duties = #{duties}
+        </if>
+        <if test="province != null and province != '' ">
+            and maintable.province = #{province}
+        </if>
+        <if test="city != null and city != '' ">
+            and maintable.city = #{city}
+        </if>
+        <if test="contry != null and contry != '' ">
+            and maintable.contry = #{contry}
+        </if>
+        <if test="address != null and address != '' ">
+            and maintable.address = #{address}
+        </if>
+        <if test="telephone != null and telephone != '' ">
+            and maintable.telephone = #{telephone}
+        </if>
+        <if test="phoneticode != null and phoneticode != '' ">
+            and maintable.phoneticode = #{phoneticode}
+        </if>
+        <if test="fivecode != null and fivecode != '' ">
+            and maintable.fivecode = #{fivecode}
+        </if>
+        <if test="intro != null and intro != '' ">
+            and maintable.intro = #{intro}
+        </if>
+        <if test="isstick != null and isstick != '' ">
+            and maintable.isstick = #{isstick}
+        </if>
+        <if test="ordernum != null and ordernum != '' ">
+            and maintable.ordernum = #{ordernum}
+        </if>
+        <if test="confirmstate != null and confirmstate != '' ">
+            and maintable.confirmstate = #{confirmstate}
+        </if>
+        <if test="examineby != null and examineby != '' ">
+            and maintable.examineby = #{examineby}
+        </if>
+        <if test="starttime != null and starttime != '' ">
+            and maintable.starttime = #{starttime}
+        </if>
+        <if test="confirmtime != null and confirmtime != '' ">
+            and maintable.confirmtime = #{confirmtime}
+        </if>
+        <if test="source != null and source != '' ">
+            and maintable.source = #{source}
+        </if>
+        <if test="itaskprice != null and itaskprice != '' ">
+            and maintable.itaskprice = #{itaskprice}
+        </if>
+        <if test="itasktime != null and itasktime != '' ">
+            and maintable.itasktime = #{itasktime}
+        </if>
+        <if test="itaskisopen != null and itaskisopen != '' ">
+            and maintable.itaskisopen = #{itaskisopen}
+        </if>
+        <if test="thaskprice != null and thaskprice != '' ">
+            and maintable.thaskprice = #{thaskprice}
+        </if>
+        <if test="thasktime != null and thasktime != '' ">
+            and maintable.thasktime = #{thasktime}
+        </if>
+        <if test="thaskisopen != null and thaskisopen != '' ">
+            and maintable.thaskisopen = #{thaskisopen}
+        </if>
+        <if test="itagainprice != null and itagainprice != '' ">
+            and maintable.itagainprice = #{itagainprice}
+        </if>
+        <if test="itagaintime != null and itagaintime != '' ">
+            and maintable.itagaintime = #{itagaintime}
+        </if>
+        <if test="itagainisopen != null and itagainisopen != '' ">
+            and maintable.itagainisopen = #{itagainisopen}
+        </if>
+        <if test="thagainprice != null and thagainprice != '' ">
+            and maintable.thagainprice = #{thagainprice}
+        </if>
+        <if test="thagaintime != null and thagaintime != '' ">
+            and maintable.thagaintime = #{thagaintime}
+        </if>
+        <if test="thagainisopen != null and thagainisopen != '' ">
+            and maintable.thagainisopen = #{thagainisopen}
+        </if>
+        <if test="createby != null and createby != '' ">
+            and maintable.createby = #{createby}
+        </if>
+        <if test="createtime != null and createtime != '' ">
+            and maintable.createtime = #{createtime}
+        </if>
+        <if test="updateby != null and updateby != '' ">
+            and maintable.updateby = #{updateby}
+        </if>
+        <if test="updatetime != null and updatetime != '' ">
+            and maintable.updatetime = #{updatetime}
+        </if>
+        <if test="remark != null and remark != '' ">
+            and maintable.remark = #{remark}
+        </if>
+        <if test="docstate != null and docstate != '' ">
+            and maintable.docstate = #{docstate}
+        </if>
+        <if test="setprice != null and setprice != '' ">
+            and maintable.setprice = #{setprice}
+        </if>
+        <if test="websiteranking != null and websiteranking != '' ">
+            and maintable.websiteranking = #{websiteranking}
+        </if>
+        <if test="websitestate != null and websitestate != '' ">
+            and maintable.websitestate = #{websitestate}
+        </if>
+        <if test="openid != null and openid != '' ">
+            and maintable.openid = #{openid}
+        </if>
+        <if test="headimgurl != null and headimgurl != '' ">
+            and maintable.headimgurl = #{headimgurl}
+        </if>
+        <if test="nickname != null and nickname != '' ">
+            and maintable.nickname = #{nickname}
+        </if>
+        <if test="aftermedicalfee != null and aftermedicalfee != '' ">
+            and maintable.aftermedicalfee = #{aftermedicalfee}
+        </if>
+        <if test='orderby!=null and orderby!=""'>
+            order by ${orderby}
+        </if>
+        <if test='orderby==null or orderby==""'>
+            order by maintable.ordernum desc,maintable.starttime desc
+        </if>
+    </sql>
+    <select id="queryByCondition" resultType="java.util.Map"
+            parameterType="java.util.Map">
+        <include refid="fenye"/>
+    </select>
+    <select id="getListByKey" resultType="java.util.Map"
+            parameterType="java.util.Map">
+        <include refid="queryByCondition_getListByKey"/>
+    </select>
+    <select id="getCountByKey" resultType="java.lang.Long" parameterType="java.util.Map">
+        select count(*) from doctorinfo maintable where 1=1
+        <if test="id != null and id != '' ">
+            and maintable.id = #{id}
+        </if>
+        <if test="nid != null and nid != '' ">
+            and maintable.id != #{nid}
+        </if>
+        <if test="doctorcode != null and doctorcode != '' ">
+            and maintable.doctorcode = #{doctorcode}
+        </if>
+        <if test="doctorname != null and doctorname != '' ">
+            and maintable.doctorname = #{doctorname}
+        </if>
+        <if test="password != null and password != '' ">
+            and maintable.password = #{password}
+        </if>
+        <if test="headphoto != null and headphoto != '' ">
+            and maintable.headphoto = #{headphoto}
+        </if>
+        <if test="qrsmallurl != null and qrsmallurl != '' ">
+            and maintable.qrsmallurl = #{qrsmallurl}
+        </if>
+        <if test="qrbigurl != null and qrbigurl != '' ">
+            and maintable.qrbigurl = #{qrbigurl}
+        </if>
+        <if test="sex != null and sex != '' ">
+            and maintable.sex = #{sex}
+        </if>
+        <if test="birthday != null and birthday != '' ">
+            and maintable.birthday = #{birthday}
+        </if>
+        <if test="hospitaid != null and hospitaid != '' ">
+            and maintable.hospitaid = #{hospitaid}
+        </if>
+        <if test="department != null and department != '' ">
+            and maintable.department = #{department}
+        </if>
+        <if test="duties != null and duties != '' ">
+            and maintable.duties = #{duties}
+        </if>
+        <if test="province != null and province != '' ">
+            and maintable.province = #{province}
+        </if>
+        <if test="city != null and city != '' ">
+            and maintable.city = #{city}
+        </if>
+        <if test="contry != null and contry != '' ">
+            and maintable.contry = #{contry}
+        </if>
+        <if test="address != null and address != '' ">
+            and maintable.address = #{address}
+        </if>
+        <if test="telephone != null and telephone != '' ">
+            and maintable.telephone = #{telephone}
+        </if>
+        <if test="phoneticode != null and phoneticode != '' ">
+            and maintable.phoneticode = #{phoneticode}
+        </if>
+        <if test="fivecode != null and fivecode != '' ">
+            and maintable.fivecode = #{fivecode}
+        </if>
+        <if test="intro != null and intro != '' ">
+            and maintable.intro = #{intro}
+        </if>
+        <if test="isstick != null and isstick != '' ">
+            and maintable.isstick = #{isstick}
+        </if>
+        <if test="ordernum != null and ordernum != '' ">
+            and maintable.ordernum = #{ordernum}
+        </if>
+        <if test="confirmstate != null and confirmstate != '' ">
+            and maintable.confirmstate = #{confirmstate}
+        </if>
+        <if test="examineby != null and examineby != '' ">
+            and maintable.examineby = #{examineby}
+        </if>
+        <if test="starttime != null and starttime != '' ">
+            and maintable.starttime = #{starttime}
+        </if>
+        <if test="confirmtime != null and confirmtime != '' ">
+            and maintable.confirmtime = #{confirmtime}
+        </if>
+        <if test="source != null and source != '' ">
+            and maintable.source = #{source}
+        </if>
+        <if test="itaskprice != null and itaskprice != '' ">
+            and maintable.itaskprice = #{itaskprice}
+        </if>
+        <if test="itasktime != null and itasktime != '' ">
+            and maintable.itasktime = #{itasktime}
+        </if>
+        <if test="itaskisopen != null and itaskisopen != '' ">
+            and maintable.itaskisopen = #{itaskisopen}
+        </if>
+        <if test="thaskprice != null and thaskprice != '' ">
+            and maintable.thaskprice = #{thaskprice}
+        </if>
+        <if test="thasktime != null and thasktime != '' ">
+            and maintable.thasktime = #{thasktime}
+        </if>
+        <if test="thaskisopen != null and thaskisopen != '' ">
+            and maintable.thaskisopen = #{thaskisopen}
+        </if>
+        <if test="itagainprice != null and itagainprice != '' ">
+            and maintable.itagainprice = #{itagainprice}
+        </if>
+        <if test="itagaintime != null and itagaintime != '' ">
+            and maintable.itagaintime = #{itagaintime}
+        </if>
+        <if test="itagainisopen != null and itagainisopen != '' ">
+            and maintable.itagainisopen = #{itagainisopen}
+        </if>
+        <if test="thagainprice != null and thagainprice != '' ">
+            and maintable.thagainprice = #{thagainprice}
+        </if>
+        <if test="thagaintime != null and thagaintime != '' ">
+            and maintable.thagaintime = #{thagaintime}
+        </if>
+        <if test="thagainisopen != null and thagainisopen != '' ">
+            and maintable.thagainisopen = #{thagainisopen}
+        </if>
+        <if test="createby != null and createby != '' ">
+            and maintable.createby = #{createby}
+        </if>
+        <if test="createtime != null and createtime != '' ">
+            and maintable.createtime = #{createtime}
+        </if>
+        <if test="updateby != null and updateby != '' ">
+            and maintable.updateby = #{updateby}
+        </if>
+        <if test="updatetime != null and updatetime != '' ">
+            and maintable.updatetime = #{updatetime}
+        </if>
+        <if test="remark != null and remark != '' ">
+            and maintable.remark = #{remark}
+        </if>
+        <if test="docstate != null and docstate != '' ">
+            and maintable.docstate = #{docstate}
+        </if>
+        <if test="setprice != null and setprice != '' ">
+            and maintable.setprice = #{setprice}
+        </if>
+        <if test="websiteranking != null and websiteranking != '' ">
+            and maintable.websiteranking = #{websiteranking}
+        </if>
+        <if test="websitestate != null and websitestate != '' ">
+            and maintable.websitestate = #{websitestate}
+        </if>
+        <if test="openid != null and openid != '' ">
+            and maintable.openid = #{openid}
+        </if>
+        <if test="headimgurl != null and headimgurl != '' ">
+            and maintable.headimgurl = #{headimgurl}
+        </if>
+        <if test="nickname != null and nickname != '' ">
+            and maintable.nickname = #{nickname}
+        </if>
+        <if test="aftermedicalfee != null and aftermedicalfee != '' ">
+            and maintable.aftermedicalfee = #{aftermedicalfee}
+        </if>
+
+    </select>
+
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from doctorinfo maintable
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from
+        doctorinfo
+        where id IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </delete>
+    <insert id="insertComplete" parameterType="com.zksd.website.entity.Doctorinfo" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into
+        doctorinfo (
+        id,doctorcode,doctorname,password,headphoto,qrsmallurl,qrbigurl,sex,birthday,hospitaid,department,duties,province,city,contry,address,telephone,phoneticode,fivecode,intro,isstick,ordernum,confirmstate,examineby,starttime,confirmtime,source,itaskprice,itasktime,itaskisopen,thaskprice,thasktime,thaskisopen,itagainprice,itagaintime,itagainisopen,thagainprice,thagaintime,thagainisopen,createby,createtime,updateby,updatetime,remark,docstate,setprice,websiteranking,websitestate,openid,headimgurl,nickname,aftermedicalfee
+        )
+        values (
+        #{id},#{doctorcode},#{doctorname},#{password},#{headphoto},#{qrsmallurl},#{qrbigurl},#{sex},#{birthday},#{hospitaid},#{department},#{duties},#{province},#{city},#{contry},#{address},#{telephone},#{phoneticode},#{fivecode},#{intro},#{isstick},#{ordernum},#{confirmstate},#{examineby},#{starttime},#{confirmtime},#{source},#{itaskprice},#{itasktime},#{itaskisopen},#{thaskprice},#{thasktime},#{thaskisopen},#{itagainprice},#{itagaintime},#{itagainisopen},#{thagainprice},#{thagaintime},#{thagainisopen},#{createby},#{createtime},#{updateby},#{updatetime},#{remark},#{docstate},#{setprice},#{websiteranking},#{websitestate},#{openid},#{headimgurl},#{nickname},#{aftermedicalfee}
+        )
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.zksd.website.entity.Doctorinfo" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into doctorinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="doctorcode != null">
+                doctorcode,
+            </if>
+            <if test="doctorname != null">
+                doctorname,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="headphoto != null">
+                headphoto,
+            </if>
+            <if test="qrsmallurl != null">
+                qrsmallurl,
+            </if>
+            <if test="qrbigurl != null">
+                qrbigurl,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="hospitaid != null">
+                hospitaid,
+            </if>
+            <if test="department != null">
+                department,
+            </if>
+            <if test="duties != null">
+                duties,
+            </if>
+            <if test="province != null">
+                province,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="contry != null">
+                contry,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="telephone != null">
+                telephone,
+            </if>
+            <if test="phoneticode != null">
+                phoneticode,
+            </if>
+            <if test="fivecode != null">
+                fivecode,
+            </if>
+            <if test="intro != null">
+                intro,
+            </if>
+            <if test="isstick != null">
+                isstick,
+            </if>
+            <if test="ordernum != null">
+                ordernum,
+            </if>
+            <if test="confirmstate != null">
+                confirmstate,
+            </if>
+            <if test="examineby != null">
+                examineby,
+            </if>
+            <if test="starttime != null">
+                starttime,
+            </if>
+            <if test="confirmtime != null">
+                confirmtime,
+            </if>
+            <if test="source != null">
+                source,
+            </if>
+            <if test="itaskprice != null">
+                itaskprice,
+            </if>
+            <if test="itasktime != null">
+                itasktime,
+            </if>
+            <if test="itaskisopen != null">
+                itaskisopen,
+            </if>
+            <if test="thaskprice != null">
+                thaskprice,
+            </if>
+            <if test="thasktime != null">
+                thasktime,
+            </if>
+            <if test="thaskisopen != null">
+                thaskisopen,
+            </if>
+            <if test="itagainprice != null">
+                itagainprice,
+            </if>
+            <if test="itagaintime != null">
+                itagaintime,
+            </if>
+            <if test="itagainisopen != null">
+                itagainisopen,
+            </if>
+            <if test="thagainprice != null">
+                thagainprice,
+            </if>
+            <if test="thagaintime != null">
+                thagaintime,
+            </if>
+            <if test="thagainisopen != null">
+                thagainisopen,
+            </if>
+            <if test="createby != null">
+                createby,
+            </if>
+            <if test="createtime != null">
+                createtime,
+            </if>
+            <if test="updateby != null">
+                updateby,
+            </if>
+            <if test="updatetime != null">
+                updatetime,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="docstate != null">
+                docstate,
+            </if>
+            <if test="setprice != null">
+                setprice,
+            </if>
+            <if test="websiteranking != null">
+                websiteranking,
+            </if>
+            <if test="websitestate != null">
+                websitestate,
+            </if>
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="headimgurl != null">
+                headimgurl,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+            <if test="aftermedicalfee != null">
+                aftermedicalfee,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="doctorcode != null">
+                #{doctorcode},
+            </if>
+            <if test="doctorname != null">
+                #{doctorname},
+            </if>
+            <if test="password != null">
+                #{password},
+            </if>
+            <if test="headphoto != null">
+                #{headphoto},
+            </if>
+            <if test="qrsmallurl != null">
+                #{qrsmallurl},
+            </if>
+            <if test="qrbigurl != null">
+                #{qrbigurl},
+            </if>
+            <if test="sex != null">
+                #{sex},
+            </if>
+            <if test="birthday != null">
+                #{birthday},
+            </if>
+            <if test="hospitaid != null">
+                #{hospitaid},
+            </if>
+            <if test="department != null">
+                #{department},
+            </if>
+            <if test="duties != null">
+                #{duties},
+            </if>
+            <if test="province != null">
+                #{province},
+            </if>
+            <if test="city != null">
+                #{city},
+            </if>
+            <if test="contry != null">
+                #{contry},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+            <if test="telephone != null">
+                #{telephone},
+            </if>
+            <if test="phoneticode != null">
+                #{phoneticode},
+            </if>
+            <if test="fivecode != null">
+                #{fivecode},
+            </if>
+            <if test="intro != null">
+                #{intro},
+            </if>
+            <if test="isstick != null">
+                #{isstick},
+            </if>
+            <if test="ordernum != null">
+                #{ordernum},
+            </if>
+            <if test="confirmstate != null">
+                #{confirmstate},
+            </if>
+            <if test="examineby != null">
+                #{examineby},
+            </if>
+            <if test="starttime != null">
+                #{starttime},
+            </if>
+            <if test="confirmtime != null">
+                #{confirmtime},
+            </if>
+            <if test="source != null">
+                #{source},
+            </if>
+            <if test="itaskprice != null">
+                #{itaskprice},
+            </if>
+            <if test="itasktime != null">
+                #{itasktime},
+            </if>
+            <if test="itaskisopen != null">
+                #{itaskisopen},
+            </if>
+            <if test="thaskprice != null">
+                #{thaskprice},
+            </if>
+            <if test="thasktime != null">
+                #{thasktime},
+            </if>
+            <if test="thaskisopen != null">
+                #{thaskisopen},
+            </if>
+            <if test="itagainprice != null">
+                #{itagainprice},
+            </if>
+            <if test="itagaintime != null">
+                #{itagaintime},
+            </if>
+            <if test="itagainisopen != null">
+                #{itagainisopen},
+            </if>
+            <if test="thagainprice != null">
+                #{thagainprice},
+            </if>
+            <if test="thagaintime != null">
+                #{thagaintime},
+            </if>
+            <if test="thagainisopen != null">
+                #{thagainisopen},
+            </if>
+            <if test="createby != null">
+                #{createby},
+            </if>
+            <if test="createtime != null">
+                #{createtime},
+            </if>
+            <if test="updateby != null">
+                #{updateby},
+            </if>
+            <if test="updatetime != null">
+                #{updatetime},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="docstate != null">
+                #{docstate},
+            </if>
+            <if test="setprice != null">
+                #{setprice},
+            </if>
+            <if test="websiteranking != null">
+                #{websiteranking},
+            </if>
+            <if test="websitestate != null">
+                #{websitestate},
+            </if>
+            <if test="openid != null">
+                #{openid},
+            </if>
+            <if test="headimgurl != null">
+                #{headimgurl},
+            </if>
+            <if test="nickname != null">
+                #{nickname},
+            </if>
+            <if test="aftermedicalfee != null">
+                #{aftermedicalfee},
+            </if>
+        </trim>
+    </insert>
+
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.zksd.website.entity.Doctorinfo">
+        update doctorinfo
+        <set>
+            <if test="doctorcode != null">
+                doctorcode=#{doctorcode},
+            </if>
+            <if test="doctorname != null">
+                doctorname=#{doctorname},
+            </if>
+            <if test="password != null">
+                password=#{password},
+            </if>
+            <if test="headphoto != null">
+                headphoto=#{headphoto},
+            </if>
+            <if test="qrsmallurl != null">
+                qrsmallurl=#{qrsmallurl},
+            </if>
+            <if test="qrbigurl != null">
+                qrbigurl=#{qrbigurl},
+            </if>
+            <if test="sex != null">
+                sex=#{sex},
+            </if>
+            <if test="birthday != null">
+                birthday=#{birthday},
+            </if>
+            <if test="hospitaid != null">
+                hospitaid=#{hospitaid},
+            </if>
+            <if test="department != null">
+                department=#{department},
+            </if>
+            <if test="duties != null">
+                duties=#{duties},
+            </if>
+            <if test="province != null">
+                province=#{province},
+            </if>
+            <if test="city != null">
+                city=#{city},
+            </if>
+            <if test="contry != null">
+                contry=#{contry},
+            </if>
+            <if test="address != null">
+                address=#{address},
+            </if>
+            <if test="telephone != null">
+                telephone=#{telephone},
+            </if>
+            <if test="phoneticode != null">
+                phoneticode=#{phoneticode},
+            </if>
+            <if test="fivecode != null">
+                fivecode=#{fivecode},
+            </if>
+            <if test="intro != null">
+                intro=#{intro},
+            </if>
+            <if test="isstick != null">
+                isstick=#{isstick},
+            </if>
+            <if test="ordernum != null">
+                ordernum=#{ordernum},
+            </if>
+            <if test="confirmstate != null">
+                confirmstate=#{confirmstate},
+            </if>
+            <if test="examineby != null">
+                examineby=#{examineby},
+            </if>
+            <if test="starttime != null">
+                starttime=#{starttime},
+            </if>
+            <if test="confirmtime != null">
+                confirmtime=#{confirmtime},
+            </if>
+            <if test="source != null">
+                source=#{source},
+            </if>
+            <if test="itaskprice != null">
+                itaskprice=#{itaskprice},
+            </if>
+            <if test="itasktime != null">
+                itasktime=#{itasktime},
+            </if>
+            <if test="itaskisopen != null">
+                itaskisopen=#{itaskisopen},
+            </if>
+            <if test="thaskprice != null">
+                thaskprice=#{thaskprice},
+            </if>
+            <if test="thasktime != null">
+                thasktime=#{thasktime},
+            </if>
+            <if test="thaskisopen != null">
+                thaskisopen=#{thaskisopen},
+            </if>
+            <if test="itagainprice != null">
+                itagainprice=#{itagainprice},
+            </if>
+            <if test="itagaintime != null">
+                itagaintime=#{itagaintime},
+            </if>
+            <if test="itagainisopen != null">
+                itagainisopen=#{itagainisopen},
+            </if>
+            <if test="thagainprice != null">
+                thagainprice=#{thagainprice},
+            </if>
+            <if test="thagaintime != null">
+                thagaintime=#{thagaintime},
+            </if>
+            <if test="thagainisopen != null">
+                thagainisopen=#{thagainisopen},
+            </if>
+            <if test="createby != null">
+                createby=#{createby},
+            </if>
+            <if test="createtime != null">
+                createtime=#{createtime},
+            </if>
+            <if test="updateby != null">
+                updateby=#{updateby},
+            </if>
+            <if test="updatetime != null">
+                updatetime=#{updatetime},
+            </if>
+            <if test="remark != null">
+                remark=#{remark},
+            </if>
+            <if test="docstate != null">
+                docstate=#{docstate},
+            </if>
+            <if test="setprice != null">
+                setprice=#{setprice},
+            </if>
+            <if test="websiteranking != null">
+                websiteranking=#{websiteranking},
+            </if>
+            <if test="websitestate != null">
+                websitestate=#{websitestate},
+            </if>
+            <if test="openid != null">
+                openid=#{openid},
+            </if>
+            <if test="headimgurl != null">
+                headimgurl=#{headimgurl},
+            </if>
+            <if test="nickname != null">
+                nickname=#{nickname},
+            </if>
+            <if test="aftermedicalfee != null">
+                aftermedicalfee=#{aftermedicalfee},
+            </if>
+        </set>
+        where
+        id = #{id}
+    </update>
+
+    <update id="updateByPrimaryKeyComplete" parameterType="com.zksd.website.entity.Doctorinfo">
+        update doctorinfo
+        <set>
+            doctorcode=#{doctorcode},
+            doctorname=#{doctorname},
+            password=#{password},
+            headphoto=#{headphoto},
+            qrsmallurl=#{qrsmallurl},
+            qrbigurl=#{qrbigurl},
+            sex=#{sex},
+            birthday=#{birthday},
+            hospitaid=#{hospitaid},
+            department=#{department},
+            duties=#{duties},
+            province=#{province},
+            city=#{city},
+            contry=#{contry},
+            address=#{address},
+            telephone=#{telephone},
+            phoneticode=#{phoneticode},
+            fivecode=#{fivecode},
+            intro=#{intro},
+            isstick=#{isstick},
+            ordernum=#{ordernum},
+            confirmstate=#{confirmstate},
+            examineby=#{examineby},
+            starttime=#{starttime},
+            confirmtime=#{confirmtime},
+            source=#{source},
+            itaskprice=#{itaskprice},
+            itasktime=#{itasktime},
+            itaskisopen=#{itaskisopen},
+            thaskprice=#{thaskprice},
+            thasktime=#{thasktime},
+            thaskisopen=#{thaskisopen},
+            itagainprice=#{itagainprice},
+            itagaintime=#{itagaintime},
+            itagainisopen=#{itagainisopen},
+            thagainprice=#{thagainprice},
+            thagaintime=#{thagaintime},
+            thagainisopen=#{thagainisopen},
+            createby=#{createby},
+            createtime=#{createtime},
+            updateby=#{updateby},
+            updatetime=#{updatetime},
+            remark=#{remark},
+            docstate=#{docstate},
+            setprice=#{setprice},
+            websiteranking=#{websiteranking},
+            websitestate=#{websitestate},
+            openid=#{openid},
+            headimgurl=#{headimgurl},
+            nickname=#{nickname},
+            aftermedicalfee=#{aftermedicalfee}
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <select id="getDuties" parameterType="java.util.Map" resultType="java.lang.String">
+        select itemname from datadictionarydetail where sortcode = #{sortcode} and itemcode = #{itemcode}
+    </select>
+
+    <select id="getDoctorSkillName" parameterType="map" resultType="map">
+        select CONVERT(GROUP_CONCAT(skillname ORDER BY createtime) USING utf8) skillname from doctorskill group by doctorid
+        having doctorid=#{doctorid}
+    </select>
+
+    <select id="selectDoctorDetailsById" resultMap="DoctorDetailsVoResultMap" parameterType="java.lang.String">
+        select di.id,di.websitestate,di.doctorcode,di.doctorname,di.headphoto,di.qrsmallurl,di.qrbigurl,di.sex,di.birthday,di.hospitaid,di.department,di.duties,di.province,di.city,di.contry,di.address,di.telephone,di.phoneticode,di.fivecode,di.intro,di.isstick,di.ordernum,di.confirmstate,su.username as examineby,di.starttime,di.confirmtime,di.source
+        ,di.orcodestatus,di.orderurl,price1.itemname as itaskprice,di.itasktime,di.itaskisopen,price2.itemname as thaskprice,di.thasktime,di.thaskisopen,price3.itemname as itagainprice,di.itagaintime,di.itagainisopen,price4.itemname as thagainprice,di.thagaintime,di.thagainisopen,di.createby,di.createtime,di.updateby,di.updatetime,di.remark
+        ,hi.hospitacode,hi.hospitaname,hi.hospitashortname,dd.itemname as departmentname,dd1.itemname as dutiesname,di.thagainprice as thagainpriceid,di.setprice
+        from doctorinfo di
+        left join hospitainfo hi on hi.id=di.hospitaid
+        left join datadictionarydetail dd on dd.sortcode='keshi' and dd.itemcode=di.department
+        left join datadictionarydetail dd1 on dd1.sortcode='zhicheng' and dd1.itemcode=di.duties
+        left join datadictionarydetail price1 on price1.sortcode='wzje' and price1.itemcode=di.itaskprice
+        left join datadictionarydetail price2 on price2.sortcode='wzje' and price2.itemcode=di.thaskprice
+        left join datadictionarydetail price3 on price3.sortcode='wzje' and price3.itemcode=di.itagainprice
+        left join datadictionarydetail price4 on price4.sortcode='wzje' and price4.itemcode=di.thagainprice
+        left join sysuserinfo su on su.id=di.examineby
+        where di.id = #{id}
+    </select>
+
+
+    <select id="doctorqualificationMapper" resultType="java.util.Map"
+            parameterType="java.util.Map">
+        select
+        <include refid="doctorqualification" />
+        from doctorqualification maintable
+        where 1=1
+        <if test="id != null and id != '' ">
+            and  maintable.id = #{id}
+        </if>
+        <if test="nid != null and nid != '' ">
+            and  maintable.id != #{nid}
+        </if>
+        <if test="doctorid != null and doctorid != '' ">
+            and  maintable.doctorid = #{doctorid}
+        </if>
+        <if test="qftype != null and qftype != '' ">
+            and  maintable.qftype = #{qftype}
+        </if>
+        <if test="papername != null and papername != '' ">
+            and  maintable.papername = #{papername}
+        </if>
+        <if test="paperfile != null and paperfile != '' ">
+            and  maintable.paperfile = #{paperfile}
+        </if>
+        <if test="createby != null and createby != '' ">
+            and  maintable.createby = #{createby}
+        </if>
+        <if test="createtime != null and createtime != '' ">
+            and  maintable.createtime = #{createtime}
+        </if>
+    </select>
+
+
+
+    <sql id="fenye">
+        select
+        <include refid="Base_Column_List"/>
+        from doctorinfo maintable
+        where 1=1
+        <if test="id != null and id != '' ">
+            and maintable.id = #{id}
+        </if>
+        <if test="nid != null and nid != '' ">
+            and maintable.id != #{nid}
+        </if>
+        <if test="doctorcode != null and doctorcode != '' ">
+            and maintable.doctorcode = #{doctorcode}
+        </if>
+        <if test="doctorname != null and doctorname != '' ">
+            and maintable.doctorname = #{doctorname}
+        </if>
+        <if test="password != null and password != '' ">
+            and maintable.password = #{password}
+        </if>
+        <if test="headphoto != null and headphoto != '' ">
+            and maintable.headphoto = #{headphoto}
+        </if>
+        <if test="qrsmallurl != null and qrsmallurl != '' ">
+            and maintable.qrsmallurl = #{qrsmallurl}
+        </if>
+        <if test="qrbigurl != null and qrbigurl != '' ">
+            and maintable.qrbigurl = #{qrbigurl}
+        </if>
+        <if test="sex != null and sex != '' ">
+            and maintable.sex = #{sex}
+        </if>
+        <if test="birthday != null and birthday != '' ">
+            and maintable.birthday = #{birthday}
+        </if>
+        <if test="hospitaid != null and hospitaid != '' ">
+            and maintable.hospitaid = #{hospitaid}
+        </if>
+        <if test="department != null and department != '' ">
+            and maintable.department = #{department}
+        </if>
+        <if test="duties != null and duties != '' ">
+            and maintable.duties = #{duties}
+        </if>
+        <if test="province != null and province != '' ">
+            and maintable.province = #{province}
+        </if>
+        <if test="city != null and city != '' ">
+            and maintable.city = #{city}
+        </if>
+        <if test="contry != null and contry != '' ">
+            and maintable.contry = #{contry}
+        </if>
+        <if test="address != null and address != '' ">
+            and maintable.address = #{address}
+        </if>
+        <if test="telephone != null and telephone != '' ">
+            and maintable.telephone = #{telephone}
+        </if>
+        <if test="phoneticode != null and phoneticode != '' ">
+            and maintable.phoneticode = #{phoneticode}
+        </if>
+        <if test="fivecode != null and fivecode != '' ">
+            and maintable.fivecode = #{fivecode}
+        </if>
+        <if test="intro != null and intro != '' ">
+            and maintable.intro = #{intro}
+        </if>
+        <if test="isstick != null and isstick != '' ">
+            and maintable.isstick = #{isstick}
+        </if>
+        <if test="ordernum != null and ordernum != '' ">
+            and maintable.ordernum = #{ordernum}
+        </if>
+        <if test="confirmstate != null and confirmstate != '' ">
+            and maintable.confirmstate = #{confirmstate}
+        </if>
+        <if test="examineby != null and examineby != '' ">
+            and maintable.examineby = #{examineby}
+        </if>
+        <if test="starttime != null and starttime != '' ">
+            and maintable.starttime = #{starttime}
+        </if>
+        <if test="confirmtime != null and confirmtime != '' ">
+            and maintable.confirmtime = #{confirmtime}
+        </if>
+        <if test="source != null and source != '' ">
+            and maintable.source = #{source}
+        </if>
+        <if test="itaskprice != null and itaskprice != '' ">
+            and maintable.itaskprice = #{itaskprice}
+        </if>
+        <if test="itasktime != null and itasktime != '' ">
+            and maintable.itasktime = #{itasktime}
+        </if>
+        <if test="itaskisopen != null and itaskisopen != '' ">
+            and maintable.itaskisopen = #{itaskisopen}
+        </if>
+        <if test="thaskprice != null and thaskprice != '' ">
+            and maintable.thaskprice = #{thaskprice}
+        </if>
+        <if test="thasktime != null and thasktime != '' ">
+            and maintable.thasktime = #{thasktime}
+        </if>
+        <if test="thaskisopen != null and thaskisopen != '' ">
+            and maintable.thaskisopen = #{thaskisopen}
+        </if>
+        <if test="itagainprice != null and itagainprice != '' ">
+            and maintable.itagainprice = #{itagainprice}
+        </if>
+        <if test="itagaintime != null and itagaintime != '' ">
+            and maintable.itagaintime = #{itagaintime}
+        </if>
+        <if test="itagainisopen != null and itagainisopen != '' ">
+            and maintable.itagainisopen = #{itagainisopen}
+        </if>
+        <if test="thagainprice != null and thagainprice != '' ">
+            and maintable.thagainprice = #{thagainprice}
+        </if>
+        <if test="thagaintime != null and thagaintime != '' ">
+            and maintable.thagaintime = #{thagaintime}
+        </if>
+        <if test="thagainisopen != null and thagainisopen != '' ">
+            and maintable.thagainisopen = #{thagainisopen}
+        </if>
+        <if test="createby != null and createby != '' ">
+            and maintable.createby = #{createby}
+        </if>
+        <if test="createtime != null and createtime != '' ">
+            and maintable.createtime = #{createtime}
+        </if>
+        <if test="updateby != null and updateby != '' ">
+            and maintable.updateby = #{updateby}
+        </if>
+        <if test="updatetime != null and updatetime != '' ">
+            and maintable.updatetime = #{updatetime}
+        </if>
+        <if test="remark != null and remark != '' ">
+            and maintable.remark = #{remark}
+        </if>
+        <if test="docstate != null and docstate != '' ">
+            and maintable.docstate = #{docstate}
+        </if>
+        <if test="setprice != null and setprice != '' ">
+            and maintable.setprice = #{setprice}
+        </if>
+        <if test="websiteranking != null and websiteranking != '' ">
+            and maintable.websiteranking = #{websiteranking}
+        </if>
+        <if test="websitestate != null and websitestate != '' ">
+            and maintable.websitestate = #{websitestate}
+        </if>
+        <if test="openid != null and openid != '' ">
+            and maintable.openid = #{openid}
+        </if>
+        <if test="headimgurl != null and headimgurl != '' ">
+            and maintable.headimgurl = #{headimgurl}
+        </if>
+        <if test="nickname != null and nickname != '' ">
+            and maintable.nickname = #{nickname}
+        </if>
+        <if test="aftermedicalfee != null and aftermedicalfee != '' ">
+            and maintable.aftermedicalfee = #{aftermedicalfee}
+        </if>
+        <if test='orderby!=null and orderby!=""'>
+            order by ${orderby}
+        </if>
+        <if test='orderby==null or orderby==""'>
+            order by maintable.ordernum desc,maintable.starttime desc
+        </if>
+        limit #{currIndex} , #{pageSize}
+
+    </sql>
+
+
+    <select id="chaxunwenzhang" resultType="java.util.Map" parameterType="java.util.Map">
+        select *
+        from article maintable
+        where 1=1 and maintable.state = '1' and maintable.isshow = '1'
+        <if test="id != null and id != '' ">
+            and maintable.id = #{id}
+        </if>
+        <if test="title != null and title != '' ">
+            <bind name="pattern" value="'%' + title + '%'" />
+            and maintable.title like #{pattern}
+        </if>
+        <if test="subtitle != null and subtitle != '' ">
+            <bind name="pattern" value="'%' + subtitle + '%'" />
+            and maintable.subtitle like #{pattern}
+        </if>
+        <if test="classify != null and classify != '' ">
+            <bind name="pattern" value="'%' + classify + '%'" />
+            and maintable.classify like #{pattern}
+        </if>
+        <if test="isshow != null and isshow != '' ">
+            and maintable.isshow = #{isshow}
+        </if>
+        <if test="updatetime != null and updatetime != '' ">
+            and maintable.updatetime = #{updatetime}
+        </if>
+        <if test="type != null and type != '' ">
+            and maintable.type = #{type}
+        </if>
+        <if test="weight != null and weight != '' ">
+            and maintable.weight = #{weight}
+        </if>
+        <if test="creatime != null and creatime != '' ">
+            and maintable.creatime = #{creatime}
+        </if>
+        <if test="context != null and context != '' ">
+            and maintable.context = #{context}
+        </if>
+        <if test="coverurl != null and coverurl != '' ">
+            and maintable.coverurl = #{coverurl}
+        </if>
+        <if test="label != null and label != '' ">
+            and maintable.label = #{label}
+        </if>
+        <if test="desc != null and desc != '' ">
+            order by creatime desc
+        </if>
+        <if test="wdesc != null and wdesc != '' ">
+            order by weight desc,updatetime desc
+        </if>
+
+
+    </select>
+</mapper>

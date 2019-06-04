@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>支出明细</title>
+
+
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>支出明细</h3>
+                </div>
+                <div class="ibox-title">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="name">订单号</label>
+                            <input type="text" autocomplete="off" class="form-control" id="ordercode" placeholder="输入订单号">
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <label for="phone">日期</label>
+                            <input type="date" class="form-control" placeholder="输入日期" id="createtime">
+                        </div>
+                        <div class="form-group">
+                            <label>账户类型</label>
+                            <select class="form-control" id="accountype">
+                                <option value="">请选择</option>
+                                <option value="1">医生</option>
+                                <option value="2">患者</option>
+                                <option value="3">平台</option>
+                            </select>
+                        </div>
+                        <input type="button" class="btn btn-default submit" value="确定" id="searchBtn"/>
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div id="container" class="out_box">
+                                <table class="display table " id="tbSpendingDetail" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th>订单号</th>
+                                        <th>账户类型</th>
+                                        <th>操作前</th>
+                                        <th>本次</th>
+                                        <th>操作后</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/pay/spendingDetail.js" ></script>
+<script type="text/javascript">
+    $(document).ready(ObjSpendingDetailIndex.init('{ID}'));
+</script>

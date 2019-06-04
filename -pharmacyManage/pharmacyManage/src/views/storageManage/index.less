@@ -1,0 +1,107 @@
+.storageManage {
+    background: #ffffff;
+    height: 100%;
+    overflow-y: auto;
+    .page {
+        padding: 20px;
+        .content {
+            margin-top: 20px;
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                >li {
+                    width: 29%;
+                    @media screen and(max-width: 1680px){
+                        width: 28%;
+                    }
+                    @media screen and(max-width: 1400px){
+                        width: 27%;
+                    }
+                    border: 1px solid #c1c1c1;
+                    border-radius: 6px;
+                    padding: 20px;
+                    list-style: none;
+                    margin: 20px 0;
+                    >div {
+                        display: flex;
+                        p:nth-child(1) {
+                            width: 50%;
+                        }
+                        p:nth-child(2) {
+                            width: 44%;
+                            margin-left: 6%;
+                        }
+                    }
+                    div:nth-child(2) {
+                        font-size: 18px;
+                        margin-bottom: 40px;
+                        p:nth-child(2) {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                    div:nth-child(3) {
+                        p {
+                            span:nth-child(2) {
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    div:nth-child(4) {
+                        margin-top: 20px;
+                        p:nth-child(1) {
+                            span:nth-child(2) {
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .titles {
+                        font-size: 50px;
+                        margin-bottom: 20px;
+                    }
+                }
+                li:nth-child(3n-1) {
+                    margin: 20px 30px;
+                }
+            }
+        }
+        .dialog-warn {
+            .form-inline {
+                .el-form-item {
+                    width: 28%;
+                    @media screen and (min-width: 1600px) {
+                        .el-form-item__content {
+                            width: 60%;
+                        }
+                    }
+                    @media screen and (min-width: 1440px) {
+                        .el-form-item__content {
+                            width: 60%;
+                        }
+                    }
+                    .el-form-item__content {
+                        .el-date-editor.el-input {
+                            width: 100%;
+                        }
+                        .el-input {
+                            .el-input__inner {
+                                padding-right: 30px;
+                            }
+                            .el-form-item.is-success .el-input__inner {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .clearfix:after {
+            clear: both;
+            content: "";
+            display: block;
+            overflow: hidden;
+        }
+    }
+}

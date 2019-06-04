@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFangSC'
+        }
+        body{
+            background: #F1F0F5;
+        }
+        .help{
+            background: #ffffff;
+            margin-top: 6px;
+            padding: 16px 15px;
+        }
+        .help .name{
+            font-size: 14px;
+            color: #141414;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="help">
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script>
+    $(function (){
+        var id = GetQueryString('id').split(',');
+        $.getJSON("/static/js/common/help.json", function (data){
+            $.each(data, function (infoIndex, info){
+                if(infoIndex == id[0]) {
+                    $.each(info['list'],function(index,item){
+                        if(index == id[1]){
+                            var html =  '<p class="item clearfix" style="font-size:14px;">'+item['name']+'</p>' ;
+                            $('.help').append(html);
+                            $.each(item['list'],function(index,items){
+                                var htmls = '';
+                                if(items.type == 'text'){
+                                    htmls = '<p style="margin-bottom:16px;font-weight: lighter;font-size:12px;">'+items.val+'</p>'
+                                }
+                                if(items.type == 'pic'){
+                                    htmls = '<p style="text-align:center;font-size:12px;"><img style="display:block;margin: 20px auto;" width="200" src="/static/image/help/'+items.val+'.png" /><span style="display:block;margin-bottom:30px;">图'+items.val+'</span></p>'
+                                }
+                                $('.help').append(htmls);
+                            })
+                        }
+                    })
+                } 
+            }) 
+        }) 
+    })
+</script>

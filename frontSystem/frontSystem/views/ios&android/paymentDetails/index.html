@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=yes"/>
+  <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+  <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="/static/css/paymentDetails/paymentDetails.css" rel="stylesheet">
+
+  <title>收支详情</title>
+</head>
+
+<body>
+  <!-- 金额 -->
+  <div class="money">
+    <span id="totalPrice"></span>
+  </div>
+  <div class="contents">
+    <div class="orderNum">
+      <span class="fl">订单号</span>
+      <span class="fr" id="ordercode"></span>
+    </div>
+    <div class="paymentType">
+      <span class="fl">收支类型</span>
+      <span class="fr" id="serviceId"></span>
+    </div>
+    <div class="processingTime">
+      <span class="fl">处理时间</span>
+      <span class="fr" id="payTime"></span>
+    </div>
+  </div>
+  <a class="clearfix footer" id="serverTel">
+    <span class="fl">呼叫客服</span>
+    <span class="fr" id="serverTels"></span>
+  </a>
+</body>
+
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/ios&android/paymentDetails/index.js"></script>
+<script>
+  $(document).ready(function(){
+      query();
+  })
+</script>

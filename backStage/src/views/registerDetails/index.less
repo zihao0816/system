@@ -1,0 +1,199 @@
+.consultDetails{
+    padding: 20px;
+    .page{
+        .nav{
+            position: relative;
+            >span{
+                position: absolute;
+                right: 20px;
+                height: 16px;
+                line-height: 16px;
+                top: 12px;
+                display: block;
+                padding-left: 20px;
+                background-image: url(../../assets/img/fhui@3x.png);
+                background-size: 14px 10px;
+                background-repeat: no-repeat;
+                background-position: 0 3px;
+                cursor:pointer;
+            }
+        }
+        .content{
+            padding: 20px;
+            background: #fff;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+            header{
+                display: flex;
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+                img{
+                    width: 60px;
+                    height: 60px;
+                    float: left;
+                    margin-right: 10px;
+                }
+                >div{
+                    width: 33%;
+                    height: 100px;
+                    padding: 20px;
+                    border-right: #F1F0F5 1px solid;
+                    overflow: hidden;
+                    font-size: 12px;
+                    div:nth-child(2){
+                        float: left;
+                        line-height: 30px;
+                        h3{
+                            font-size: 18px;
+                        }
+                        span{
+                            display: block;
+                            color: #818181;
+                        }
+                    }
+                    div:last-child{
+                        float: right;
+                        line-height: 30px;
+                        text-align: right;
+                        span{
+                            display: block;
+                        }
+                        span:nth-child(1){
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .orderList{
+                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                margin-top: 20px;
+                .orderinfo{
+                    height: 50px;
+                    background: #F8F8F8;
+                    line-height: 50px;
+                    color: #818181;
+                    padding: 0 20px;
+                    span{
+                        padding-right: 50px;
+                    }
+                    span:last-child{
+                        float: right;
+                        padding-right: 0;
+                    }
+                }
+                .orderprescription{
+                    display: flex;
+                    padding: 20px;
+                    border-bottom: #F1F0F5 1px dashed;
+                    >div{
+                        width: 33%;
+                        border-right: #F1F0F5 1px solid;
+                        p{
+                            height: 30px;
+                            line-height: 30px;
+                            span{
+                                float: right;
+                            }
+                        }
+                    }
+                    >div:nth-child(1){
+                        span{
+                            padding-right: 60px;
+                        }
+                    }
+                    >div:nth-child(2){
+                        p{
+                            padding: 0 60px;
+                        }
+                    }
+                    >div:nth-child(3){
+                        p{
+                            padding-left: 60px;
+                        }
+                    }
+                    >div:last-child{
+                        border-right: none;
+                    }
+                }
+                .medicinalMaterials{
+                    padding: 0 20px;
+                    h3{
+                        font-size: 24px;
+                    }
+                    >div:nth-child(2){
+                        overflow: hidden;
+                        p{
+                            width: 26%;
+                            line-height: 30px;
+                            padding: 0 40px;
+                            float: left;
+                            span{
+                                float: right;
+                            }
+                        }
+                       
+                    }
+                    >div:nth-child(3){
+                        padding: 20px 0;
+                        p{
+                            height: 30px;
+                            line-height: 30px;
+                            font-weight: bold;
+                            span{
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                    >div:nth-child(4){
+                        padding: 10px 0;
+                        border-top: #F1F0F5 1px dashed;
+                        height: 40px;
+                        line-height: 40px;
+                        display: flex;
+                        p{
+                            width: 33%;
+                        }
+                    }
+                    >div:nth-child(5){
+                        border-top: #F1F0F5 1px dashed;
+                        border-bottom: #F1F0F5 1px solid;
+                        padding: 10px 0;
+                        line-height: 40px;
+                        overflow: hidden;
+                        p{
+                            width: 33%;
+                            float: left;
+                        }
+                    }
+                }
+                .toggle{
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: right;
+                    span.cancel{
+                        height: 40px;
+                        padding: 0 40px;
+                        background: #07A591;
+                        line-height: 40px;
+                        font-size: 16px;
+                        color: #fff;
+                        display: inline-block;
+                        float: left;
+                        border-radius: 6px;
+                        margin: 10px;
+                    }
+                    span.toggle{
+                        cursor:pointer;
+                        line-height: 60px;
+                        color: #60A8FC;
+                        padding-right: 60px;
+                        background-image: url(../../assets/img/icon_zhankai@3x.png);
+                        background-size: 14px 14px;
+                        background-repeat: no-repeat;
+                        background-position: 40px 4px;
+                    }
+                }
+            }
+        }
+    }  
+}

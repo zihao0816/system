@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>待认证列表</title>
+
+
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/common-js/flatpickr.min.css">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <link href="/static/css/order/order.css" rel="stylesheet">
+    <link href="/static/css/admin/home.css" rel="stylesheet">
+</head>
+
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="b-title clearfix">
+                        <h3>待认证列表</h3>
+                    </div>
+                    <!-- 查询 -->
+                    <div class="ibox-title">
+                        <form class="form-inline clearfix">
+                            <div class="form-group">
+                                <label for="name">姓名</label>
+                                <input type="text" class="form-control" id="doctornames" autocomplete="off" placeholder="输入医生姓名" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">账号</label>
+                                <input type="text" class="form-control" id="doctorcode" autocomplete="off" placeholder="输入账号" />
+                            </div>
+                            <div class="form-group">
+                                <label>性别</label>
+                                <select class="form-control" id="sex">
+                                    <option value="">请选择</option>
+                                    <option value="1">男</option>
+                                    <option value="2">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>认证时间</label>
+                                <input type="date" class="form-control" style="width: 150px" placeholder="请选择" id="confirmtimestart" />&ensp;-&ensp;
+                                <input type="date" class="form-control" style="width: 150px" placeholder="请选择" id="confirmtimeend" />
+                            </div>
+                            <input type="button" class="btn btn-default submit fr" id="searchbtn" value="确定" />
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- 数据内容 -->
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                                <div id="container" class="out_box">
+                                    <table class="display table " id="tbUnauthorizedList" cellpadding="0" cellspacing="0"
+                                        border="0" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th>账号</th>
+                                                <th>医生姓名</th>
+                                                <th>性别</th>
+                                                <th>职称</th>
+                                                <th>所属医院</th>
+                                                <th>认证时间</th>
+                                                <th>认证状态</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<div class="hide" id="updateDoctorDetails">
+    <div class="container">
+        <form class="form-horizontal " style="height: 360px;overflow-y: auto;overflow-x: hidden">
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>头像</label>
+                <div class="col-sm-4">
+                    <div class="fl">
+                        <p class="headImg" style="margin-top: 10px;text-align: center;">
+                            <img width="100%" height="100%" src="/static/image/img1.png" id="headphotoimg" picname="" />
+                            <img class="delImg" style="cursor: pointer;border-radius: 50%;background-color: #ffffff;margin-left: 110px;margin-top: -250px;width: 16px;"
+                                src="/static/image/minus-circle.png" />
+                            <label class="glyphicon glyphicon-plus glyphicon-plus1" style="margin: 34px 0 0 0;"><input
+                                    class="uploadImg1s" id="headphoto" style="visibility: hidden" type="file" /></label>
+                            (不能大于200KB)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label"><span class="r-color">*</span>医生姓名</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="doctorname" autocomplete="off" placeholder="输入医生姓名">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>性别</label>
+                <div class="col-sm-2">
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" checked="checked" name="sex" id="man"
+                            value="1">男
+                    </label>
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" name="sex" id="women" value="2">女
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">年龄</label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="birthday" autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>职称</label>
+                <div class="col-sm-3">
+                    <select class="form-control" id="duties">
+                        <option>请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>科室</label>
+                <div class="col-sm-3">
+                    <select class="form-control" id="department">
+                        <option>请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>省份</label>
+                <div data-toggle="distpicker" class="col-sm-8" id="distpickerup">
+                    <select class="col-sm-2 form-controls" id="province"></select>
+                    <select class="col-sm-2 form-controls" id="city"></select>
+                    <select class="col-sm-2 form-controls" id="contry"></select>
+                    <select class="form-controls col-sm-3" id="hospitaid">
+                        <option>请选择</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>联系方式</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" autocomplete="off" readonly="readonly" placeholder="输入联系电话"
+                        id="telephone" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>擅长技能</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control skill" autocomplete="off" list="skillslist" placeholder="输入关键字"
+                        id="skillsearch" />
+                    <datalist id="skillslist">
+                    </datalist>
+                </div>
+                <div class="col-sm-12" style="padding: 0">
+                    <div class="col-md-2"></div>
+                    <ul class="col-sm-8" id="selectskill"></ul>
+                </div>
+            </div>
+            <div class="form-group" style="border-bottom: 1px dashed #dddddd;padding-bottom: 20px;">
+                <label class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="6" autocomplete="off" placeholder="输入个人简历" style="resize: none"
+                        id="intro"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>执业证</label>
+                <div class="col-sm-10 clearfix">
+                    <div class="fl addImg-zhiyezheng">
+                        <p class="uploadImg">
+                            <label class="glyphicon glyphicon-plus"><input class="uploadImgs" filecode="zhiyezheng"
+                                    style="visibility: hidden" type="file" /></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>资格证</label>
+                <div class="col-sm-10 clearfix">
+                    <div class="fl addImg-zigezheng">
+                        <p class="uploadImg">
+                            <label class="glyphicon glyphicon-plus"><input class="uploadImgs" filecode="zigezheng"
+                                    style="visibility: hidden" type="file" /></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">技术职称证（选填）</label>
+                <div class="col-sm-10 clearfix">
+                    <div class="fl addImg-jishuzheng">
+                        <p class="uploadImg">
+                            <label class="glyphicon glyphicon-plus"><input class="uploadImgs" filecode="jishuzheng"
+                                    style="visibility: hidden" type="file" /></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">排序</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control MustNum" autocomplete="off" id="ordernum" onkeyup="if(isNaN(value))execCommand('undo')"
+                        onafterpaste="if(isNaN(value))execCommand('undo')" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>认证状态</label>
+                <div class="col-sm-10">
+                    <select class="col-sm-2 form-controls " id="confirmstate">
+                        <option value="1">已认证</option>
+                        <option value="2" selected="selected">待认证</option>
+                        <option value="3">未认证</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">未通过原因</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="6" autocomplete="off" placeholder="输入内容" style="resize: none"
+                        id="remark"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.data.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.js"></script>
+<script type="text/javascript" src="/static/js/common/main.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/doctor/unauthorizedList.js"></script>
+<script type="text/javascript">
+    $(document).ready(ObjUnauthorizedListIndex.init('{ID}'));
+</script>

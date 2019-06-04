@@ -1,0 +1,71 @@
+*{
+    margin:  0 auto;
+    padding: 0;
+}
+body{
+    color: #141414;
+    background-color: #F1F0F5;
+    font-size: 14px;
+    font-weight: 400;
+}
+.cashWithdrawal{
+    width: 100%;
+    padding-bottom: 30px;
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+.cashWithdrawal p{
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #141414;
+}
+.state{
+    color: #D74326;
+}
+img:nth-child(1),img:nth-child(5),img:nth-child(8),img:nth-child(12){
+    width: 36px;
+    height: 41px;
+    margin: 22px auto 16px;
+}
+img:nth-child(4),img:nth-child(7),img:nth-child(11),img:nth-child(15){
+    width: 200px;
+    height: auto;
+}
+.explain{
+    width: 100%;
+    /* height: 100vh; */
+    padding-bottom: 30px;
+    background: #fff;
+}
+.explain p{
+    font-size: 14px;
+    color: #3E3C46;
+    line-height: 24px;
+    padding: 0 16px;
+    text-align: left;
+    padding-top: 30px;
+}
+.explain p:nth-child(1){
+    padding-top: 10px;
+}
+.explain span{
+    font-size: 12px;
+    color: #46444D;
+    line-height: 20px;
+    display: block;
+    padding: 0 16px;
+}
+.explain span.state{
+    color: #D74326;
+    padding-top: 30px;
+}
+.explain span.tel{
+    color: #D74326;
+    display: inline;
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>病历详情</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0}
+        p{margin: 0}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        body{font-family: "serif","sans-serif","cursive","fantasy","monospace";font-size: 15px;}
+        body,.page{width: 100%;background-color: #f1f0f5;}
+        .page .p-top{width: 100%;text-align: center;background: url("/static/common-image/disekuai@3x.png") no-repeat;background-size: 100% 100%;color:#ffffff;}
+        .p-top .headerImg{width: 62px;height: 62px;border-radius: 50%;margin-top: 40px;}
+        .p-top .name{margin-top: 10px;}
+        .name span{font-size: 18px;position: relative}
+        .name span img{position: absolute;top: 4px;left: 50px;}
+        .page .content{background-color: #ffffff;margin-top: 6px;text-align: center;padding: 16px 0;}
+        .content .padding-top{margin-bottom: 10px;font-size: 16px}
+        .spans{margin-left: 22px;}
+        .page .mainsuit{background-color: #ffffff;margin-top: 6px;padding: 16px 20px;}
+        .marginbottom{margin-bottom: 20px;}
+        .label-color{color: #818181;}
+        #smallwidth{width:100%;height: 130px;overflow: hidden;position: relative;-webkit-transition: height 0.6s;-moz-transition: height 0.6s;-o-transition: height 0.6s;transition: height 0.6s;}
+        #content{width:100%;}
+        #button {position: absolute;  bottom: 4px; right: 0}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="p-top">
+        <img class="headerImg" src="/static/image/img1.png">
+        <p class="name"><span>张三<img width="50px" src="/static/common-image/yirenzhen@3x.png" /></span></p>
+        <p style="font-size: 14px;padding: 10px 0 21px;"><span>主任医生</span>&ensp;<span>北京京顺中医堂</span></p>
+    </div>
+    <div class="content">
+        <p class="padding-top">【患者信息】</p>
+        <p class="c-message paddingall"><span>张三</span><span class="spans">男</span><span class="spans">33岁</span></p>
+    </div>
+    <div class="mainsuit">
+        <p class="clearfix marginbottom"><span class="fl label-color">身高</span><span class="fr">180cm</span></p>
+        <p class="clearfix marginbottom"><span class="fl label-color">体重</span><span class="fr">79kg</span></p>
+        <div class="marginbottom" id="smallwidth">
+            <p class="label-color" id="smalltitle">病症自诉</p>
+            <p id="content" style="margin-top: 8px;">心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不好，容易疲劳，心情不df</p>
+            <a href="javascript:;" id="button"><img width='12px' src='/static/common-image/zhankai@3x.png'/>展开</a>
+        </div>
+        <div class="marginbottom">
+            <p class="label-color">既往病史</p>
+            <p></p>
+        </div>
+        <div class="">
+            <p class="label-color">过敏史</p>
+            <p></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function init(){
+        var eleBtn = document.getElementById("button"),
+            eleMore = document.getElementById("smallwidth"),
+            ptextheight = document.getElementById("content").offsetHeight,
+            smalltitle = document.getElementById("smalltitle").offsetHeight,
+            content = document.getElementById("content");
+        var display = false;
+        var contents = content.innerHTML;
+        var newhight = ptextheight+smalltitle+40;
+        content.innerHTML = contents.substring(0,46);
+        eleBtn.onclick = function() {
+            display = !display;
+            eleMore.style.height = display? newhight+"px": "130px";
+            eleBtn.innerHTML = display? "<img width='12px' style='transform: rotate(180deg)' src='/static/common-image/zhankai@3x.png'/>收起":"<img width='12px' src='/static/common-image/zhankai@3x.png'/>展开";
+            content.innerHTML = display? contents:contents.substring(0,46);
+            return false;
+        };
+    }
+    init();
+</script>

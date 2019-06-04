@@ -1,0 +1,74 @@
+.addDrug{
+    width: calc(100% - 160px);
+    height: calc(100vh - 70px);
+    margin-left: 20px;
+    .main{
+        padding: 20px;
+        height: calc(100vh - 62px - 70px);
+        background: #fff;
+        .message{
+            margin-bottom: 20px;
+            span:nth-child(1){
+                float: left;
+                color: #141414;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            span:nth-child(2){
+                float: right;
+                text-decoration: underline;
+                color: #07A591;
+                font-size: 14px;
+                margin-top: 6px;
+                cursor: pointer;
+            }
+        }
+        .form-inline{
+            // margin-left: 52px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .el-form-item{
+                width: 32%;
+                margin-right: 0px;
+                margin-bottom: 18px;
+                .el-form-item__label{
+                    font-size: 16px;
+                }
+                .el-form-item__content{
+                    .el-input{
+                        .el-input__inner{
+                            padding-right: 30px;
+                        }
+                    }
+                }
+                p{
+                    font-size: 14px;
+                    color: #D74326;
+                    text-align: left;
+                }
+            }
+            .submit{
+                width: 100%;
+                text-align: center;
+            }
+            div:nth-child(3n-1){
+                text-align: center;
+            }
+            div:nth-child(3n){
+                text-align: right;
+            }
+        }
+        
+    }
+    .el-form-item__error{
+        display: none;
+    }
+    .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before{
+        display: none;
+    }
+    .el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus{
+        border: 1px solid #dcdfe6;
+    }
+}

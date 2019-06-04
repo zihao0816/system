@@ -1,0 +1,95 @@
+.drugStorage{
+    width: calc(100% - 160px);
+    height: calc(100vh - 70px);
+    margin-left: 20px;
+    .main{
+        color: #141414;
+        padding: 0 20px 30px;
+        background: #fff;
+        .search{
+            overflow: hidden;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #141414;
+            >div{
+                float: left;
+                padding-right: 20px;
+                .el-input{
+                    width: 120px;
+                    max-width: 200px;
+                }
+            }
+        }
+        .el-table{
+            .el-button+.el-button{
+                margin-left: 0;
+            }
+            th{
+                text-align:center;/** 设置水平方向居中 */
+                vertical-align:middle/** 设置垂直方向居中 */
+            }
+            .drugcode{
+                width: 80px;
+                display: block;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap
+            }
+        }
+        .form-inline{
+            // margin-left: 52px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .el-form-item{
+                width: 32%;
+                margin-right: 0px;
+                margin-bottom: 18px;
+                .el-form-item__label{
+                    font-size: 16px;
+                }
+                .el-form-item__content{
+                    width: 50%;
+                    .el-input{
+                        .el-input__inner{
+                            padding-right: 30px;
+                        }
+                    }
+                }
+                p{
+                    font-size: 14px;
+                    color: #D74326;
+                    text-align: left;
+                }
+            }
+            .submit{
+                width: 100%;
+            }
+            div:nth-child(3n-1){
+                text-align: center;
+            }
+            div:nth-child(3n){
+                text-align: right;
+            }
+        }
+        .total{
+            color: #141414;
+            height: 40px;
+            line-height: 40px;
+            span{
+                padding-right: 20px;
+            }
+        }
+    }
+    .el-table--enable-row-transition .el-table__body td{
+        text-align: center;
+    }
+    .el-pagination{
+        text-align: right;
+        padding: 20px 5px 0;
+    }
+    .el-form-item__error{
+        display: none;
+    }
+}

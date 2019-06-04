@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>添加药方模板</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <link href="/static/css/admin/home.css" rel="stylesheet">
+    <style type="text/css">
+        .add,
+        .canel {
+            padding: 6px 30px;
+            background-color: #07a591;
+            color: #ffffff;
+        }
+
+        .canel {
+            margin-left: 20px;
+        }
+
+        .add:hover,
+        .canel:hover,
+        .add:focus,
+        .canel:focus {
+            background-color: #007a6b;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="b-title clearfix">
+                        <h3>添加药方模板</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal" id="addform">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-1 control-label">药方名称</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="prescriptionname" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-sm-1 control-label">药方剂型</label>
+                                <div class="col-sm-3">
+                                    <select class="form-control" id="Formulation">
+                                        <option value="">请选择</option>
+                                        <option value="1">颗粒</option>
+                                        <option value="2">饮片</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group f-herbs">
+                                <label class="col-sm-1 control-label">药材</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control medicines" autocomplete="off" id="medicinesearch"
+                                        list="medicinelist" placeholder="输入关键字" />
+                                    <datalist id="medicinelist">
+                                    </datalist>
+                                </div>
+                                <div class="col-sm-12" style="padding: 0">
+                                    <div class="col-md-1"></div>
+                                    <ul class="col-sm-8 selectmedicine" id="selectmedicine"></ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">特殊医嘱</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" autocomplete="off" placeholder="填写服药时间，特殊医嘱"
+                                        id="specialadvice" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">用药禁忌</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control unprescription" list="prescriptionlist"
+                                        placeholder="输入关键字" autocomplete="off" />
+                                    <datalist id="prescriptionlist">
+                                    </datalist>
+                                </div>
+                                <div class="col-sm-12" style="padding: 0">
+                                    <div class="col-md-1"></div>
+                                    <ul class="col-sm-6" id="selectprescription"></ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">用药说明</label>
+                                <div class="col-sm-4" style="padding-top: 7px;">
+                                    <span>共<span class="span-style"><input type="text" autocomplete="off" style="width: 26px;border: none;outline: none"
+                                                id="totaldosage" onkeyup="checkNum(this)" onafterpaste="checkNum(this)" /></span>剂，每日<span
+                                            class="span-style"><input type="text" style="width: 26px;border: none;outline: none"
+                                                id="daydosage" onkeyup="checkNum(this)" onafterpaste="checkNum(this)"
+                                                autocomplete="off" /></span>剂，每剂分<span class="span-style"><input type="text"
+                                                style="width: 26px;border: none;outline: none" id="taketime" onkeyup="checkNum(this)"
+                                                onafterpaste="checkNum(this)" autocomplete="off" /></span>次服用</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">药方总价</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" disabled id="totalprice" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">药方状态</label>
+                                <div class="col-sm-10">
+                                    <select class="col-sm-2 form-controls" id="state">
+                                        <option value="1" selected="selected">显示</option>
+                                        <option value="2">隐藏</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-6">
+                                    <input type="button" class="btn add" value="添加" id="add" />
+                                    <input type="button" class="btn canel" value="取消" id="reset" />
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/addPrescriptionTemplate/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(ObjaddPrescriptionIndex.init('{ID}'));
+</script>

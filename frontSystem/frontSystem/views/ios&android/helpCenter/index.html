@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .page{
+            width: 100%;
+            overflow: hidden;
+            background: #F1F0F5;
+        }
+        .help .name{
+            padding: 15px 10px;
+            color: #4A4A4A;
+            font-size: 14px;
+            margin: 0;
+        }
+        .help .item{
+            background: #ffffff;
+            border-bottom: 1px solid #F1F0F5;
+            padding: 16px 15px;
+            margin: 0;
+        }
+        .help .item span{
+            font-size: 14px;
+            color: #141414;
+            float: left;
+            width: 92%;
+        }
+        .help .item img{
+            float: right;
+            margin-top: 4px;
+        }
+        .clearfix:after{
+            clear: both;
+            display: block;
+            content: "";
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="help"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script>
+    $(function (){
+        $.getJSON("/static/js/common/help.json", function (data){
+            console.log(data)
+            $.each(data, function (infoIndex, info){ 
+                var htmls = '<p class="name" id="'+infoIndex+'">'+info['name']+'</p>' ;
+                $('.help').append(htmls);    
+                $.each(info['list'],function(index,item){
+                    var html =  '<p class="item clearfix" parentid="'+infoIndex+'" id="'+index+'">' +
+                                    '<span>'+item['name']+'</span>' +
+                                    '<img width="6" height="12" src="../../../static/image/zfjr_icon@3x.png" alt="">' +
+                                '</p>' ;
+                    $('.help').append(html);
+                   
+                })
+            }) 
+            $('.item').on('click',function(){
+                var id = $(this).attr("parentid") + ',' + $(this).attr("id");
+                window.location.href = '/ios&android/helpDetail?id='+id;
+            })
+        }) 
+    })
+</script>

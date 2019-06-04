@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>患者管理</title>
+
+
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <link href="/static/css/doctor/index.css" rel="stylesheet">
+    <link href="/static/css/order/order.css" rel="stylesheet">
+    <link href="/static/css/admin/home.css" rel="stylesheet">
+    
+    <style type="text/css">
+    .showimgsize{
+    	margin: 0 auto;
+		width: 600px;    	
+    }
+    </style>
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>患者管理</h3>
+                </div>
+                <div class="ibox-title">
+                    <form class="form-inline">
+                    
+                    	<div class="form-group">
+                            <label for="phone">姓名</label>
+                            <input type="text" autocomplete="off" class="form-control" id="patientname" placeholder="输入姓名" style="width: 90px"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">手机号</label>
+                            <input type="text" autocomplete="off" class="form-control" id="phone" placeholder="输入手机号" style="width: 120px"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">性别</label>
+                            <select class="form-control" id="sex">
+                                <option value="">请选择</option>
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">年龄</label>
+                            <input id="age" autocomplete="off" type="text" class="form-control" placeholder="1-120" style="width: 70px" onkeyup="checkNum(this,0,120)" onafterpaste="checkNum(this,0,120)"/>
+                        </div>
+                        <div class="form-group">
+                            <div data-toggle="distpicker" id="distpickerquery">
+                                <div class="form-group">
+                                    <label for="province">省份</label>
+                                    <select style="width: 100px" class="form-control" id="province" data-province="请选择"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="city"></label>
+                                    <select style="width: 100px" class="form-control" id="city" data-city="请选择"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="district"></label>
+                                    <select style="width: 100px" class="form-control" id="district" data-district="请选择"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="button" class="btn btn-default submit" id="cxone" value="确定" />
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div  class="out_box">
+                                <table class="display table " id="tbPatient" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th>头像</th>
+                                        <th>微信昵称</th>
+                                        <th>真实姓名</th>
+                                        <th>性别</th>
+                                        <th>年龄</th>
+                                        <th>省份</th>
+                                        <th>手机号</th>
+                                        <th>注册时间</th>
+                                        <th>备注</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<div class="hide" id="editPatient">
+    <div class="container">
+        <form class="form-horizontal" style="height: 380px;overflow-y: auto;overflow-x: hidden">
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>头像</label>
+                <div class="col-sm-3">
+                    <img class="headImg" id="headphotoup" src="/static/image/img1.png" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>微信昵称</label>
+                <div class="col-sm-3">
+                    <input type="text" id="patientnicknameup" class="form-control" disabled/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>真实姓名</label>
+                <div class="col-sm-3">
+                    <input type="text" id="patientnameup" maxlength="5" class="form-control" autocomplete="off" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\u4E00-\u9FA5]/g,'')"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>性别</label>
+                <div class="col-sm-2">
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" name="sexup" id="inlineRadio1" value="1">男
+                    </label>
+                    <label class="radio-inline my_protocol">
+                        <input type="radio" class="radio_agreement_protocol" name="sexup" id="inlineRadio2" value="2">女
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>年龄</label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control " id="birthdayup" placeholder="请输入"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>省份</label>
+                <div data-toggle="distpicker" id="distpickerup">
+                    <div class="col-sm-2">
+                        <select class="form-control" id="provinceup" ></select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="cityup"></select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="contyup"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>身高</label>
+                <div class="col-sm-3" style="width: 110px;">
+                    <input type="text" id="heightup" maxlength="3" autocomplete="off" class="form-control MustNum" onkeyup="checkNum(this,0,250)" onafterpaste="checkNum(this,0,250)" style="width: 100px"/>
+                </div>
+                <div class="col-sm-3" style="text-align: left;line-height: 35px">
+                	CM
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>体重</label>
+                <div class="col-sm-3" style="width: 110px;">
+                    <input type="text"  id="weightup" maxlength="3" autocomplete="off" class="form-control MustNum" onkeyup="checkNum(this,0,250)" onafterpaste="checkNum(this,0,250)" style="width: 100px"/>
+                </div>
+                <div class="col-sm-3" style="text-align: left;line-height: 35px">
+                	KG
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>联系方式</label>
+                <div class="col-sm-3">
+                    <input type="text" id="telephoneup" maxlength="11" autocomplete="off" class="form-control" disabled/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>注册时间</label>
+                <div class="col-sm-2">
+                    <span id="registertimeup" style="line-height: 33px;"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="r-color">*</span>备注</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="4" autocomplete="off" style="resize:none" id="remarkup"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide" id="detailsMedicalRecord">
+    <div class="container">
+        <div class="row">
+            <form class="form-horizontal form-inline ">
+                <div class="from-group col-sm-4" style="margin-left: 8px;">
+                    <label class="control-label">医生姓名</label>
+                    <input type="text" class="form-control" autocomplete="off" placeholder="输入医生姓名" id="m_doctorname"/>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="control-label">问诊时间</label>
+                    <input type="date" class="form-control" placeholder="输入时间" style="width: 70%" id="m_buytime"/>
+                </div>
+                <input type="button" class="btn btn-default submit" value="确定" id="m_searchBtn"/>
+            </form>
+        </div>
+        <div  class="out_box" style="margin-top: 26px;">
+            <table class="display table" id="tbMedicalRecord" cellpadding="0" cellspacing="0" border="0" style="width: 100%;table-layout: fixed;">
+                <thead>
+                <tr>
+                    <th>问诊医生</th>
+                    <th>职称</th>
+                    <th>问诊时间</th>
+                    <th>问诊方式</th>
+                    <th width="300px" style="word-wrap: break-word;">辩证结果</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="hide" id="detailsDoctor">
+    <div class="container">
+        <div class="row">
+            <form class="form-horizontal form-inline ">
+                <div class="from-group col-sm-3" style="margin-left: 8px;">
+                    <label class="control-label">医生姓名</label>
+                    <input type="text" class="form-control" autocomplete="off" placeholder="输入医生姓名" style="width: 60%" id="ps_doctorname"/>
+                </div>
+                <div class="from-group col-sm-4">
+                    <label class="control-label">联系方式</label>
+                    <input type="text" class="form-control" autocomplete="off" placeholder="输入手机号码" style="width: 70%" id="ps_telephone"/>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">添加方式</label>
+                    <select class="form-control" id="ps_addtype">
+                        <option value="">请选择</option>
+                        <option value="1">扫二维码</option>
+                        <option value="2">问诊查询</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-default submit"  value="确定" id="ps_searchBtn"/>
+            </form>
+        </div>
+        <div  class="out_box" style="margin-top: 26px;">
+            <table class="display table" id="tbDoctor" cellpadding="0"  cellspacing="0" border="0" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>医生姓名</th>
+                    <th>联系方式</th>
+                    <th>图文复诊</th>
+                    <th>电话复诊</th>
+                    <th>图文咨询</th>
+                    <th>电话咨询</th>
+                    <th>累计问诊次数</th>
+                    <th>辩证开方</th>
+                    <th>添加方式</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="hide" id="detailsMedicalRecords">
+    <div class="container">
+        <div style="height: 380px;overflow-y: auto;overflow-x: hidden">
+            <form role="form" class="formWidth" style="margin-bottom: 30px;">
+                <div class="p-title">
+                    <h4>病历订单</h4>
+                </div>
+                <div class="p-content">
+                    <div class="c-message">
+                        <table cellspacing="0" cellpadding="0" border="0" class="clearfix">
+                            <tr>
+                                <td><label>订单号：</label><span id="mr_ordercode"></span></td>
+                                <td><label>问诊类型：</label><span id="mr_servicename"></span></td>
+                                <td><label>问诊时间：</label><span id="mr_buytime"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label>问诊医生：</label><span id="mr_doctorname"></span></td>
+                                <td><label>职称：</label><span id="mr_dutiesname"></span></td>
+                                <td><label>科室：</label><span id="mr_departmentname"></span></td>
+                                <td><label>所属医院：</label><span id="mr_hospitaname"></span></td>
+                                <td><label>辩证结果：</label><span id="mr_doctorconclusion"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="c-img">
+                        <p>初始病历</p>
+                        <div id="mr_initialCases">
+                        </div>
+                    </div>
+                    <div class="c-prescription">
+                        <p style="font-weight: 600;font-size: 14px;padding-bottom: 20px;border-bottom: 2px dashed #dfdfdf">病历主诉：</p>
+                        <p style="margin: 8px 0">
+                        	<label>年龄：</label><span class="span-margin" id="mr_age"></span>
+                            <label>身高：</label><span class="span-margin" id="mr_height"></span>
+                            <label>体重：</label><span class="span-margin" id="mr_weight"></span>
+                            <label>病历自诉：</label><span class="span-margin" id="mr_symptom"></span>
+                            <label>既往病史：</label><span class="span-margin" id="mr_pastcase"></span>
+                            <label>过敏史：</label><span class="span-margin" id="mr_allergichistory"></span>
+                        </p>
+                    </div>
+                    <div class="ask">
+                        <p style="font-size: 14px;font-weight: 600;padding: 16px 0;border-bottom: 2px dashed #dfdfdf">问诊单</p>
+                        <div style="margin-top: 16px;" id="mr_reorderinquiryquestion">
+                            
+                        </div>
+                    </div>
+                    <div class="bodyImg">
+                        <p style="font-size: 14px;font-weight: 600;padding: 16px 0;border-bottom: 2px dashed #dfdfdf">舌照面照</p>
+                        <div id="mr_accordingTtongue">
+                           
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form role="form" class="formWidth" id="orderprescriptionform">
+                <div class="p-title">
+                    <h4>药方订单</h4>
+                </div>
+                <div class="p-content">
+                    <div class="c-message">
+                        <table cellspacing="0" cellpadding="0" border="0" class="clearfix">
+                            <tr>
+                                <td><label>药方单号：</label><span id="ps_ordercode">&nbsp;</span></td>
+                                <td><label>问诊类型：</label><span id="ps_servicename">&nbsp;</span></td>
+                                <td><label>问诊医生：</label><span id="ps_doctorname">&nbsp;</span></td>
+                                <td><label>处方：</label><span id="ps_prescriptionname">&nbsp;</span></td>
+                                <td><label>下单时间：</label><span id="ps_buytime">&nbsp;</span></td>
+                                <td><label>收货人：</label><span id="ps_receiver">&nbsp;</span></td>
+                                <td><label>联系方式：</label><span id="ps_telephone">&nbsp;</span></td>
+                                <td><label>收货地址：</label><span id="ps_address">&nbsp;</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="c-prescription">
+                        <p style="font-weight: 600;font-size: 16px;">R：</p>
+                        <ul class="clearfix" id="p_medicines">
+                            <li>桂枝&emsp;10g</li>
+                        </ul>
+                        <p class="clearfix">
+                            <label>用药说明：</label>
+                            <span>共<span class="span-style" id="ps_totaldosage">&nbsp;</span>剂，每日<span class="span-style" id="ps_daydosage">&nbsp;</span>剂，每剂分<span class="span-style" id="ps_taketime">&nbsp;</span>次服用</span>
+                            <span class="fr"><label>药态：</label><span id="ps_prescriptionshape"></span></span>
+                        </p>
+                        <p><label>特殊医嘱：</label><span id="ps_specialadvice">&nbsp;</span></p>
+                        <p><label>用药禁忌：</label><span id="ps_taboo">&nbsp;</span></p>
+                    </div>
+                    <div class="c-pay">
+                        <p class="clearfix">
+                            <label>&nbsp;</label>
+                            <span id="ps_lasttime">&nbsp;</span>
+                            <span class="fr">
+                            <label>订单总价：</label>
+                            <span id="ps_totalprice">&nbsp;</span>
+                        </span>
+                        </p>
+                        <p class="clearfix">
+                        <span class="s-style">
+                            <label>付款时间：</label>
+                            <span id="ps_paytime">&nbsp;</span>
+                        </span>
+                            <span class="s-style">
+                            <label>支付方式：</label>
+                            <span>微信支付</span>
+                        </span>
+                            <span>
+                            <label>配送方式：</label>
+                            <span id="ps_sendcompany">顺丰快递&ensp;货到付款</span>
+                        </span>
+                            <span class="fr">
+                            <label>支付状态：</label>
+                            <span id="ps_paystate">&nbsp;</span>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="hide" id="showimg">
+    <div class="container">
+        <div style="height: 380px;overflow-y: auto;overflow-x: hidden;text-align: center;">
+            <img alt="" src="" id="showimgurl" style="height: 380px;margin: 0 auto;">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.data.js"></script>
+<script type="text/javascript" src="/static/js/common/distpicker.js"></script>
+<script type="text/javascript" src="/static/js/common/main.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/common/index.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/patientManagement/index.js" ></script>
+<script src="/static/js/index/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(ObjpatientManagementIndex.init('{ID}'));
+</script>

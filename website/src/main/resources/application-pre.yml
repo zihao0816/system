@@ -1,0 +1,7 @@
+url: https://www.51bjhzy.com
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.127:3306/pre_hzy?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 51BJhzy.c@m
+    driver-class-name: com.mysql.jdbc.Driver

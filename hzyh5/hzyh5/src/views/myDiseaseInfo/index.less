@@ -1,0 +1,121 @@
+.myDiseaseInfo{
+    padding: 10px;
+    .basicInfo{
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        text-align: center;
+        .top{
+            padding: 10px 0;
+            h3{
+                font-size: 18px;
+                color: #141414;
+                font-weight: normal;
+            }
+            span{
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+                color: #32303B;
+                line-height: 40px;
+            }
+        }
+        .line{
+            padding: 10px 0;
+            border-top: #C1C1C1 1px dashed;
+            border-bottom: #C1C1C1 1px dashed;
+            overflow: hidden;
+            >div{
+                width: 50%;
+                display: inline-block;
+                float: left;
+                text-align: center;
+                span{
+                    display: block;
+                    line-height: 30px;
+                    :nth-child(1){
+                       font-size: 16px;
+                       color: #141414;
+                    }
+                    :nth-child(2){
+                        font-size: 14px;
+                        color: #32303B;
+                     }
+                }
+            }
+        }
+        .history{
+            text-align: left;
+            h3{
+               color: #141414;
+               font-weight: normal; 
+               line-height: 40px;
+               font-size: 16px;
+            }
+            span{
+                color: #32303B;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    .facePhoto{
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        margin: 10px 0;
+        width: 100%;
+        h3{
+            width: 100%;
+            border-bottom: 1px dashed #C1C1C1;
+            font-weight: normal;
+            height: 30px;
+            font-size: 16px;
+            span{
+                color: #C1C1C1;
+                font-size: 14px;
+                float: right;
+                height: auto;
+                line-height: 20px;
+            }
+        }
+        >div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div{
+                width: 30%;
+                height: 100px;
+                margin-top: 3%;
+                div{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        span{
+            color: #818181;
+            height: 40px;
+            line-height: 40px;
+        }
+        .issueInfo{
+            display: block;
+            span{
+                display: block;
+                height: 30px;
+                font-size: 14px;
+            }
+            span:nth-child(odd){
+                color: #141414;
+            }
+            span:nth-child(even){
+                color: #32303B;
+            }
+        }
+    }
+}

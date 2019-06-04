@@ -1,0 +1,161 @@
+
+  .patientName{
+    overflow: hidden;
+    padding:16px 20px;
+    background:#fff;
+    border-radius: 28px;
+    margin:10px 0;
+  }
+  .two .weui-cell{
+    padding:10px 0;
+  }
+ 
+  .two .label{
+    border-radius: 28px;
+    display: flex;
+    width: 49%;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 22px 20px 20px;
+    background:#fff;
+  }
+  .two .label i{
+    font-size: 14px;
+    font-style: normal;
+    color:#818181;
+  }
+  .two .label input{
+    padding:16px 16px;
+    font-size: 15px;
+  }
+  .two .textHeight{
+    display: flex;
+    justify-content: space-between;
+    background:#f1f0f5;
+    padding: 0!important;
+  }
+  .addpatient-py {
+    padding: 16px 20px;
+  }
+  
+  .selectpatient-py {
+    background: #ffffff;
+    padding: 16px 20px;
+    margin-bottom: 6px;
+  }
+  .selectpatient-py div {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .selectpatient-py div p:nth-child(2){
+      margin-top: 10px;
+      color: #818181;
+  }
+  .selectpatient-py div p:nth-child(1) span:nth-child(2){
+      margin-left: 10px;
+      color: #818181;
+  }
+  .selectpatient-py div,
+  .selectpatient-py img {
+    vertical-align: middle;
+  }
+  .selectpatient-py i{
+      float: right;
+      line-height: 54px;
+  }
+  .addreadme-py {
+    padding-bottom: 30px;
+  }
+  .patient-py {
+    background: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    color: #d74326;
+  }
+  .patient-py i {
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .patient-py span {
+    vertical-align: middle;
+    padding-left: 4px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .aone-py {
+    background: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 28px;
+  }
+  .aone-py .title-py{
+    border-bottom:0!important;
+  }
+  .footer-py{
+    margin-bottom:50px;
+  }
+  .aone-py .title-py {
+    padding: 16px 20px 0;
+    color: #141414;
+  }
+  .aone-py .title-py span{
+    font-size: 14px;
+    color:#818181 ;
+  }
+  .aone-py .msg-py {
+    text-align: center;
+    color: #c1c1c1;
+    font-size: 15px;
+    padding-top: 16px;
+  }
+  .aone-py .texts-py {
+    padding: 16px 20px;    
+  }
+  .texts-py textarea {
+    display: block;
+    border-radius: 8px 8px 0 0;
+    background: #F8F8F8 ;
+    resize: none;
+    width: 100%;
+    padding: 16px 0 0 16px;
+    border: none;
+    font-size: 16px;
+  }
+  .texts-py .maxlength{
+    border-radius:0 0 8px 8px;
+    display:block;
+    width:100%;
+    text-align:right;
+    background:#F8F8F8;
+    line-height:12px;
+    font-size:12px;
+    color:#818181;
+    padding:0 15px 14px 0;
+  }
+  .height-py,
+  .weight-py {
+    border: none;
+    outline: none;
+    background: #F8F8F8;
+    padding: 10px 0 10px 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+  .btn-py {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .el-button--primary {
+    background: #d74326;
+    border-color: #d74326;
+    width: 100%;
+    border-radius: 0;
+  }
+  .el-button--primary:focus,
+  .el-button--primary:hover {
+    background: #d74326;
+    border-color: #d74326;
+  }

@@ -1,0 +1,35 @@
+.one,
+.tow,
+.three {
+  padding-bottom: 20px;
+}
+.contents{
+  padding:50px 0 0 200px;
+  display: flex;
+}
+.wtitle,
+.wdetails,
+.wreminder{
+  width:100px;
+  padding-right: 10px;
+  color:#666;
+  text-align: right;
+  display: inline-block;
+}
+.wcontents,
+.details,
+.reminder{
+  flex:1;
+}
+.tow input,
+.three input{
+  width: 500px;
+}
+.save{
+  margin: 50px 0 0 100px;
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 150px;
+  height: 40px;
+}
+

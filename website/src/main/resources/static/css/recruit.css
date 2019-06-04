@@ -1,0 +1,79 @@
+.index {
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+.index .banner {
+    min-width: 1200px;
+}
+.index .banner img {
+    width: 100%;
+    height: auto;
+}
+.productManager_wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+.productManager_wrap .productManager {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #CCC;
+}
+.productManager_wrap .productManager .manager_top {
+    width: 1200px;
+    height: 60px;
+}
+.productManager_wrap .productManager .manager_top .manager_top_left {
+    line-height: 30px;
+    float: left;
+}
+.productManager_wrap .productManager .manager_top .manager_top_left img {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.productManager_wrap .productManager .manager_top .manager_top_left span {
+    float: left;
+    font-size: 24px;
+    color: #AB3100;
+    line-height: 30px;
+    margin-left: 30px;
+}
+.productManager_wrap .productManager .manager_top .manager_top_right {
+    float: right;
+    line-height: 30px;
+    cursor: pointer;
+}
+.productManager_wrap .productManager .manager_top .manager_top_right img {
+    display: inline-block;
+    width: 16px;
+    height: 8px;
+}
+.productManager_wrap .productManager .manager_top .manager_top_right .hideImg {
+    display: none;
+}
+.productManager_wrap .productManager .manager_top .manager_top_right span {
+    font-size: 20px;
+    color: #C1C1C1;
+    margin-right: 20px;
+}
+.productManager_wrap .productManager .manage_text {
+    width: 1200px;
+    clear: both;
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+.productManager_wrap .productManager .manage_text ul {
+    margin-bottom: 40px;
+}
+.productManager_wrap .productManager .manage_text ul li {
+    color: #141414;
+    font-size: 18px;
+    text-align: left;
+    font-family: PingFangSC-Medium;
+}
+.productManager_wrap .productManager:nth-of-type(5) {
+    border-bottom: 0;
+}

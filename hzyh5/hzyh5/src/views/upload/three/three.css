@@ -1,0 +1,168 @@
+  li {
+    list-style: none;
+  }
+
+  .three .warn-py {
+    padding: 16px 20px;
+    color: #D74326;
+    background: #FFFFD3;
+    font-size: 13px;
+  }
+  .three .headphoto-py {
+    background: #ffffff;
+    padding: 22px 0;
+  }
+  .three .inputPatientName {
+    border: none;
+    display:block;
+    width:100%;
+    background: #f8f8f8;
+    font-size: 16px;
+    padding:16px 15px;
+  }
+  .three .weui-cell{
+    padding:10px 0!important;
+  }
+  .three .patientName{
+    float:left;
+    width:74px;
+    height:50px;
+    line-height:50px;
+  }
+  .three .headphoto-py .addphoto-py {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  .three .headphoto-py .addphoto-py .uploadphoto-py {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+  }
+  .three .headphoto-py .addphoto-py img{
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .three .headphoto-py .addphoto-py .uploadphoto-py i {
+    font-size: 22px;
+    margin-top: 26px;
+  }
+  .three .headphoto-py .addphoto-py .uploadphoto-py input{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+  /* .three .information-py {
+    padding: 10px;
+    padding: 
+  } */
+  .three .addname-py {
+    padding: 12px 20px 13px;
+    background: #ffffff;
+    margin-top: 10px;
+    border-radius: 28px;
+  }
+  .three .addnames-py {
+    background: #ffffff;
+    margin-top: 10px;
+    border-radius: 28px;
+    width:100%;
+    overflow: hidden;
+    padding: 28px 20px;
+  }
+  /* .three .addnames-py:nth-of-type(2){
+    padding:
+  } */
+  .three .addnames-py p{
+    float:right;
+  }
+  .three .addnames-py p span{
+    float:right;
+    margin-right:18px;
+    font-size: 15px;
+    width:55px;
+    line-height:26px;
+    text-align: center;
+    border-radius: 13px;
+    border: 1px solid #C1C1C1;
+  }
+  .three .addname-py label {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .three .inputstyle-py {
+    margin-left:74px;
+    /* float:left; */
+
+    background: #f8f8f8;
+    /* margin-top: 16px; */
+    /* padding: 16px 20px; */
+  }
+
+  .three .date-py{
+    display: flex;
+    margin-top: 16px;
+  }
+  .three .date-py li {
+    background: #f8f8f8;
+    padding: 16px 15px;
+    flex: 1;
+  }
+  .three .date-py li input {
+    border: none;
+    background: none;
+    text-align: center;
+    width: 65%;
+    font-size: 16px;
+  }
+  .three .btn-submit-py{
+    width: 100%;
+    background: #D74326;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-top: 45px;
+    border: none;
+    padding: 9px 0;
+    font-size: 16px;
+  }
+  .three .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .three .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .three .avatar-uploader-icon {
+    color: #ffffff;
+    text-align: center;
+  }
+  .three .avatar {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+  }
+  .male{
+    background:#FE5858;
+    border-color:  #FE5858!important;
+    color:#fff;
+  }
+ 

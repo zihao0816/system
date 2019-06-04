@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>完善资料</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: PingFang-SC-Regular;
+      color: #141414;
+      background-color: #F1F0F5;
+    }
+    .details {
+      background-color: #fff;
+      border-bottom: 6px solid #F1F0F5;
+    }
+    .add{
+      margin: 20px;
+      text-align: center;
+      line-height: 53px;
+      color: #D74326;
+      font-size: 18px;
+      background-color: #fff;
+      display:none;
+    }
+    .information{
+      padding: 16px 0 16px 19px;
+      display: flex;
+    }
+    .headphoto{
+      height: 54px;
+      width: 54px;
+      padding-right: 15px;
+    }
+    .patientname{
+      font-size: 16px;
+      color: #141414;
+    }
+    .relationship{
+      font-size: 14px;
+      color: #818181;
+      padding-left: 5px;
+    }
+    .patientsex,.patientage{
+      font-size: 14px;
+      color: #818181;
+      padding-top: 12px;
+      display: inline-block;
+    }
+    .report {
+      background-color: #fff;
+      padding-left: 20px;
+      line-height: 54px;
+      font-size: 16px;
+      border-bottom: 1px solid #F1F0F5;
+    }
+    .reports {
+      background-color: #fff;
+      padding-left: 20px;
+      line-height: 54px;
+      font-size: 16px;
+    }
+    .disease {
+      padding: 16px 20px 0px 20px;
+      color: #818181;
+      font-size: 15px;
+      height: 142px;
+      background-color: #ffffff;
+      border-bottom: 6px solid#F1F0F5;
+    }
+    .diseases {
+      background-color: #F8F8F8;
+      height: 110px;
+      padding: 16px 0 0 20px;
+    }
+    .hint{
+      padding:16px 45px 0 45px;
+      color:#C1C1C1;
+      font-size: 15px;
+      background: #fff;
+    }
+    @media screen and (max-width: 370px) {
+      .hint{
+      padding:16px 15px 0 15px;
+      color:#C1C1C1;
+      font-size: 15px;
+      background: #fff;
+    }
+    }
+    .allergy{
+      padding: 0 20px 0px 20px;
+      color: #818181;
+      font-size: 15px;
+      height: 142px;
+      background-color: #ffffff;
+      border-bottom: 6px solid#F1F0F5;
+    }
+    .allergys{
+      background-color: #F8F8F8;
+      height: 110px;
+      padding: 16px 0 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="details">
+    <p class="add">+ 添加患者</p>
+    <div class="information" id="information">
+      <img class="headphoto" id="headphoto" src="" alt="">
+      <div>
+        <span class="patientname" id="patientname"></span> <span class="relationship" id="relationship"></span>
+        <p><span class="patientsex" id="patientsex"></span>，<span class="patientage" id="patientage"></span></p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="report">病症自述</div>
+    <div class="disease">
+      <div class="diseases" id="diseases">请详细描述您的病情与症状</div>
+    </div>
+  </div>
+  <div>
+    <div class="hint">以下信息将帮助医生更准确的了解您的病情</div>
+      <div class="reports" id="reports">过敏史（选填）</div>
+      <div class="allergy">
+        <div class="allergys"id="pastcase">请描述您的过敏史</div>
+      </div>
+      <div class="reports">既往病史（选填）</div>
+      <div class="allergy">
+        <div class="allergys" id="history">请描述您的既往病史</div>
+      </div>
+    </div>
+</body>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/common/template-web.js"></script>
+<script type="text/javascript" src="/static/js/ios&android/informationComplete/index.js"></script>
+<script>
+  window.onload = function(){
+   created();
+ }
+
+</script>
+</html>

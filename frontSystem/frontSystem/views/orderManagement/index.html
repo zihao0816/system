@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>订单管理</title>
+
+
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/common-css/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jqGrid/ui.jqgrid-bootstrap-ui.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+    <link href="/static/common-css/metroStyle.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/jsTree/style.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick.css" rel="stylesheet">
+    <link href="/static/common-css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="/static/css/patientManagement/patientManagement.css" rel="stylesheet">
+    <link href="/static/css/order/order.css" rel="stylesheet">
+    <link href="/static/css/prescriptionTemplate/index.css" rel="stylesheet">
+    <style>
+        .col-sm-3{
+            width: 20%;
+        }
+        .content {
+            margin-top:5%;
+            margin-left:25%;
+            display:none;
+            width:50%;
+            height:60%;
+            background-clip: padding-box;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            outline: 0 none;
+            position: relative;
+        }
+        .header {
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .body {
+            padding: 20px 30px 30px 30px;
+        }
+        .footer {
+            margin-top: 0;
+        }
+        .footer {
+            padding: 15px;
+            text-align: right;
+            border-top: 1px solid #e5e5e5;
+    }
+    </style>
+</head>
+<body class="fixed-sidebar full-height-layout pace-done gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="b-title clearfix">
+                    <h3>订单管理</h3>
+                </div>
+                <div class="ibox-title">
+                    <form class="form-inline clearfix">
+                        <div style="margin: 10px 0;overflow:hidden;">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="ordercode" style="margin-left: 1px;">订单号</label>
+                                    <input type="text" autocomplete="off" style="width: 60%" class="form-control" id="ordercode" placeholder="输入订单号">
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -20px;">
+                                <div class="form-group">
+                                    <label for="doctorname" style="margin-left: 1px;">问诊医生</label>
+                                    <input type="text" autocomplete="off" style="width: 56%" class="form-control" id="doctorname" placeholder="输入医生姓名">
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -20px;">
+                                <div class="form-group">
+                                    <label for="patientname" style="margin-left: 1px;">问诊患者</label>
+                                    <input type="text" autocomplete="off" style="width: 56%" class="form-control" id="patientname" placeholder="输入患者姓名">
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -20px;width: 500px;">
+                                <label>问诊时间</label>
+                                <input type="date" class="form-control" style="width: 150px" placeholder="请选择" id="confirmtimestart" />&ensp;-&ensp;
+                                <input type="date" class="form-control" style="width: 150px" placeholder="请选择" id="confirmtimeend" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label style="margin-left: 1px;">医院</label>
+                                <select class="form-control" id="hospital">
+                                    <option value="">请选择</option>
+                                    <option>中医堂</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-left: 1px;">科室</label>
+                                <select class="form-control" id="class">
+                                    <option value="">请选择</option>
+                                    <option>呼吸科</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-left: 1px;">问诊类型</label>
+                                <select class="form-control" id="serviceid">
+                                    <option value="">请选择</option>
+	                                <option value="1">图文复诊</option>
+	                                <option value="2">电话复诊</option>
+	                                <option value="3">图文咨询</option>
+	                                <option value="4">电话咨询</option>
+	                                <option value="5">药方</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-left: 1px;">支付状态</label>
+                                <select class="form-control" id="paystate">
+                                    <option value="">请选择</option>
+                                    <option value="1">待支付</option>
+                                    <option value="2">已支付</option>
+                                    <option value="3">已取消</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-left: 1px;">发货状态</label>
+                                <select class="form-control" id="dispatch">
+                                    <option value="">请选择</option>
+                                    <option value="0">未发货</option>
+                                    <option value="1">已发货</option>
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                            <input type="button" class="btn btn-default submit" value="确定" id="searchBtn"/>
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="ibox-content orderList">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div id=" " class="out_box">
+                                <table class="display table " id="tbOrderList" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <thead>
+                                    <tr>
+                                        <th>问诊时间</th>
+                                        <th>医生</th>
+                                        <th>患者</th>
+                                        <th>患者实付款</th>
+                                        <th>医生收益</th>
+                                        <th>平台收益</th>
+                                        <th>合计</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="content">
+    <div class="header">
+        <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">提示信息</h4>
+    </div>
+    <div class="body">
+        <div class="bootbox-body">
+            <div style="text-align: center">
+                <p>不能取消哦</p>
+            </div>
+        </div>
+        <div class="footer">
+            <button data-bb-handler="ok" type="button" class="success">知道了</button>
+        </div>
+    </div>
+</div> -->
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/dataTables/datatables.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jstree.min.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/jsTree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+
+<script type="text/javascript" src="/static/common-js/company.js"></script>
+<script type="text/javascript" src="/static/common-js/ComboBoxCommon.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/97date/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/js/common/index.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/order/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(ObjorderIndex.init('{ID}'));
+</script>

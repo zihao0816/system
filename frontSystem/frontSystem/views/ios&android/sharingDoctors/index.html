@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>医生详情</title>
+    <link href="/static/common-css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-css/bootstrapValidator.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        p{margin: 0;}
+        a{text-decoration: none;color: #5d9ce5;}
+        a:hover,a:focus{text-decoration: none;color: #5d9ce5;}
+        li{list-style: none}
+        ul{margin: 0}
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix:after{display: block;content: "";clear: both;}
+        body{font-family: "serif","sans-serif","cursive","fantasy","monospace";font-size: 16px;}
+        li{list-style: none;}
+        body,.page{background-color: #F1F0F5;}
+        .title{background:url(./../../../static/image/fxbg.png) no-repeat;width: 100%;padding: 30px;background-size:100% 100%;background-position:center;}
+        .title .docimg{margin:auto;width: 70px;height: 70px;position: relative;}
+        .title .docimg #docimg{width: 70px;height: 70px;border-radius: 50%;}
+        .title .docimg .renzheng{width: 20px;height: 20px;position: absolute;bottom: 0;right: 0;}
+        .title div{margin: auto;text-align: center;color: #FFFFFF;letter-spacing:4px;}
+        .title .hospital{padding:5px;color: rgba(255, 255, 255, 1);font-size: 12px;text-align: center;letter-spacing:4px;}
+        .factions{width: 100%;padding: 14px;padding-left:40px;background-color: rgba(104, 170, 246, 1);position: relative;}
+        .factions .hos{font-size: 13px;color: rgba(255, 255, 255, 1);}
+        .factions .hosimg{position: absolute;left: 15px;top: 10px;width: 14px;height: 12px;}
+        .factions .hosimg img{width: 100%;height: 100%;}
+        .QRcode{margin-top:2px;margin-bottom:6px;width: 100%;padding: 48px 15px;color: rgba(129, 129, 129, 1);background: rgba(255, 255, 255, 1); font-size: 14px;text-align: left;position: relative;}  
+        .QRcode img{position: absolute;right: 15px;top: 34px;width: 88px;height: 88px;}  
+        .disease{margin-top:2px;margin-bottom:6px;padding:15px;background: rgba(255, 255, 255, 1); line-height: 13px;}
+        .disease .tit{margin:auto;font-size: 18px;text-align: center;margin-bottom: 20px;}
+        .disease .text{max-width: 100%; line-height: 23px;color: rgba(20, 20, 20, 1);font-size: 16px;text-align: justify;}
+        .disease .department{margin-bottom:20px;}
+        .disease .redsanjiao{display: inline-block;overflow:hidden;font-size: 0;line-height: 0;border-width:6px 0 6px 8px;border-style:solid;border-color:transparent transparent transparent rgba(215, 67, 38, 1);}
+        .disease .redtitle{color: rgba(215, 67, 38, 1);font-size: 17px;text-align: left;}
+        .disease .bodys{width: 100%;margin-top: 3px;}
+        .disease .bodys div{display: inline-block;border-radius: 12%; padding:7px 21px;margin: 12px 20px 0 0;border: 1px solid rgba(231, 230, 235, 1);}
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="title">
+        <div class="docimg">
+            <img id="docimg" src="./../../../static/image/talk.png" alt="">
+            <img class="renzheng" src="../../../static/image/rzcg_y.png" alt="">
+        </div>
+        <div id="docname"></div>
+        <div id="duties" class="hospital"></div>
+    </div>
+    <div class="factions">
+        <div class="hosimg"><img src="../../../static/image/yytb.png" alt=""></div>
+        <div id="hos"></div>
+    </div>
+    <div class="QRcode">
+        <div>这是我的二维码名片<br>长按图片或扫码<br>直接与我微信交流</div>
+        <img id="QRcodeimg" alt="">
+    </div>
+    <div class="disease">
+        <div class="tit">ㅡ&nbsp;&nbsp;&nbsp;擅长病症&nbsp;&nbsp;&nbsp;ㅡ</div>
+        <div class="department">
+            <div id="skillname" class="bodys"></div>
+        </div>
+    </div>
+
+    <div class="disease"> 
+        <div class="tit">ㅡ&nbsp;&nbsp;&nbsp;医生简介&nbsp;&nbsp;&nbsp;ㅡ</div>
+        <div id="text" class="text"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/ios&android/sharingDoctors/index.js"></script>
+<script>
+  $(document).ready(function(){
+    //   query();
+      var docid = window.location.href.split('?')[1].split('=')[1];
+      ajax({  
+        type: "get",
+        url: "/api/AppHomePage/doctorSlice?inDoctorId="+docid,
+        contentType: "application/json", //必须有
+        dataType: "json", //表示返回值类型，不必须
+        success: function (val) {
+            $('#docname').html(val.doctorName);
+            $('#duties').html(val.duties);
+            var hospitaname = val.hospitaname.split(",");
+            for(var i in hospitaname){
+                $('#hos').append('<div class="hos">· <span>'+ hospitaname[i] +'</span></div>')
+            }
+            $("#docimg").attr("src",filefdfspath+val.doctorFace);
+            $("#QRcodeimg").attr("src","https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket="+val.doctorQr);
+            // append('<img class="smallimg" src="' + filefdfspath + val.accordingTtongue[i] + '">')
+            if(val.intro != null){
+                $('.disease')[1].style.display = 'none';
+            }
+            $('#text').html(val.intro);
+            var skillname = val.skillname.split(",");
+            for(var i in skillname){
+                $('#skillname').append('<div>' + skillname[i] + '</div>')
+            }
+        }
+    })
+  })
+</script>

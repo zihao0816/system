@@ -1,0 +1,50 @@
+.examine {
+    padding: 20px;
+    background-color: #F1F0F5;
+  
+    .page {
+      .content {
+        background: #ffffff;
+        padding: 20px;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+  
+        .search {
+          margin-top: 20px;
+  
+          /deep/ .el-input__inner {
+            padding-right: 15px;
+          }
+  
+        }
+        .tk {
+            width:100%;
+            min-height:200px;
+            box-sizing: border-box;
+            .tk_left {
+                float:left;
+                padding-right:11px;
+                box-sizing: border-box;
+                img {
+                    float:left;
+                    display: block;
+                    width:180px;
+                    height:180px;
+                    background:#ddd;
+                    margin-bottom:26px;
+                }
+            }
+            .tk_right {
+                min-height:300px;
+            }
+            .tk_right p {
+                display: inline-block;
+                font-size: 18px;
+                margin: 15px;
+            }
+        }
+
+      }
+  
+    }
+  }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>用户登录</title>
+  <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!-- Toastr style -->
+  <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+  <!-- Gritter -->
+  <link href="/static/common-js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+  <link href="/static/common-css/animate.css" rel="stylesheet">
+  <link href="/static/common-css/style.css" rel="stylesheet">
+	<style>
+		.ibox-content {
+			clear: both;
+			border-radius: 8px;
+			filter: alpha(opacity=50);
+		}
+		.border-bottom{
+			border-left:none;
+			border-right:none;
+			border-top:none;
+			border-bottom:1px solid #0F2543;
+		}
+		.footer{
+			background:none;
+			border:none;
+		}
+		.checkbox{
+			height: 12px;
+			width: 12px;
+		}
+		.clearfix .rememberpwd{
+			margin: 2px 0 0;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#usercode,#password{
+			width: 285px;
+			background-color: #ffffff;
+			border-bottom: none;
+			border-left: 1px solid #e3e3e3;
+			border-top: none;
+			border-right: none;
+
+		}
+	</style>
+</head>
+<body class="gray-bg" style="background-image: url('/static/image/shouye tupian @2x.png');background-size:cover;">
+<div class="loginColumns animated fadeInDown">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-8">
+			<div class="ibox-content" style="text-align: center">
+				<div id="div-login">
+					<form class="m-t" role="form" action="#" id="defaultForm" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+						<div class="form-group border-bottom" style="color: #25d2bc">
+							<h4>登录</h4>
+						</div>
+						<div class="form-group clearfix" style="margin-top: 30px;border: 1px solid #e3e3e3;background-color: #f5f5f5">
+							<img class="fl" width="14" style="margin: 6px 12px;" src="/static/image/phone.png" />
+							<input id="usercode" type="usercode" class="form-control userpwd" name="firstName" placeholder="请输入用户名" required data-bv-notempty-message="不能为空" data-bv-stringlength="true" data-bv-stringlength-min="1" data-bv-stringlength-max="30" />
+						</div>
+						<div class="form-group clearfix" style="margin-top: 30px;border: 1px solid #e3e3e3;background-color: #f5f5f5">
+							<img class="fl" width="14" style="margin: 6px 12px;" src="/static/image/password.png">
+							<input id="password" type="password" class="form-control userpwd" placeholder="请输入密码" name="lastName" required data-bv-notempty-message="不能为空" />
+						</div>
+						<div class="form-group clearfix" style="text-align: left;">
+							<h5 id="showmsg" style="color: red;margin-left: 5px;"></h5>
+						</div>
+						<input type="submit" class="btn btn-sm btn-primary btn-block" id="loginBtn" disabled value="登录"/>
+					</form>
+
+					<!--<input id="aaaaa" type="button" value="微信支付测试按钮！！禁止点击！！！！！" style="height: 50px"/>-->
+				</div>
+				<div id="div-jumping" class="hide">
+					<h5>登录成功,跳转中......</h5>
+					<div class="progress progress-striped active">
+						<div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-danger">
+							<p>请稍候</p>
+						</div>
+					</div>
+				</div>
+				<div id="div-info" class="hide">
+					<h5><span>{UserName}</span>  您已经登录系统,如果不是您请重新登录.</h5>
+					<button id="logoutBtn" type="button" class="btn btn-danger block full-width m-b">重新登录</button>
+					<button id="backBtn" type="button" class="btn btn-success block full-width m-b">返回</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row footer">
+	<div class="col-xs-12" style="color:#fff;text-align: center;">
+		北京好中医医疗信息有限公司
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/static/common-js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/common-js/bootbox.js"></script>
+<script type="text/javascript" src="/static/common-js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="/static/common-js/common.js"></script>
+<script type="text/javascript" src="/static/common-js/zh_CN.js"></script>
+<script type="text/javascript" src="/static/common-js/plugins/md5/md5.min.js" ></script>
+<script type="text/javascript" src="/static/common-js/index.js" ></script>
+<script type="text/javascript" src="/static/common-js/plugins/layer/layer.js"></script>
+<script type="text/javascript" src="/static/js/common/AbstractDropdownList.js"></script>
+<script type="text/javascript" src="/static/js/user/login.js" ></script>
+<script type="text/javascript" src="/static/js/user/jquery.cookie.js" ></script>
+<script type="text/javascript" src="/static/js/user/jQuery.md5.js" ></script>
+<script type="text/javascript">
+	$(document).ready(ObjLoginIndex.init('{ID}'));
+</script>
